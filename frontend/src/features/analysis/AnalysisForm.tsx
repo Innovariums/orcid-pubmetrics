@@ -42,9 +42,6 @@ export function AnalysisForm({ initialOrcid, loading, onSubmit }: Props) {
   return (
     <div className="container-md">
       <div style={{ marginBottom: 44 }}>
-        <div className="t-tiny" style={{ marginBottom: 12 }}>
-          <span style={{ color: "var(--q1)" }}>●</span> Fuente activa · SJR 2024
-        </div>
         <h1 className="t-hero" style={{ margin: 0, maxWidth: 620 }}>
           Análisis bibliométrico por{" "}
           <em style={{ fontStyle: "italic", color: "var(--ink-700)" }}>ORCID</em>, cuartil y comité editorial.

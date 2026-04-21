@@ -65,7 +65,6 @@ export function ResultsView({
             <span className="meta-row__chip-orcid">{result.orcid}</span>
             {result.affiliation && <span>{result.affiliation}</span>}
             <span>Rango {result.start_year}–{result.end_year}</span>
-            <span className="meta-row__source">Fuente {source} 2024</span>
           </div>
         </div>
         <div className="page-head__actions">

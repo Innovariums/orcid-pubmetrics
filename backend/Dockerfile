@@ -13,13 +13,19 @@ RUN apt-get update \
         fonts-dejavu-core \
     && rm -rf /var/lib/apt/lists/*
 
-COPY pyproject.toml ./
+# pyproject/deps primero para maximizar cache
+COPY backend/pyproject.toml ./
 RUN pip install --no-cache-dir .
 
-COPY app ./app
+# App
+COPY backend/app ./app
+
+# Data bakeada en la imagen (~190 MB): evita depender de volume mounts
+# del orquestador. Si quieres sustituir con volume, monta /data ro.
+COPY data /data
 
 ENV SJR_DATA_DIR=/data/sjr \
-    OPEN_EDITORS_DATA_PATH=/data/open_editors/dataset.csv \
+    OPEN_EDITORS_DATA_PATH=/data/open_editors/openeditors_plus.parquet \
     DATABASE_URL=sqlite:////data/app.db \
     JOURNAL_METRICS_PROVIDER=sjr \
     EDITORIAL_BOARDS_PROVIDER=open_editors \

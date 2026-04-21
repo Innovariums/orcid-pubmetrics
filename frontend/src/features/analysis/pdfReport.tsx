@@ -1,6 +1,5 @@
 import {
   Document,
-  Font,
   Page,
   Path,
   Rect,
@@ -18,23 +17,11 @@ import {
 } from "@react-pdf/renderer";
 import type { AnalysisResult, EnrichedWork, TopJournal, YearQuartileBucket, YearScorePoint } from "../../types";
 
-/* --- Fonts (Inter + Newsreader desde Google Fonts) --- */
-Font.register({
-  family: "Inter",
-  fonts: [
-    { src: "https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50ojIa2ZL7W0Q5nw.ttf", fontWeight: 400 },
-    { src: "https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50ojIa1ZL7W0Q5nw.ttf", fontWeight: 500 },
-    { src: "https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50ojIa3pL7W0Q5nw.ttf", fontWeight: 600 },
-    { src: "https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50ojIa0JL7W0Q5nw.ttf", fontWeight: 700 },
-  ],
-});
-Font.register({
-  family: "Newsreader",
-  fonts: [
-    { src: "https://fonts.gstatic.com/s/newsreader/v21/cY9qfjOCX1hbuyalUrK49dLac06G1ZGsZBtoBCzBDXXD9JVF438weI_ADg.ttf", fontWeight: 400 },
-    { src: "https://fonts.gstatic.com/s/newsreader/v21/cY9qfjOCX1hbuyalUrK49dLac06G1ZGsZBtoBCzBDXXD9JVF4zwweI_ADg.ttf", fontWeight: 500 },
-  ],
-});
+/* Fuentes built-in de PDF (Helvetica, Times-Roman, Courier) — sin descargas
+   externas, sin CORS, sin red. Se renderizan idénticas en cualquier visor. */
+const FF_SANS = "Helvetica";
+const FF_SERIF = "Times-Roman";
+const FF_MONO = "Courier";
 
 /* --- Paleta (espejo del CSS del sitio) --- */
 const C = {
@@ -64,7 +51,7 @@ const s = StyleSheet.create({
   page: {
     backgroundColor: C.paper,
     color: C.ink900,
-    fontFamily: "Inter",
+    fontFamily: FF_SANS,
     fontSize: 10,
     paddingTop: 48,
     paddingBottom: 56,
@@ -88,14 +75,14 @@ const s = StyleSheet.create({
     textTransform: "uppercase",
     fontWeight: 500,
   },
-  hero: { fontFamily: "Newsreader", fontSize: 26, fontWeight: 500, lineHeight: 1.15, marginBottom: 8 },
+  hero: { fontFamily: FF_SERIF, fontSize: 26, fontWeight: 500, lineHeight: 1.15, marginBottom: 8 },
   h2: { fontSize: 13, fontWeight: 600, marginBottom: 10, color: C.ink900 },
   h3: { fontSize: 9.5, letterSpacing: 1, color: C.ink500, textTransform: "uppercase", marginBottom: 6, fontWeight: 500 },
   body: { fontSize: 10, color: C.ink700, lineHeight: 1.55 },
   muted: { color: C.ink500 },
-  mono: { fontFamily: "Courier", fontSize: 9.5 },
+  mono: { fontFamily: FF_MONO, fontSize: 9.5 },
   orcidChip: {
-    fontFamily: "Courier",
+    fontFamily: FF_MONO,
     fontSize: 9.5,
     color: C.ink700,
     backgroundColor: C.ink100,
@@ -136,7 +123,7 @@ const s = StyleSheet.create({
     gap: 4,
     marginBottom: 6,
   },
-  kpiValue: { fontFamily: "Newsreader", fontSize: 22, lineHeight: 1 },
+  kpiValue: { fontFamily: FF_SERIF, fontSize: 22, lineHeight: 1 },
   kpiHint: { fontSize: 8, color: C.ink500, marginTop: 3 },
 
   /* Chart blocks */
@@ -403,7 +390,7 @@ function DoughnutPdf({ totals, size = 120 }: { totals: AnalysisResult["quartile_
         {arcs.map((a) => (
           <Path key={a.k} d={a.path} fill={a.c} />
         ))}
-        <Text x={cx - 10} y={cy - 2} style={{ fontFamily: "Newsreader", fontSize: 16, fill: C.ink900 }}>
+        <Text x={cx - 10} y={cy - 2} style={{ fontFamily: FF_SERIF, fontSize: 16, fill: C.ink900 }}>
           {total}
         </Text>
         <Text x={cx - 17} y={cy + 10} style={{ fontSize: 6.5, fill: C.ink500, letterSpacing: 0.5 }}>
@@ -415,7 +402,7 @@ function DoughnutPdf({ totals, size = 120 }: { totals: AnalysisResult["quartile_
           <View key={a.k} style={{ flexDirection: "row", alignItems: "center", gap: 6 }}>
             <View style={{ width: 7, height: 7, borderRadius: 1.5, backgroundColor: a.c }} />
             <Text style={{ fontSize: 9, width: 56 }}>{a.l}</Text>
-            <Text style={{ fontFamily: "Courier", fontSize: 8, color: C.ink500 }}>
+            <Text style={{ fontFamily: FF_MONO, fontSize: 8, color: C.ink500 }}>
               {a.v} · {a.pct}%
             </Text>
           </View>
@@ -465,7 +452,7 @@ function HBarPdf({ rows, width = 460 }: { rows: TopJournal[]; width?: number }) 
               }}
             />
           </View>
-          <Text style={{ fontFamily: "Courier", fontSize: 8, color: C.ink500, width: countW, textAlign: "right" }}>
+          <Text style={{ fontFamily: FF_MONO, fontSize: 8, color: C.ink500, width: countW, textAlign: "right" }}>
             {r.count}
           </Text>
         </View>
@@ -608,7 +595,7 @@ function PublicationRow({ ew, idx }: { ew: EnrichedWork; idx: number }) {
         <Text style={s.tableMeta}>{m ? truncate(m.category, 40) : reason}</Text>
       </View>
       <View style={{ width: 40, alignItems: "flex-end" }}>
-        <Text style={[s.tableCell, { fontFamily: "Courier", color: m ? C.ink900 : C.ink300 }]}>
+        <Text style={[s.tableCell, { fontFamily: FF_MONO, color: m ? C.ink900 : C.ink300 }]}>
           {m ? m.score.toFixed(3) : "—"}
         </Text>
       </View>

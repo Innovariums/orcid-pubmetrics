@@ -1,8 +1,11 @@
-import { Card, Chip } from "../../components/primitives";
+import { useState } from "react";
+import { Btn, Card, Chip, Icon } from "../../components/primitives";
 import { ShareButton } from "../../components/ShareButton";
 import type { ComparisonResult } from "../../types";
 import { TONES } from "./CompareForm";
 import { CoopGraph } from "./CoopGraph";
+import { downloadComparisonCsv } from "./exportCsv";
+import { downloadComparisonPdfReport } from "./pdfReport";
 
 interface Props {
   result: ComparisonResult;
@@ -11,6 +14,16 @@ interface Props {
 
 export function CompareView({ result, onNewQuery }: Props) {
   const rs = result.researchers;
+  const [pdfLoading, setPdfLoading] = useState(false);
+
+  const handlePdf = async () => {
+    setPdfLoading(true);
+    try {
+      await downloadComparisonPdfReport(result);
+    } finally {
+      setPdfLoading(false);
+    }
+  };
   const totalOverlaps = result.journal_overlap.length;
   const suspiciousOverlaps = result.journal_overlap.filter((o) => o.has_editorial_conflict).length;
   const editorialCrossCount = result.editorial_cross.length;
@@ -35,7 +48,7 @@ export function CompareView({ result, onNewQuery }: Props) {
           <h1 className="t-h1">Comparación de {rs.length} investigadores</h1>
           <div className="meta-row">
             <span>Rango {result.start_year}–{result.end_year}</span>
-            <span className="meta-row__source">Fuente {result.metrics_source.toUpperCase()} 2024</span>
+            <span>Fuente {result.metrics_source.toUpperCase()} 2024</span>
             {result.editorial_source && <span>Comités vía {result.editorial_source}</span>}
           </div>
           <p className="t-small" style={{ marginTop: 10, maxWidth: 720 }}>
@@ -46,9 +59,20 @@ export function CompareView({ result, onNewQuery }: Props) {
         </div>
         <div className="page-head__actions">
           <ShareButton variant="secondary" />
-          <button className="op-btn op-btn--ghost" onClick={onNewQuery}>
+          <Btn variant="ghost" iconLeft={Icon.download()} onClick={() => downloadComparisonCsv(result)}>
+            CSV
+          </Btn>
+          <Btn
+            variant="secondary"
+            iconLeft={Icon.download()}
+            onClick={handlePdf}
+            disabled={pdfLoading}
+          >
+            {pdfLoading ? "Generando…" : "PDF"}
+          </Btn>
+          <Btn variant="ghost" onClick={onNewQuery}>
             Nueva comparación
-          </button>
+          </Btn>
         </div>
       </div>
 
