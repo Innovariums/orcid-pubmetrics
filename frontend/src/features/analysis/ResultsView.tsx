@@ -123,36 +123,6 @@ export function ResultsView({
         />
       </div>
 
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          gap: 10,
-          padding: "10px 14px",
-          background: "var(--paper)",
-          border: "1px solid var(--ink-200)",
-          borderLeft: "3px solid var(--q3)",
-          borderRadius: "var(--r-sm)",
-          marginBottom: 20,
-          fontSize: 12.5,
-          color: "var(--ink-700)",
-          lineHeight: 1.5,
-        }}
-      >
-        <span style={{ color: "var(--q3)", flexShrink: 0 }}>{Icon.info()}</span>
-        <span style={{ flex: 1 }}>
-          Cuartiles calculados con <strong>{source} 2024 (Scimago/Scopus)</strong>. Pueden diferir en
-          una Q respecto a JCR.{" "}
-          {result.quartile_totals.unindexed > 0 && (
-            <>
-              {result.quartile_totals.unindexed}{" "}
-              {result.quartile_totals.unindexed === 1 ? "publicación quedó" : "publicaciones quedaron"} sin cuartil
-              resoluble; ver detalle en la tabla.
-            </>
-          )}
-        </span>
-      </div>
-
       <div className="charts-row-1">
         <Card title="Publicaciones por año" subtitle="apiladas por cuartil SJR">
           <div
@@ -281,6 +251,38 @@ export function ResultsView({
           </table>
         </div>
       </div>
+
+      <div style={{ height: 20 }} />
+
+      {/* Fuente y alcance — estructurado al final, reemplaza el disclaimer card */}
+      <Card title="Fuente y alcance">
+        <dl
+          style={{
+            display: "grid",
+            gridTemplateColumns: "160px 1fr",
+            gap: "10px 16px",
+            margin: 0,
+            fontSize: 13,
+          }}
+        >
+          <dt className="op-muted">Cuartil</dt>
+          <dd style={{ margin: 0 }}>
+            {source} 2024 (Scimago Journal Rank, basado en Scopus). Los valores
+            pueden diferir en una Q respecto a JCR/Clarivate.
+          </dd>
+          <dt className="op-muted">Publicaciones</dt>
+          <dd style={{ margin: 0 }}>
+            OpenAlex. Solo publicaciones públicas del registro ORCID.
+          </dd>
+          <dt className="op-muted">Interpretación</dt>
+          <dd style={{ margin: 0 }}>
+            Los datos provienen de fuentes públicas. No se emiten juicios; solo
+            se exponen cifras y distribuciones. Cuando una publicación queda
+            sin cuartil, la razón específica aparece en la columna correspondiente
+            de la tabla.
+          </dd>
+        </dl>
+      </Card>
     </div>
   );
 }
