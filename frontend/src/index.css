@@ -290,6 +290,54 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 /* Layout containers */
 .app-shell { display: flex; flex-direction: column; min-height: 100vh; }
 .app-shell__main { flex: 1; overflow: auto; position: relative; }
+
+/* Minimal tab strip (replaces full header) */
+.app-tabs {
+  display: flex;
+  gap: 4px;
+  padding: 8px 24px 0;
+  border-bottom: 1px solid var(--ink-200);
+  background: var(--paper);
+  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.app-tab {
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 10px 14px 12px;
+  background: transparent;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  color: var(--ink-500);
+  cursor: pointer;
+  transition: color .12s, border-color .12s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: -1px;
+}
+.app-tab:hover { color: var(--ink-900); }
+.app-tab.is-active {
+  color: var(--ink-900);
+  border-bottom-color: var(--ink-900);
+}
+.app-tab__badge {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 3px;
+  background: var(--q1-tint);
+  color: var(--q1);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+@media (max-width: 540px) {
+  .app-tabs { padding: 6px 12px 0; }
+  .app-tab { padding: 10px 10px 12px; font-size: 12.5px; }
+}
 .app-header {
   height: 56px;
   border-bottom: 1px solid var(--ink-200);

@@ -17,7 +17,11 @@ class FakePublicationProvider:
     def get_works_by_orcid(
         self, orcid: str, start_year: int, end_year: int
     ) -> list[Work]:
-        return [w for w in self._works if start_year <= w.pub_year <= end_year]
+        return [
+            w
+            for w in self._works
+            if w.orcid == orcid and start_year <= w.pub_year <= end_year
+        ]
 
     def health(self) -> bool:
         return True

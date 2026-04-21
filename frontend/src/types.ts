@@ -95,6 +95,61 @@ export interface AnalysisRequest {
   end_year: number;
 }
 
+/* --- Fase 2: comparación --- */
+
+export interface ResearcherSummary {
+  orcid: string;
+  researcher_name: string | null;
+  total_works: number;
+  indexed_works: number;
+  quartile_totals: QuartileTotals;
+}
+
+export interface JournalOverlap {
+  issn: string | null;
+  journal_title: string;
+  best_quartile: Quartile | null;
+  pubs_by_orcid: Record<string, number>;
+  has_editorial_conflict: boolean;
+  editors_orcids: string[];
+}
+
+export interface Coauthorship {
+  orcids: string[];
+  work_title: string;
+  pub_year: number;
+  doi: string | null;
+  journal_title: string | null;
+  quartile: Quartile | null;
+}
+
+export interface EditorialCrossRef {
+  publisher_orcid: string;
+  editor_orcid: string;
+  issn: string | null;
+  journal_title: string;
+  editor_role: string;
+  pub_count: number;
+}
+
+export interface ComparisonResult {
+  orcids: string[];
+  start_year: number;
+  end_year: number;
+  metrics_source: MetricsSource;
+  editorial_source: string | null;
+  researchers: ResearcherSummary[];
+  journal_overlap: JournalOverlap[];
+  coauthorships: Coauthorship[];
+  editorial_cross: EditorialCrossRef[];
+}
+
+export interface ComparisonRequest {
+  orcids: string[];
+  start_year: number;
+  end_year: number;
+}
+
 // Paleta consistente para toda la UI
 export const QUARTILE_COLORS: Record<Quartile | "unindexed", string> = {
   Q1: "#22c55e", // verde

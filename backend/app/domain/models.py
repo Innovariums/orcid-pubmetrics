@@ -57,6 +57,70 @@ class TopJournal(BaseModel):
     count: int
 
 
+class ResearcherSummary(BaseModel):
+    """Resumen por investigador dentro de una comparación."""
+
+    orcid: str
+    researcher_name: str | None = None
+    total_works: int
+    indexed_works: int
+    quartile_totals: QuartileTotals
+
+
+class JournalOverlap(BaseModel):
+    """Revista donde publican 2+ investigadores del grupo comparado."""
+
+    issn: str | None
+    journal_title: str
+    best_quartile: Literal["Q1", "Q2", "Q3", "Q4"] | None = None
+    pubs_by_orcid: dict[str, int]
+    has_editorial_conflict: bool = Field(
+        default=False,
+        description=(
+            "True si ≥1 investigador del grupo publica en esta revista y otro(s) "
+            "figura(n) en el comité editorial. Requiere OpenEditorsProvider."
+        ),
+    )
+    editors_orcids: list[str] = Field(
+        default_factory=list,
+        description="Subconjunto de ORCIDs del grupo que están en el comité editorial de la revista.",
+    )
+
+
+class Coauthorship(BaseModel):
+    """Par (o n-upla) de investigadores co-autores en un mismo trabajo."""
+
+    orcids: list[str]
+    work_title: str
+    pub_year: int
+    doi: str | None = None
+    journal_title: str | None = None
+    quartile: Literal["Q1", "Q2", "Q3", "Q4"] | None = None
+
+
+class EditorialCrossRef(BaseModel):
+    """A publica en revista X donde B está en el comité editorial."""
+
+    publisher_orcid: str
+    editor_orcid: str
+    issn: str | None
+    journal_title: str
+    editor_role: str
+    pub_count: int
+
+
+class ComparisonResult(BaseModel):
+    orcids: list[str]
+    start_year: int
+    end_year: int
+    metrics_source: str
+    editorial_source: str | None = None
+    researchers: list[ResearcherSummary]
+    journal_overlap: list[JournalOverlap]
+    coauthorships: list[Coauthorship]
+    editorial_cross: list[EditorialCrossRef]
+
+
 class AnalysisResult(BaseModel):
     orcid: str
     researcher_name: str | None = Field(

@@ -1,4 +1,9 @@
-import type { AnalysisRequest, AnalysisResult } from "../types";
+import type {
+  AnalysisRequest,
+  AnalysisResult,
+  ComparisonRequest,
+  ComparisonResult,
+} from "../types";
 
 /**
  * Base de la API. En dev usa el proxy `/api` → backend local (vite.config.ts).
@@ -37,4 +42,6 @@ export const api = {
   health: () => request<{ status: string; app: string; metrics_provider: string }>("/health"),
   analyze: (req: AnalysisRequest) =>
     request<AnalysisResult>("/analysis", { method: "POST", body: JSON.stringify(req) }),
+  compare: (req: ComparisonRequest) =>
+    request<ComparisonResult>("/comparison", { method: "POST", body: JSON.stringify(req) }),
 };
