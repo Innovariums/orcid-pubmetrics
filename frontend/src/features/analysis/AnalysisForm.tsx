@@ -122,22 +122,14 @@ export function AnalysisForm({ initialOrcid, loading, onSubmit }: Props) {
         <div
           style={{
             marginTop: 14,
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
             color: "var(--ink-500)",
             fontSize: 12.5,
-            gap: 10,
-            flexWrap: "wrap",
           }}
         >
-          <div>
-            Ejemplo:{" "}
-            <span className="mono" style={{ color: "var(--ink-700)" }}>
-              0000-0002-0170-462X
-            </span>
-          </div>
-          <span style={{ color: "var(--ink-400)" }}>Comparar 2–3 investigadores (Fase 2)</span>
+          Ejemplo:{" "}
+          <span className="mono" style={{ color: "var(--ink-700)" }}>
+            0000-0002-0170-462X
+          </span>
         </div>
       </form>
 

@@ -114,12 +114,12 @@ export function ResultsView({
             </span>
           </div>
         </div>
-        <div style={{ display: "flex", gap: 8, flexShrink: 0 }}>
+        <div style={{ display: "flex", gap: 8, flexShrink: 0, flexWrap: "wrap" }}>
           <Btn variant="ghost" iconLeft={Icon.download()} onClick={() => downloadCsv(result)}>
             CSV
           </Btn>
-          <Btn variant="secondary" iconLeft={Icon.download()} disabled title="Próximamente">
-            PDF
+          <Btn variant="secondary" onClick={onNewQuery}>
+            Nueva consulta
           </Btn>
         </div>
       </div>

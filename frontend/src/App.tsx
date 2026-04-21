@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { api, ApiError } from "./api/client";
 import { Shell } from "./components/Shell";
-import { Btn } from "./components/primitives";
 import { AnalysisForm } from "./features/analysis/AnalysisForm";
 import { DetailDrawer } from "./features/analysis/DetailDrawer";
 import { ErrorState } from "./features/analysis/ErrorState";
@@ -40,15 +39,8 @@ export default function App() {
     setStage({ kind: "form" });
   };
 
-  const headerRight =
-    stage.kind === "results" ? (
-      <Btn variant="ghost" size="sm" onClick={reset}>
-        Nueva consulta
-      </Btn>
-    ) : undefined;
-
   return (
-    <Shell right={headerRight}>
+    <Shell>
       {stage.kind === "form" && <AnalysisForm onSubmit={run} loading={false} />}
       {stage.kind === "loading" && (
         <LoadingView
