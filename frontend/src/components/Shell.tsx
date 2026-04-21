@@ -29,7 +29,6 @@ export function Shell({
           onClick={() => onTab("compare")}
         >
           Comparar
-          <span className="app-tab__badge">nuevo</span>
         </button>
       </div>
       <main className="app-shell__main">{children}</main>

@@ -54,9 +54,6 @@ export function CompareForm({ loading, onSubmit }: Props) {
   return (
     <div className="container-md">
       <div style={{ marginBottom: 36 }}>
-        <div className="t-tiny" style={{ marginBottom: 12 }}>
-          <span style={{ color: "var(--accent)" }}>●</span> Fase 2 · Comparación entre investigadores
-        </div>
         <h1 className="t-hero" style={{ margin: 0, maxWidth: 640 }}>
           Compara <em style={{ fontStyle: "italic", color: "var(--ink-700)" }}>2–5 ORCIDs</em> y detecta solapamientos de publicación y comité editorial.
         </h1>

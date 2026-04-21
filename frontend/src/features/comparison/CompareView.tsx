@@ -17,17 +17,7 @@ export function CompareView({ result, onNewQuery }: Props) {
 
   return (
     <div className="container-lg">
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          gap: 10,
-          marginBottom: 16,
-          fontSize: 13,
-          color: "var(--ink-500)",
-          flexWrap: "wrap",
-        }}
-      >
+      <div className="crumbs">
         <button
           className="op-link"
           onClick={onNewQuery}
@@ -35,47 +25,36 @@ export function CompareView({ result, onNewQuery }: Props) {
         >
           Comparación
         </button>
-        <span style={{ color: "var(--ink-300)" }}>/</span>
-        <span style={{ color: "var(--ink-900)" }}>Resultados</span>
-        <span style={{ marginLeft: "auto", fontSize: 12 }}>
-          Rango {result.start_year}–{result.end_year} · Fuente {result.metrics_source.toUpperCase()} 2024
-          {result.editorial_source && <> · Comités vía {result.editorial_source}</>}
-        </span>
+        <span className="crumbs__sep">/</span>
+        <span className="crumbs__active">Resultados</span>
       </div>
 
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "flex-start",
-          marginBottom: 20,
-          gap: 16,
-          flexWrap: "wrap",
-        }}
-      >
-        <div>
-          <h1 className="t-h1" style={{ margin: 0 }}>
-            Comparación de {rs.length} investigadores
-          </h1>
-          <p className="t-small" style={{ marginTop: 6, maxWidth: 720 }}>
+      <div className="page-head">
+        <div className="page-head__title">
+          <h1 className="t-h1">Comparación de {rs.length} investigadores</h1>
+          <div className="meta-row">
+            <span>Rango {result.start_year}–{result.end_year}</span>
+            <span className="meta-row__source">Fuente {result.metrics_source.toUpperCase()} 2024</span>
+            {result.editorial_source && <span>Comités vía {result.editorial_source}</span>}
+          </div>
+          <p className="t-small" style={{ marginTop: 10, maxWidth: 720 }}>
             Los datos provienen de fuentes públicas (OpenAlex + Scimago + Open Editors).
             La interpretación es responsabilidad del lector — no se emiten juicios sobre
             conducta; solo se exponen patrones factuales de coincidencia.
           </p>
         </div>
-        <button
-          className="op-btn op-btn--secondary"
-          onClick={onNewQuery}
-        >
-          Nueva comparación
-        </button>
+        <div className="page-head__actions">
+          <button className="op-btn op-btn--secondary" onClick={onNewQuery}>
+            Nueva comparación
+          </button>
+        </div>
       </div>
 
       {/* Researcher cards */}
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: `repeat(${Math.min(rs.length, 3)}, minmax(0, 1fr))`,
+          gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
           gap: 12,
           marginBottom: 24,
         }}

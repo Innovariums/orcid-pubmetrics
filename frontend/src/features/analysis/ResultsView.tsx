@@ -34,87 +34,29 @@ export function ResultsView({
 
   return (
     <div className="container-lg">
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          gap: 10,
-          marginBottom: 20,
-          fontSize: 13,
-          color: "var(--ink-500)",
-        }}
-      >
-        <button className="op-link" style={{ background: "transparent", border: 0, cursor: "pointer", padding: 0, color: "var(--ink-500)" }} onClick={onNewQuery}>
+      <div className="crumbs">
+        <button
+          className="op-link"
+          onClick={onNewQuery}
+          style={{ background: "transparent", border: 0, cursor: "pointer", padding: 0, color: "var(--ink-500)" }}
+        >
           Análisis
         </button>
-        <span style={{ color: "var(--ink-300)" }}>/</span>
-        <span style={{ color: "var(--ink-900)" }}>Resultados</span>
+        <span className="crumbs__sep">/</span>
+        <span className="crumbs__active">Resultados</span>
       </div>
 
-      <div
-        style={{
-          display: "flex",
-          alignItems: "flex-start",
-          justifyContent: "space-between",
-          marginBottom: 24,
-          gap: 20,
-          flexWrap: "wrap",
-        }}
-      >
-        <div style={{ minWidth: 0, flex: 1 }}>
-          <h1 className="t-h1" style={{ margin: 0, overflowWrap: "anywhere" }}>{headerTitle}</h1>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: 10,
-              marginTop: 8,
-              fontSize: 13,
-              color: "var(--ink-500)",
-              flexWrap: "wrap",
-            }}
-          >
-            <span
-              className="mono"
-              style={{
-                color: "var(--ink-700)",
-                background: "var(--ink-100)",
-                padding: "2px 6px",
-                borderRadius: 3,
-                fontSize: 12,
-              }}
-            >
-              {result.orcid}
-            </span>
-            {result.affiliation && (
-              <>
-                <span>·</span>
-                <span>{result.affiliation}</span>
-              </>
-            )}
-            <span>·</span>
-            <span>
-              Rango {result.start_year}–{result.end_year}
-            </span>
-            <span>·</span>
-            <span>
-              Fuente{" "}
-              <span
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: 4,
-                  color: "var(--ink-900)",
-                  fontWeight: 500,
-                }}
-              >
-                <span style={{ width: 6, height: 6, borderRadius: 3, background: "var(--q1)" }} />{" "}
-                {source} 2024
-              </span>
-            </span>
+      <div className="page-head">
+        <div className="page-head__title">
+          <h1 className="t-h1">{headerTitle}</h1>
+          <div className="meta-row">
+            <span className="meta-row__chip-orcid">{result.orcid}</span>
+            {result.affiliation && <span>{result.affiliation}</span>}
+            <span>Rango {result.start_year}–{result.end_year}</span>
+            <span className="meta-row__source">Fuente {source} 2024</span>
           </div>
         </div>
-        <div style={{ display: "flex", gap: 8, flexShrink: 0, flexWrap: "wrap" }}>
+        <div className="page-head__actions">
           <Btn variant="ghost" iconLeft={Icon.download()} onClick={() => downloadCsv(result)}>
             CSV
           </Btn>
