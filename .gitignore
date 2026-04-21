@@ -51,3 +51,6 @@ logs/
 
 # Build artifacts
 *.pdf.tmp
+
+# Playwright MCP transient state
+.playwright-mcp/

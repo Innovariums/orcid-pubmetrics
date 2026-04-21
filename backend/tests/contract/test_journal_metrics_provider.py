@@ -35,7 +35,6 @@ def provider(request: pytest.FixtureRequest) -> JournalMetricsProvider:
     return _make_provider(request.param)
 
 
-@pytest.mark.skip(reason="Fase 1: implementar adapters y fixtures de prueba")
 def test_known_journal_returns_quartile(provider: JournalMetricsProvider) -> None:
     results = provider.get_metrics("03064573", 2023)
     assert results
@@ -43,13 +42,18 @@ def test_known_journal_returns_quartile(provider: JournalMetricsProvider) -> Non
     assert all(m.source == provider.name for m in results)
 
 
-@pytest.mark.skip(reason="Fase 1: implementar adapters")
 def test_unknown_journal_returns_empty(provider: JournalMetricsProvider) -> None:
     assert provider.get_metrics("00000000", 2023) == []
 
 
-@pytest.mark.skip(reason="Fase 1: implementar adapters")
 def test_year_rule_is_reported(provider: JournalMetricsProvider) -> None:
     results = provider.get_metrics("03064573", 2099)
     for m in results:
         assert m.year_rule in {"exact", "fallback-1", "fallback+1", "fallback-any"}
+
+
+def test_issn_with_hyphen_is_accepted(provider: JournalMetricsProvider) -> None:
+    # Mismo ISSN en formato humano; el provider debe normalizar.
+    results = provider.get_metrics("0306-4573", 2023)
+    assert results
+    assert all(m.issn == "03064573" for m in results)
