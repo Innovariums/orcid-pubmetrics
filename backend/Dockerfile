@@ -1,4 +1,4 @@
-# rev: 2026-04-21T18:30 — force rebuild to kill orphan containers
+# rev: 2026-04-21T18:50 — pickup new traefik labels
 FROM python:3.12-slim
 
 ENV PYTHONUNBUFFERED=1 \

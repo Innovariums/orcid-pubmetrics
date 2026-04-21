@@ -1,3 +1,4 @@
+# rev: 2026-04-21T18:50 — pickup new traefik labels
 # Build stage
 FROM node:20-alpine AS build
 
