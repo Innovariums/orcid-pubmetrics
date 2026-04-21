@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { CHART_COLORS, DoughnutChart, HBarChart, LineChart, StackedBarChart } from "../../components/charts";
 import { Btn, Card, Chip, Icon, StatCard } from "../../components/primitives";
+import { ShareButton } from "../../components/ShareButton";
 import type { AnalysisResult, EnrichedWork } from "../../types";
 import { downloadCsv } from "./exportCsv";
 import { downloadPdfReport } from "./pdfReport";
@@ -68,6 +69,7 @@ export function ResultsView({
           </div>
         </div>
         <div className="page-head__actions">
+          <ShareButton variant="secondary" />
           <Btn variant="ghost" iconLeft={Icon.download()} onClick={() => downloadCsv(result)}>
             CSV
           </Btn>
@@ -79,7 +81,7 @@ export function ResultsView({
           >
             {pdfLoading ? "Generando…" : "PDF"}
           </Btn>
-          <Btn variant="secondary" onClick={onNewQuery}>
+          <Btn variant="ghost" onClick={onNewQuery}>
             Nueva consulta
           </Btn>
         </div>

@@ -1,4 +1,5 @@
 import { Card, Chip } from "../../components/primitives";
+import { ShareButton } from "../../components/ShareButton";
 import type { ComparisonResult } from "../../types";
 import { TONES } from "./CompareForm";
 import { CoopGraph } from "./CoopGraph";
@@ -44,7 +45,8 @@ export function CompareView({ result, onNewQuery }: Props) {
           </p>
         </div>
         <div className="page-head__actions">
-          <button className="op-btn op-btn--secondary" onClick={onNewQuery}>
+          <ShareButton variant="secondary" />
+          <button className="op-btn op-btn--ghost" onClick={onNewQuery}>
             Nueva comparación
           </button>
         </div>
