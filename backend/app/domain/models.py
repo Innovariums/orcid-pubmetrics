@@ -59,6 +59,11 @@ class TopJournal(BaseModel):
 
 class AnalysisResult(BaseModel):
     orcid: str
+    researcher_name: str | None = Field(
+        default=None,
+        description="Nombre del investigador derivado de OpenAlex authorships (primer match)",
+    )
+    affiliation: str | None = None
     start_year: int
     end_year: int
     metrics_source: str

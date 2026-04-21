@@ -35,6 +35,8 @@ def analyze(
 
     return AnalysisResult(
         orcid=orcid,
+        researcher_name=_extract_researcher_name(orcid, works),
+        affiliation=None,
         start_year=start_year,
         end_year=end_year,
         metrics_source=metrics.name,
@@ -46,6 +48,18 @@ def analyze(
         top_journals=_top_journals(enriched),
         works=enriched,
     )
+
+
+def _extract_researcher_name(orcid: str, works: list[Work]) -> str | None:
+    """
+    Busca en los authorships de cualquier work un autor con este ORCID y
+    devuelve su display_name. Sin llamada extra a OpenAlex.
+    """
+    for w in works:
+        for a in w.authors:
+            if a.orcid == orcid and a.name and a.name != "unknown":
+                return a.name
+    return None
 
 
 def _enrich(work: Work, metrics: JournalMetricsProvider) -> EnrichedWork:

@@ -1,63 +1,76 @@
 import { useState } from "react";
 import { api, ApiError } from "./api/client";
+import { Shell } from "./components/Shell";
+import { Btn } from "./components/primitives";
 import { AnalysisForm } from "./features/analysis/AnalysisForm";
-import "./features/analysis/chartSetup";
+import { DetailDrawer } from "./features/analysis/DetailDrawer";
+import { ErrorState } from "./features/analysis/ErrorState";
+import { LoadingView } from "./features/analysis/LoadingView";
 import { ResultsView } from "./features/analysis/ResultsView";
-import type { AnalysisRequest, AnalysisResult } from "./types";
+import type { AnalysisRequest, AnalysisResult, EnrichedWork } from "./types";
+
+type Stage =
+  | { kind: "form" }
+  | { kind: "loading"; request: AnalysisRequest }
+  | { kind: "results"; result: AnalysisResult }
+  | { kind: "error"; message: string; lastRequest: AnalysisRequest | null };
 
 export default function App() {
-  const [result, setResult] = useState<AnalysisResult | null>(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const [stage, setStage] = useState<Stage>({ kind: "form" });
+  const [detail, setDetail] = useState<EnrichedWork | null>(null);
 
-  const handleSubmit = async (req: AnalysisRequest) => {
-    setLoading(true);
-    setError(null);
-    setResult(null);
+  const run = async (req: AnalysisRequest) => {
+    setStage({ kind: "loading", request: req });
     try {
-      const r = await api.analyze(req);
-      setResult(r);
+      const result = await api.analyze(req);
+      setStage({ kind: "results", result });
     } catch (e) {
-      if (e instanceof ApiError) {
-        setError(`${e.status}: ${e.detail}`);
-      } else {
-        setError(String(e));
-      }
-    } finally {
-      setLoading(false);
+      const msg =
+        e instanceof ApiError
+          ? `${e.detail} (HTTP ${e.status})`
+          : e instanceof Error
+          ? e.message
+          : String(e);
+      setStage({ kind: "error", message: msg, lastRequest: req });
     }
   };
 
+  const reset = () => {
+    setDetail(null);
+    setStage({ kind: "form" });
+  };
+
+  const headerRight =
+    stage.kind === "results" ? (
+      <Btn variant="ghost" size="sm" onClick={reset}>
+        Nueva consulta
+      </Btn>
+    ) : undefined;
+
   return (
-    <main className="app">
-      <header className="app-header">
-        <div>
-          <h1>orcid-pubmetrics</h1>
-          <div className="subtitle">
-            Análisis bibliométrico por ORCID · cuartil, revistas, evolución
-          </div>
-        </div>
-      </header>
-
-      <AnalysisForm
-        initialOrcid="0000-0002-0170-462X"
-        loading={loading}
-        onSubmit={handleSubmit}
-      />
-
-      {error && (
-        <div className="error" role="alert">
-          Error al analizar: {error}
-        </div>
+    <Shell right={headerRight}>
+      {stage.kind === "form" && <AnalysisForm onSubmit={run} loading={false} />}
+      {stage.kind === "loading" && (
+        <LoadingView
+          orcid={stage.request.orcid}
+          range={`${stage.request.start_year}–${stage.request.end_year}`}
+        />
       )}
-
-      {loading && <div className="loading">Consultando OpenAlex y resolviendo cuartil SJR…</div>}
-
-      {result && (
-        <div style={{ marginTop: "1.5rem" }}>
-          <ResultsView result={result} />
-        </div>
+      {stage.kind === "results" && (
+        <ResultsView
+          result={stage.result}
+          onOpenWork={setDetail}
+          onNewQuery={reset}
+        />
       )}
-    </main>
+      {stage.kind === "error" && (
+        <ErrorState
+          message={stage.message}
+          onRetry={() => stage.lastRequest && run(stage.lastRequest)}
+          onCancel={reset}
+        />
+      )}
+      {detail && <DetailDrawer work={detail} onClose={() => setDetail(null)} />}
+    </Shell>
   );
 }

@@ -75,6 +75,8 @@ export interface TopJournal {
 
 export interface AnalysisResult {
   orcid: string;
+  researcher_name: string | null;
+  affiliation: string | null;
   start_year: number;
   end_year: number;
   metrics_source: MetricsSource;
