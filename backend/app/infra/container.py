@@ -3,6 +3,7 @@ from functools import lru_cache
 from app.adapters.jcr_clarivate import ClarivateJcrProvider
 from app.adapters.open_editors import OpenEditorsProvider
 from app.adapters.openalex import OpenAlexPublicationProvider
+from app.adapters.publindex import PublindexProvider
 from app.adapters.sjr_csv import ScimagoSjrProvider
 from app.infra.settings import settings
 from app.ports.editorial_boards import EditorialBoardProvider
@@ -34,3 +35,8 @@ def get_editorial_board_provider() -> EditorialBoardProvider:
     raise NotImplementedError(
         f"Editorial boards provider '{settings.editorial_boards_provider}' not implemented yet"
     )
+
+
+@lru_cache(maxsize=1)
+def get_publindex_provider() -> PublindexProvider:
+    return PublindexProvider(data_path=settings.publindex_data_path)

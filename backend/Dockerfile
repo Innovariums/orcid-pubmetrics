@@ -1,4 +1,4 @@
-# rev: 2026-04-21T18:50 — pickup new traefik labels
+# rev: 2026-04-21T19:10 — add publindex dataset + env var
 FROM python:3.12-slim
 
 ENV PYTHONUNBUFFERED=1 \
@@ -27,6 +27,7 @@ COPY data /data
 
 ENV SJR_DATA_DIR=/data/sjr \
     OPEN_EDITORS_DATA_PATH=/data/open_editors/openeditors_plus.parquet \
+    PUBLINDEX_DATA_PATH=/data/publindex/publindex.json \
     DATABASE_URL=sqlite:////data/app.db \
     JOURNAL_METRICS_PROVIDER=sjr \
     EDITORIAL_BOARDS_PROVIDER=open_editors \

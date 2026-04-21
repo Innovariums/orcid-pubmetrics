@@ -1,4 +1,4 @@
-# rev: 2026-04-21T18:50 — pickup new traefik labels
+# rev: 2026-04-21T19:10 — publindex exploration UI
 # Build stage
 FROM node:20-alpine AS build
 

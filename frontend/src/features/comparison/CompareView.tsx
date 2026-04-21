@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { Btn, Card, Chip, Icon } from "../../components/primitives";
 import { ShareButton } from "../../components/ShareButton";
+import { usePublindex } from "../../hooks/usePublindex";
 import { DetailDrawer } from "../analysis/DetailDrawer";
 import type { ComparisonResult, EnrichedWork } from "../../types";
 import { TONES } from "./CompareForm";
@@ -20,6 +21,15 @@ export function CompareView({ result, onNewQuery }: Props) {
     work: EnrichedWork;
     coauthorOrcids: string[];
   } | null>(null);
+
+  // Publindex: se precarga para todos los works del grupo (la lista aparece
+  // spread en coauthorships). Feature secundaria — la UI sigue mostrando
+  // "no indexada" como señal principal.
+  const allWorks = useMemo(
+    () => result.coauthorships.map((c) => c.work),
+    [result.coauthorships],
+  );
+  const publindex = usePublindex(allWorks);
 
   const handlePdf = async () => {
     setPdfLoading(true);
@@ -428,6 +438,7 @@ export function CompareView({ result, onNewQuery }: Props) {
             coauthorOrcids: drawerWork.coauthorOrcids,
             tones: TONES,
           }}
+          publindexEntry={publindex.lookupWork(drawerWork.work)}
         />
       )}
     </div>

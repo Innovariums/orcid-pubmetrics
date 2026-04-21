@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Btn, Chip, Icon } from "../../components/primitives";
-import type { EnrichedWork } from "../../types";
+import type { EnrichedWork, PublindexEntry } from "../../types";
 
 export interface CompareContext {
   /** ORCIDs del grupo comparado, en el orden A, B, C... */
@@ -15,9 +15,13 @@ interface Props {
   work: EnrichedWork;
   onClose: () => void;
   compareContext?: CompareContext;
+  /** Entrada Publindex (MinCiencias) asociada al ISSN. Feature secundaria de
+   * exploración: se muestra *sólo* cuando el work no tiene cuartil SJR, para
+   * reforzar que JCR/SJR sigue siendo la señal principal. */
+  publindexEntry?: PublindexEntry | null;
 }
 
-export function DetailDrawer({ work, onClose, compareContext }: Props) {
+export function DetailDrawer({ work, onClose, compareContext, publindexEntry }: Props) {
   const m = work.metric;
   const allCats = work.all_metrics;
   const workTypeLabel =
@@ -182,6 +186,9 @@ export function DetailDrawer({ work, onClose, compareContext }: Props) {
                     ? "La revista no está indexada en Scimago para el rango consultado. Esto es una señal relevante."
                     : "Los metadatos de OpenAlex están incompletos para este trabajo."}
                 </div>
+                {publindexEntry && (
+                  <PublindexBlock entry={publindexEntry} pubYear={work.work.pub_year} />
+                )}
               </div>
             )}
           </section>
@@ -356,6 +363,96 @@ export function DetailDrawer({ work, onClose, compareContext }: Props) {
         </div>
       </aside>
     </>
+  );
+}
+
+function PublindexBlock({ entry, pubYear }: { entry: PublindexEntry; pubYear: number }) {
+  // Intentar encontrar la clasificación del año de publicación exacto; si no,
+  // marcar "histórico" y usar la más reciente.
+  const exact = entry.history.find((h) => h.year === pubYear);
+  const shown = exact ?? {
+    year: entry.latest_year,
+    category: entry.latest_category,
+  };
+
+  return (
+    <div
+      style={{
+        marginTop: 12,
+        padding: "10px 12px",
+        border: "1px dashed var(--ink-300)",
+        borderRadius: "var(--r-sm)",
+        background: "var(--paper)",
+        fontSize: 12.5,
+        lineHeight: 1.5,
+        color: "var(--ink-700)",
+      }}
+    >
+      <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 4 }}>
+        <span
+          style={{
+            fontSize: 10.5,
+            fontWeight: 700,
+            letterSpacing: 0.3,
+            padding: "2px 6px",
+            background: "var(--ink-900)",
+            color: "var(--paper)",
+            borderRadius: 3,
+          }}
+        >
+          PUBLINDEX · {shown.category}
+        </span>
+        <span className="op-muted" style={{ fontSize: 11.5 }}>
+          Índice Nacional (MinCiencias Colombia) · {shown.year}
+          {!exact && " (más reciente disponible)"}
+        </span>
+      </div>
+      <div style={{ marginBottom: 6 }}>
+        Esta revista aparece en <strong>Publindex</strong> como{" "}
+        <strong>categoría {shown.category}</strong>. Publindex es un índice nacional y{" "}
+        <em>no reemplaza</em> la señal principal de este informe: lo que importa para la
+        evaluación bibliométrica internacional sigue siendo el cuartil{" "}
+        <strong>JCR/SJR</strong>.
+      </div>
+      {entry.history.length > 1 && (
+        <details style={{ marginTop: 6 }}>
+          <summary
+            style={{
+              cursor: "pointer",
+              fontSize: 11.5,
+              color: "var(--ink-500)",
+              userSelect: "none",
+            }}
+          >
+            Histórico Publindex ({entry.history.length} años)
+          </summary>
+          <div
+            style={{
+              marginTop: 6,
+              display: "flex",
+              flexWrap: "wrap",
+              gap: 4,
+            }}
+          >
+            {entry.history.map((h) => (
+              <span
+                key={h.year}
+                className="mono"
+                style={{
+                  fontSize: 11,
+                  padding: "1px 6px",
+                  background: "var(--ink-50)",
+                  border: "1px solid var(--ink-200)",
+                  borderRadius: 3,
+                }}
+              >
+                {h.year}:{h.category}
+              </span>
+            ))}
+          </div>
+        </details>
+      )}
+    </div>
   );
 }
 

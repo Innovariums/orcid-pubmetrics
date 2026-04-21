@@ -3,6 +3,7 @@ import type {
   AnalysisResult,
   ComparisonRequest,
   ComparisonResult,
+  PublindexLookupResponse,
 } from "../types";
 
 /**
@@ -44,4 +45,9 @@ export const api = {
     request<AnalysisResult>("/analysis", { method: "POST", body: JSON.stringify(req) }),
   compare: (req: ComparisonRequest) =>
     request<ComparisonResult>("/comparison", { method: "POST", body: JSON.stringify(req) }),
+  publindexLookup: (issns: string[]) =>
+    request<PublindexLookupResponse>("/publindex/lookup", {
+      method: "POST",
+      body: JSON.stringify({ issns }),
+    }),
 };

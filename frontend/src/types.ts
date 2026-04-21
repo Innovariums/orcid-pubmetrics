@@ -148,6 +148,32 @@ export interface ComparisonRequest {
   end_year: number;
 }
 
+/* --- Publindex (exploración secundaria — MinCiencias Colombia) --- */
+
+export type PublindexCategory = "A1" | "A2" | "B" | "C";
+
+export interface PublindexYearItem {
+  year: number;
+  category: PublindexCategory;
+}
+
+export interface PublindexEntry {
+  issn: string;
+  name: string | null;
+  area: string | null;
+  big_area: string | null;
+  country: string | null;
+  best_category: PublindexCategory;
+  latest_year: number;
+  latest_category: PublindexCategory;
+  history: PublindexYearItem[];
+}
+
+export interface PublindexLookupResponse {
+  /** Clave = ISSN normalizado sin guión (8 chars). */
+  entries: Record<string, PublindexEntry>;
+}
+
 // Paleta consistente para toda la UI
 export const QUARTILE_COLORS: Record<Quartile | "unindexed", string> = {
   Q1: "#22c55e", // verde

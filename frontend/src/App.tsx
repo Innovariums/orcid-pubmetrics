@@ -8,6 +8,7 @@ import { LoadingView } from "./features/analysis/LoadingView";
 import { ResultsView } from "./features/analysis/ResultsView";
 import { CompareForm } from "./features/comparison/CompareForm";
 import { CompareView } from "./features/comparison/CompareView";
+import { usePublindex } from "./hooks/usePublindex";
 import type {
   AnalysisRequest,
   AnalysisResult,
@@ -43,6 +44,12 @@ export default function App() {
   const [cmp, setCmp] = useState<CompareStage>({ kind: "form" });
   const [detail, setDetail] = useState<EnrichedWork | null>(null);
   const bootstrapped = useRef(false);
+
+  // Publindex es una feature *secundaria*: se precarga para todos los works
+  // sin cuartil SJR y la UI lo muestra en el drawer de detalle como
+  // exploración. Sólo activo cuando hay results.
+  const analysisWorks = stage.kind === "results" ? stage.result.works : [];
+  const publindex = usePublindex(analysisWorks);
 
   /* Auto-ejecutar si la URL ya viene con params válidos. */
   useEffect(() => {
@@ -168,7 +175,16 @@ export default function App() {
             />
           )}
           {stage.kind === "results" && (
-            <ResultsView result={stage.result} onOpenWork={setDetail} onNewQuery={resetAnalysis} />
+            <ResultsView
+              result={stage.result}
+              onOpenWork={setDetail}
+              onNewQuery={resetAnalysis}
+              publindex={{
+                foundCount: publindex.foundCount,
+                unindexedCount: publindex.unindexedCount,
+                lookupWork: publindex.lookupWork,
+              }}
+            />
           )}
           {stage.kind === "error" && (
             <ErrorState
@@ -177,7 +193,13 @@ export default function App() {
               onCancel={resetAnalysis}
             />
           )}
-          {detail && <DetailDrawer work={detail} onClose={() => setDetail(null)} />}
+          {detail && (
+            <DetailDrawer
+              work={detail}
+              onClose={() => setDetail(null)}
+              publindexEntry={publindex.lookupWork(detail)}
+            />
+          )}
         </>
       )}
 

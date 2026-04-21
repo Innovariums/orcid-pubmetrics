@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.api import analysis, comparison, og
+from app.api import analysis, comparison, og, publindex
 from app.infra.settings import settings
 
 app = FastAPI(title=settings.app_name, version="0.1.0")
@@ -17,6 +17,7 @@ app.add_middleware(
 app.include_router(analysis.router, prefix="/analysis", tags=["analysis"])
 app.include_router(comparison.router, prefix="/comparison", tags=["comparison"])
 app.include_router(og.router, prefix="/og", tags=["og"])
+app.include_router(publindex.router, prefix="/publindex", tags=["publindex"])
 
 
 @app.get("/health")

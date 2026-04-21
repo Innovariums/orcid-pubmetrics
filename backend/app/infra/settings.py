@@ -20,6 +20,8 @@ class Settings(BaseSettings):
     editorial_boards_provider: Literal["open_editors", "manual", "composite"] = "open_editors"
     open_editors_data_path: str = "./data/open_editors/dataset.csv"
 
+    publindex_data_path: str = "./data/publindex/publindex.json"
+
     database_url: str = "sqlite:///./data/app.db"
 
     cors_origins: list[str] = [

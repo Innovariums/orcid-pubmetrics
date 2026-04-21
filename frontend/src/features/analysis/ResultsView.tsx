@@ -2,9 +2,15 @@ import { useMemo, useState } from "react";
 import { CHART_COLORS, DoughnutChart, HBarChart, LineChart, StackedBarChart } from "../../components/charts";
 import { Btn, Card, Chip, Icon, StatCard } from "../../components/primitives";
 import { ShareButton } from "../../components/ShareButton";
-import type { AnalysisResult, EnrichedWork } from "../../types";
+import type { AnalysisResult, EnrichedWork, PublindexEntry } from "../../types";
 import { downloadCsv } from "./exportCsv";
 import { downloadPdfReport } from "./pdfReport";
+
+interface PublindexSummary {
+  foundCount: number;
+  unindexedCount: number;
+  lookupWork: (w: EnrichedWork) => PublindexEntry | null;
+}
 
 type FilterKey = "all" | "q1" | "q2" | "q3" | "q4" | "unindexed";
 
@@ -12,10 +18,12 @@ export function ResultsView({
   result,
   onOpenWork,
   onNewQuery,
+  publindex,
 }: {
   result: AnalysisResult;
   onOpenWork: (w: EnrichedWork) => void;
   onNewQuery: () => void;
+  publindex?: PublindexSummary;
 }) {
   const [filter, setFilter] = useState<FilterKey>("all");
   const [pdfLoading, setPdfLoading] = useState(false);
@@ -238,6 +246,7 @@ export function ResultsView({
                   ew={w}
                   source={source}
                   onOpen={() => onOpenWork(w)}
+                  publindexEntry={publindex?.lookupWork(w) ?? null}
                 />
               ))}
               {works.length === 0 && (
@@ -265,15 +274,31 @@ export function ResultsView({
             fontSize: 13,
           }}
         >
-          <dt className="op-muted">Cuartil</dt>
+          <dt className="op-muted">Cuartil principal</dt>
           <dd style={{ margin: 0 }}>
-            {source} 2024 (Scimago Journal Rank, basado en Scopus). Los valores
-            pueden diferir en una Q respecto a JCR/Clarivate.
+            {source} 2024 (Scimago Journal Rank, basado en Scopus). Es la señal
+            bibliométrica de referencia; los valores pueden diferir en una Q
+            respecto a JCR/Clarivate.
           </dd>
           <dt className="op-muted">Publicaciones</dt>
           <dd style={{ margin: 0 }}>
             OpenAlex. Solo publicaciones públicas del registro ORCID.
           </dd>
+          {publindex && publindex.unindexedCount > 0 && (
+            <>
+              <dt className="op-muted">Publindex</dt>
+              <dd style={{ margin: 0 }}>
+                Índice Nacional MinCiencias Colombia. Se usa de forma{" "}
+                <strong>exploratoria</strong> para señalar cuáles de las{" "}
+                {publindex.unindexedCount} publicaciones marcadas como{" "}
+                <em>no indexadas</em> aparecen en Publindex (
+                <strong>{publindex.foundCount} coincidencias</strong>). No
+                reemplaza el cuartil JCR/SJR ni cambia la clasificación de este
+                informe; abre cada publicación para ver su categoría A1/A2/B/C
+                cuando aplique.
+              </dd>
+            </>
+          )}
           <dt className="op-muted">Interpretación</dt>
           <dd style={{ margin: 0 }}>
             Los datos provienen de fuentes públicas. No se emiten juicios; solo
@@ -290,14 +315,19 @@ export function ResultsView({
 function PublicationRow({
   ew,
   onOpen,
+  publindexEntry,
 }: {
   ew: EnrichedWork;
   source: string;
   onOpen: () => void;
+  publindexEntry?: PublindexEntry | null;
 }) {
   const m = ew.metric;
   const q = m ? m.quartile : "unindexed";
   const hasMulti = ew.all_metrics.length > 1;
+  // Sólo mostramos el hint de Publindex cuando no hay cuartil SJR — es
+  // información exploratoria pensada para las "no indexadas".
+  const publindexHint = !m && publindexEntry ? publindexEntry : null;
   const workTypeLabel =
     ew.work.work_type === "book-chapter"
       ? "Capítulo de libro"
@@ -354,6 +384,23 @@ function PublicationRow({
           {hasMulti && (
             <span style={{ marginLeft: 6, fontSize: 11, color: "var(--accent)" }}>
               +{ew.all_metrics.length - 1} cat.
+            </span>
+          )}
+          {publindexHint && (
+            <span
+              style={{
+                marginLeft: 8,
+                fontSize: 10.5,
+                fontWeight: 600,
+                letterSpacing: 0.3,
+                padding: "1px 5px",
+                background: "var(--ink-100)",
+                color: "var(--ink-700)",
+                borderRadius: 3,
+              }}
+              title={`En Publindex (${publindexHint.latest_year}) — feature exploratoria, no reemplaza JCR/SJR`}
+            >
+              Publindex {publindexHint.latest_category}
             </span>
           )}
         </div>
