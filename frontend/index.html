@@ -3,7 +3,78 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>orcid-pubmetrics</title>
+    <meta name="theme-color" content="#0E1116" />
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- Primary SEO -->
+    <title>orcid-pubmetrics — Análisis bibliométrico por ORCID, cuartil y comité editorial</title>
+    <meta
+      name="description"
+      content="Herramienta web abierta para analizar la producción académica de un investigador a partir de su ORCID. Cruza publicaciones de OpenAlex con cuartiles SJR y muestra distribución por año, top revistas y evolución del score promedio. En español."
+    />
+    <meta
+      name="keywords"
+      content="ORCID, bibliometría, SJR, Scimago, cuartil, JCR, análisis de publicaciones, OpenAlex, indicadores académicos, investigación, Colombia, Universidad de Córdoba"
+    />
+    <meta name="author" content="Innovarium" />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    <link rel="canonical" href="https://orcid-pubmetrics.innovarium.site/" />
+
+    <!-- Icons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+    <!-- Open Graph / Facebook / LinkedIn -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="orcid-pubmetrics" />
+    <meta property="og:locale" content="es_CO" />
+    <meta property="og:url" content="https://orcid-pubmetrics.innovarium.site/" />
+    <meta property="og:title" content="orcid-pubmetrics — Análisis bibliométrico por ORCID" />
+    <meta
+      property="og:description"
+      content="Ingresa un ORCID y un rango de años. Obtén publicaciones por cuartil SJR, top revistas y evolución temporal del score — con trazabilidad por categoría."
+    />
+    <meta property="og:image" content="https://orcid-pubmetrics.innovarium.site/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Formulario de orcid-pubmetrics mostrando el análisis bibliométrico por ORCID con fuente SJR 2024." />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://orcid-pubmetrics.innovarium.site/" />
+    <meta name="twitter:title" content="orcid-pubmetrics — Análisis bibliométrico por ORCID" />
+    <meta
+      name="twitter:description"
+      content="Cuartil SJR, distribución por año, top revistas y evolución del score para cualquier investigador con ORCID."
+    />
+    <meta name="twitter:image" content="https://orcid-pubmetrics.innovarium.site/og-image.jpg" />
+    <meta name="twitter:image:alt" content="Pantalla inicial de orcid-pubmetrics." />
+
+    <!-- JSON-LD structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "orcid-pubmetrics",
+        "url": "https://orcid-pubmetrics.innovarium.site/",
+        "description": "Análisis bibliométrico por ORCID. Cruza publicaciones de OpenAlex con rankings SJR y produce un dashboard con cuartil, evolución y top revistas.",
+        "applicationCategory": "Bibliometric analysis tool",
+        "operatingSystem": "Any (web)",
+        "inLanguage": "es",
+        "isAccessibleForFree": true,
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "creator": {
+          "@type": "Organization",
+          "name": "Innovarium",
+          "url": "https://innovarium.site"
+        }
+      }
+    </script>
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

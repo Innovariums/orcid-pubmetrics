@@ -5,13 +5,16 @@ services:
       dockerfile: Dockerfile
     restart: unless-stopped
     environment:
-      OPENALEX_MAILTO: ${OPENALEX_MAILTO:-jgasparlopez29@correo.unicordoba.edu.co}
-      JOURNAL_METRICS_PROVIDER: sjr
-      SJR_DATA_DIR: /data/sjr
-      EDITORIAL_BOARDS_PROVIDER: open_editors
-      OPEN_EDITORS_DATA_PATH: /data/open_editors/dataset.csv
-      DATABASE_URL: sqlite:////data/app.db
-      LOG_LEVEL: INFO
+      OPENALEX_MAILTO: ${OPENALEX_MAILTO}
+      JOURNAL_METRICS_PROVIDER: ${JOURNAL_METRICS_PROVIDER:-sjr}
+      SJR_DATA_DIR: ${SJR_DATA_DIR:-/data/sjr}
+      EDITORIAL_BOARDS_PROVIDER: ${EDITORIAL_BOARDS_PROVIDER:-open_editors}
+      OPEN_EDITORS_DATA_PATH: ${OPEN_EDITORS_DATA_PATH:-/data/open_editors/dataset.csv}
+      DATABASE_URL: ${DATABASE_URL:-sqlite:////data/app.db}
+      JCR_API_KEY: ${JCR_API_KEY:-}
+      JCR_API_BASE: ${JCR_API_BASE:-https://api.clarivate.com/apis/wos-journal/v1}
+      LOG_LEVEL: ${LOG_LEVEL:-INFO}
+      CORS_ORIGINS: ${CORS_ORIGINS:-["http://localhost:5173","https://orcid-pubmetrics.innovarium.site"]}
     volumes:
       - ./data:/data:ro
     expose:
@@ -22,7 +25,7 @@ services:
       context: ./frontend
       dockerfile: Dockerfile
       args:
-        VITE_API_BASE: https://api-orcid-pubmetrics.innovarium.site
+        VITE_API_BASE: ${VITE_API_BASE}
     restart: unless-stopped
     depends_on:
       - backend
