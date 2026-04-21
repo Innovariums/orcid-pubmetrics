@@ -12,7 +12,7 @@ interface Props {
 }
 
 export function AnalysisForm({ initialOrcid, loading, onSubmit }: Props) {
-  const [orcid, setOrcid] = useState(initialOrcid ?? "0000-0002-0170-462X");
+  const [orcid, setOrcid] = useState(initialOrcid ?? "");
   const [from, setFrom] = useState("2010");
   const [to, setTo] = useState(String(CURRENT_YEAR));
   const [err, setErr] = useState<string | null>(null);
@@ -70,7 +70,7 @@ export function AnalysisForm({ initialOrcid, loading, onSubmit }: Props) {
               className="op-input op-input--mono"
               value={orcid}
               onChange={(e) => setOrcid(e.target.value)}
-              placeholder="0000-0000-0000-0000"
+              placeholder="0000-0001-2345-6789"
               aria-invalid={!!err}
               spellCheck={false}
               autoComplete="off"
@@ -119,18 +119,6 @@ export function AnalysisForm({ initialOrcid, loading, onSubmit }: Props) {
             {err}
           </div>
         )}
-        <div
-          style={{
-            marginTop: 14,
-            color: "var(--ink-500)",
-            fontSize: 12.5,
-          }}
-        >
-          Ejemplo:{" "}
-          <span className="mono" style={{ color: "var(--ink-700)" }}>
-            0000-0002-0170-462X
-          </span>
-        </div>
       </form>
 
       <div
