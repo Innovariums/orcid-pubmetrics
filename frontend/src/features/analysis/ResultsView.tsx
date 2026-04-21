@@ -147,7 +147,7 @@ export function ResultsView({
             <>
               {result.quartile_totals.unindexed}{" "}
               {result.quartile_totals.unindexed === 1 ? "publicación quedó" : "publicaciones quedaron"} sin cuartil
-              resoluble — ver tabla abajo.
+              resoluble; ver detalle en la tabla.
             </>
           )}
         </span>

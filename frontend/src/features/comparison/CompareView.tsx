@@ -49,13 +49,7 @@ export function CompareView({ result, onNewQuery }: Props) {
           <div className="meta-row">
             <span>Rango {result.start_year}–{result.end_year}</span>
             <span>Fuente {result.metrics_source.toUpperCase()} 2024</span>
-            {result.editorial_source && <span>Comités vía {result.editorial_source}</span>}
           </div>
-          <p className="t-small" style={{ marginTop: 10, maxWidth: 720 }}>
-            Los datos provienen de fuentes públicas (OpenAlex + Scimago + Open Editors).
-            La interpretación es responsabilidad del lector — no se emiten juicios sobre
-            conducta; solo se exponen patrones factuales de coincidencia.
-          </p>
         </div>
         <div className="page-head__actions">
           <ShareButton />
@@ -147,7 +141,7 @@ export function CompareView({ result, onNewQuery }: Props) {
       </div>
 
       {/* Key findings */}
-      <Card title="Observaciones factuales" subtitle="Los números hablan — sin juicios">
+      <Card title="Observaciones factuales" subtitle="Cifras sin interpretación">
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 16 }}>
           <FactCard value={totalOverlaps} label="revistas donde publican 2+ investigadores del grupo" />
           <FactCard value={suspiciousOverlaps} label="de esas revistas también tienen a alguien del grupo en el comité" tone={suspiciousOverlaps ? "warning" : "neutral"} />
@@ -253,7 +247,7 @@ export function CompareView({ result, onNewQuery }: Props) {
         <>
           <Card
             title="Cruces investigador ↔ comité editorial"
-            subtitle="Patrones donde un investigador del grupo publica en una revista donde otro del grupo figura en el comité editorial. Presentado en frío — la interpretación es del lector."
+            subtitle="Patrones donde un investigador del grupo publica en una revista donde otro del grupo figura en el comité editorial. La interpretación es del lector."
           >
             <div className="op-table-wrap">
               <table className="op-table">
@@ -355,6 +349,46 @@ export function CompareView({ result, onNewQuery }: Props) {
         subtitle="Investigadores ↔ revistas compartidas. Grosor del lazo ∝ frecuencia de publicación. Borde rojo en la revista = uno del grupo está en su comité editorial."
       >
         <CoopGraph researchers={rs} overlaps={result.journal_overlap} />
+      </Card>
+
+      <div style={{ height: 20 }} />
+
+      {/* Fuente y alcance — al final, con el mismo estilo del header individual */}
+      <Card title="Fuente y alcance">
+        <dl
+          style={{
+            display: "grid",
+            gridTemplateColumns: "160px 1fr",
+            gap: "10px 16px",
+            margin: 0,
+            fontSize: 13,
+          }}
+        >
+          <dt className="op-muted">Cuartil</dt>
+          <dd style={{ margin: 0 }}>
+            {result.metrics_source.toUpperCase()} 2024 (Scimago Journal Rank, basado en Scopus).
+          </dd>
+          <dt className="op-muted">Publicaciones</dt>
+          <dd style={{ margin: 0 }}>
+            OpenAlex. Solo publicaciones públicas del registro ORCID.
+          </dd>
+          {result.editorial_source && (
+            <>
+              <dt className="op-muted">Comités editoriales</dt>
+              <dd style={{ margin: 0 }}>
+                Open Editors Plus 2026: dataset público que cubre 26 editoriales grandes
+                (Elsevier, Springer, Wiley, Taylor &amp; Francis, SAGE y otras). Revistas de
+                editoriales pequeñas o regionales pueden no estar incluidas.
+              </dd>
+            </>
+          )}
+          <dt className="op-muted">Interpretación</dt>
+          <dd style={{ margin: 0 }}>
+            Los datos provienen de fuentes públicas. La interpretación es responsabilidad del
+            lector. No se emiten juicios sobre conducta; solo se exponen patrones factuales de
+            coincidencia.
+          </dd>
+        </dl>
       </Card>
     </div>
   );
