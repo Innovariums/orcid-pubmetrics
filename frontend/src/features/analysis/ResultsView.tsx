@@ -55,6 +55,13 @@ export function ResultsView({ result }: { result: AnalysisResult }) {
         </div>
       </div>
 
+      <p className="disclaimer">
+        Solo se analizan publicaciones públicas en ORCID e indexadas en OpenAlex.
+        Un work queda <b>sin indexar</b> cuando no tiene ISSN o cuando la revista
+        no está rankeada en {source} — ver detalle en la tabla. El cuartil mostrado
+        proviene de {source}, no de JCR.
+      </p>
+
       <div className="charts-grid">
         <div className="card">
           <h2>Publicaciones por año y cuartil</h2>

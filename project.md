@@ -62,7 +62,7 @@ Herramienta de **transparencia académica** que permita a rectorías, vicerrecto
   - ¿Y viceversa?
   - Visualización de red (grafo) de relaciones autor ↔ revista ↔ comité
 
-**Nota técnica crítica:** Los datos de comités editoriales **no están en ORCID, Scopus ni WoS** como dato estructurado. Hay que resolverlos por scraping dirigido a sitios de revistas o bases especializadas. Esto es investigación aparte (ver §7).
+**Nota técnica crítica:** Los datos de comités editoriales **no están en ORCID, Scopus ni WoS** como dato estructurado. Hay que resolverlos por scraping dirigido a sitios de revistas o bases especializadas. Esto es investigación aparte (ver §8).
 
 ### Fase 3 — Escalamiento
 
@@ -152,11 +152,26 @@ query_results (query_id, work_id, jcr_metric_id_used, jcr_year_rule_used)
 
 ---
 
-## 5. Riesgos identificados
+## 5. Limitaciones de cobertura (lo que la app NO puede ver)
+
+Documentadas de cara al usuario en `README.md`. Resumen técnico:
+
+| Limitación | Consecuencia en la UI | Mitigación |
+|-----------|----------------------|------------|
+| ORCID no está en OpenAlex | Resultado vacío o muy corto | Revisar manualmente en orcid.org; considerar consultar ORCID API directamente como fallback |
+| Publicaciones marcadas privadas en ORCID | No aparecen | Ninguna (respeta decisión del investigador) |
+| Work sin ISSN en OpenAlex | Marcado `sin ISSN` — no resoluble | Futuro: enriquecer con CrossRef por DOI (Fase 1.5) |
+| Revista no indexada en SJR | Marcado `no indexada` — **este es el patrón que el proyecto quiere detectar** | Es feature, no bug |
+| SJR ≠ JCR en algunas revistas | Q mostrado difiere del JCR oficial | Migración a JCR vía Ruta B (§9) cuando la universidad lo active |
+| `journal_title` vacío en OpenAlex | "Unknown" en top revistas | Validación manual para informes formales |
+
+**Decisión explícita:** la app muestra lo que las fuentes públicas exponen. No alucina ni rellena con heurísticas especulativas. Si una publicación no tiene cuartil resoluble, queda marcada con la razón específica (`no_issn`, `not_in_source`, `incomplete_metadata`) y el usuario lo ve en la tabla.
+
+## 6. Riesgos identificados
 
 | Riesgo | Impacto | Mitigación |
 |--------|---------|------------|
-| Clarivate no vende API a individuos | **CONFIRMADO** (abril 2026) | Ruta A: usar Scimago SJR (cuartil equivalente, gratis). Ruta B: esperar a que la universidad active JCR institucional. Ver §8 |
+| Clarivate no vende API a individuos | **CONFIRMADO** (abril 2026) | Ruta A: usar Scimago SJR (cuartil equivalente, gratis). Ruta B: esperar a que la universidad active JCR institucional. Ver §9 |
 | ORCIDs con metadatos incompletos (sin ISSN/DOI) | Medio | Enriquecimiento vía CrossRef + WoS Starter API |
 | Costo API prohibitivo | Alto | Si sale de presupuesto del profe, proponer Plan B gratuito (Scimago + OpenAlex) |
 | Datos de comités editoriales no disponibles vía API | Alto (Fase 2) | Scraping dirigido, cache agresivo, validación manual del profesor en primera iteración |
@@ -165,9 +180,9 @@ query_results (query_id, work_id, jcr_metric_id_used, jcr_year_rule_used)
 
 ---
 
-## 6. Roadmap inmediato
+## 7. Roadmap inmediato
 
-1. **[COMPLETADO]** Investigación de precios y factibilidad de APIs → §8
+1. **[COMPLETADO]** Investigación de precios y factibilidad de APIs → §9
 2. **[SIGUIENTE]** Enviar al profesor resumen: no puede comprar JCR API personalmente. Presentarle las 2 rutas (A: SJR+OpenAlex gratis / B: esperar JCR institucional)
 3. Con su decisión: montar repo, iniciar Fase 1 con la ruta elegida
 4. En paralelo, que él consulte con biblioteca/investigación si la universidad ya tiene JCR (por si se puede hacer Ruta B sin costo extra)
@@ -182,7 +197,7 @@ query_results (query_id, work_id, jcr_metric_id_used, jcr_year_rule_used)
 
 ---
 
-## 7. Investigación especial: comités editoriales (Fase 2)
+## 8. Investigación especial: comités editoriales (Fase 2)
 
 **Estado:** pendiente. Posibles fuentes a explorar:
 
@@ -195,7 +210,7 @@ query_results (query_id, work_id, jcr_metric_id_used, jcr_year_rule_used)
 
 ---
 
-## 8. Investigación de APIs (abril 2026)
+## 9. Investigación de APIs (abril 2026)
 
 ### 8.1 Hallazgo crítico
 
@@ -273,7 +288,7 @@ Se compromete además a consultar en paralelo con biblioteca/investigación si l
 
 ---
 
-## 9. Decisiones tomadas y pendientes
+## 10. Decisiones tomadas y pendientes
 
 **Tomadas:**
 - [x] **Ruta A** (OpenAlex + SJR + Open Editors) — 2026-04-20
