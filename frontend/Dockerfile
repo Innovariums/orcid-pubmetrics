@@ -1,4 +1,4 @@
-# rev: 2026-04-21T19:10 — publindex exploration UI
+# rev: 2026-04-21T19:30 — publindex drawer always shows line (found/not-found)
 # Build stage
 FROM node:20-alpine AS build
 

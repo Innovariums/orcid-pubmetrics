@@ -186,9 +186,11 @@ export function DetailDrawer({ work, onClose, compareContext, publindexEntry }: 
                     ? "La revista no está indexada en Scimago para el rango consultado. Esto es una señal relevante."
                     : "Los metadatos de OpenAlex están incompletos para este trabajo."}
                 </div>
-                {publindexEntry && (
-                  <PublindexBlock entry={publindexEntry} pubYear={work.work.pub_year} />
-                )}
+                <PublindexBlock
+                  entry={publindexEntry ?? null}
+                  pubYear={work.work.pub_year}
+                  hasIssn={Boolean(work.work.issn || work.work.eissn)}
+                />
               </div>
             )}
           </section>
@@ -366,14 +368,94 @@ export function DetailDrawer({ work, onClose, compareContext, publindexEntry }: 
   );
 }
 
-function PublindexBlock({ entry, pubYear }: { entry: PublindexEntry; pubYear: number }) {
-  // Intentar encontrar la clasificación del año de publicación exacto; si no,
-  // marcar "histórico" y usar la más reciente.
-  const exact = entry.history.find((h) => h.year === pubYear);
-  const shown = exact ?? {
-    year: entry.latest_year,
-    category: entry.latest_category,
-  };
+function PublindexBlock({
+  entry,
+  pubYear,
+  hasIssn,
+}: {
+  entry: PublindexEntry | null;
+  pubYear: number;
+  hasIssn: boolean;
+}) {
+  // 3 estados: encontrada / sin match pero con ISSN / sin ISSN (no consultable).
+  const badgeLabel = entry
+    ? `PUBLINDEX · ${entry.history.find((h) => h.year === pubYear)?.category ?? entry.latest_category}`
+    : "PUBLINDEX · —";
+
+  let bodyNode: JSX.Element;
+
+  if (entry) {
+    const exact = entry.history.find((h) => h.year === pubYear);
+    const shown = exact ?? { year: entry.latest_year, category: entry.latest_category };
+    bodyNode = (
+      <>
+        <div style={{ marginBottom: 6 }}>
+          Esta revista aparece en <strong>Publindex</strong> como{" "}
+          <strong>categoría {shown.category}</strong>
+          {exact ? ` en ${shown.year}` : ` en ${shown.year} (último registro disponible)`}
+          {entry.area ? `, área ${entry.area}` : ""}. Publindex es un índice nacional
+          (MinCiencias Colombia) y <em>no reemplaza</em> la señal principal de este
+          informe: lo que importa para la evaluación bibliométrica internacional sigue
+          siendo el cuartil <strong>JCR/SJR</strong>.
+        </div>
+        {entry.history.length > 1 && (
+          <details style={{ marginTop: 6 }}>
+            <summary
+              style={{
+                cursor: "pointer",
+                fontSize: 11.5,
+                color: "var(--ink-500)",
+                userSelect: "none",
+              }}
+            >
+              Histórico Publindex ({entry.history.length} años)
+            </summary>
+            <div
+              style={{
+                marginTop: 6,
+                display: "flex",
+                flexWrap: "wrap",
+                gap: 4,
+              }}
+            >
+              {entry.history.map((h) => (
+                <span
+                  key={h.year}
+                  className="mono"
+                  style={{
+                    fontSize: 11,
+                    padding: "1px 6px",
+                    background: "var(--ink-50)",
+                    border: "1px solid var(--ink-200)",
+                    borderRadius: 3,
+                  }}
+                >
+                  {h.year}:{h.category}
+                </span>
+              ))}
+            </div>
+          </details>
+        )}
+      </>
+    );
+  } else if (hasIssn) {
+    bodyNode = (
+      <div>
+        Esta revista <strong>no está registrada</strong> en Publindex (Índice Nacional
+        MinCiencias Colombia). Publindex se consulta de forma complementaria sólo
+        como contraste; la señal principal del informe sigue siendo el cuartil{" "}
+        <strong>JCR/SJR</strong>.
+      </div>
+    );
+  } else {
+    bodyNode = (
+      <div>
+        Publindex (Índice Nacional MinCiencias Colombia) no se pudo consultar: este
+        trabajo no expone ISSN. El cuartil <strong>JCR/SJR</strong> sigue siendo la
+        señal principal del informe.
+      </div>
+    );
+  }
 
   return (
     <div
@@ -388,70 +470,27 @@ function PublindexBlock({ entry, pubYear }: { entry: PublindexEntry; pubYear: nu
         color: "var(--ink-700)",
       }}
     >
-      <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 4 }}>
+      <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 4, flexWrap: "wrap" }}>
         <span
           style={{
             fontSize: 10.5,
             fontWeight: 700,
             letterSpacing: 0.3,
             padding: "2px 6px",
-            background: "var(--ink-900)",
+            background: entry ? "var(--ink-900)" : "var(--ink-400)",
             color: "var(--paper)",
             borderRadius: 3,
           }}
         >
-          PUBLINDEX · {shown.category}
+          {badgeLabel}
         </span>
         <span className="op-muted" style={{ fontSize: 11.5 }}>
-          Índice Nacional (MinCiencias Colombia) · {shown.year}
-          {!exact && " (más reciente disponible)"}
+          {entry
+            ? `Índice Nacional (MinCiencias Colombia) · ${entry.history.find((h) => h.year === pubYear)?.year ?? entry.latest_year}${entry.history.find((h) => h.year === pubYear) ? "" : " (más reciente)"}`
+            : "Índice Nacional (MinCiencias Colombia) — sin coincidencia"}
         </span>
       </div>
-      <div style={{ marginBottom: 6 }}>
-        Esta revista aparece en <strong>Publindex</strong> como{" "}
-        <strong>categoría {shown.category}</strong>. Publindex es un índice nacional y{" "}
-        <em>no reemplaza</em> la señal principal de este informe: lo que importa para la
-        evaluación bibliométrica internacional sigue siendo el cuartil{" "}
-        <strong>JCR/SJR</strong>.
-      </div>
-      {entry.history.length > 1 && (
-        <details style={{ marginTop: 6 }}>
-          <summary
-            style={{
-              cursor: "pointer",
-              fontSize: 11.5,
-              color: "var(--ink-500)",
-              userSelect: "none",
-            }}
-          >
-            Histórico Publindex ({entry.history.length} años)
-          </summary>
-          <div
-            style={{
-              marginTop: 6,
-              display: "flex",
-              flexWrap: "wrap",
-              gap: 4,
-            }}
-          >
-            {entry.history.map((h) => (
-              <span
-                key={h.year}
-                className="mono"
-                style={{
-                  fontSize: 11,
-                  padding: "1px 6px",
-                  background: "var(--ink-50)",
-                  border: "1px solid var(--ink-200)",
-                  borderRadius: 3,
-                }}
-              >
-                {h.year}:{h.category}
-              </span>
-            ))}
-          </div>
-        </details>
-      )}
+      {bodyNode}
     </div>
   );
 }
