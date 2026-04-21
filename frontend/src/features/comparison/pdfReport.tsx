@@ -550,23 +550,26 @@ export function ComparisonReport({ result }: { result: ComparisonResult }) {
                 <View style={{ flex: 1 }}><Text style={s.tableHeadCell}>Título</Text></View>
                 <View style={{ width: 40 }}><Text style={s.tableHeadCell}>Q</Text></View>
               </View>
-              {result.coauthorships.map((ca, i) => (
-                <View key={i} style={s.tableRow} wrap={false}>
-                  <View style={{ width: 32 }}><Text style={s.mono}>{ca.pub_year}</Text></View>
-                  <View style={{ width: 60, flexDirection: "row", gap: 2 }}>
-                    {ca.orcids.map((o) => (
-                      <AuthorBadge key={o} i={orcids.indexOf(o)} />
-                    ))}
+              {result.coauthorships.map((ca, i) => {
+                const w = ca.work;
+                return (
+                  <View key={i} style={s.tableRow} wrap={false}>
+                    <View style={{ width: 32 }}><Text style={s.mono}>{w.work.pub_year}</Text></View>
+                    <View style={{ width: 60, flexDirection: "row", gap: 2 }}>
+                      {ca.orcids.map((o) => (
+                        <AuthorBadge key={o} i={orcids.indexOf(o)} />
+                      ))}
+                    </View>
+                    <View style={{ flex: 1 }}>
+                      <Text style={s.tableCell}>{w.work.title}</Text>
+                      {w.work.journal_title && <Text style={s.tableMeta}>{w.work.journal_title}</Text>}
+                    </View>
+                    <View style={{ width: 40 }}>
+                      <Chip q={w.metric?.quartile ?? null} />
+                    </View>
                   </View>
-                  <View style={{ flex: 1 }}>
-                    <Text style={s.tableCell}>{ca.work_title}</Text>
-                    {ca.journal_title && <Text style={s.tableMeta}>{ca.journal_title}</Text>}
-                  </View>
-                  <View style={{ width: 40 }}>
-                    <Chip q={ca.quartile ?? null} />
-                  </View>
-                </View>
-              ))}
+                );
+              })}
             </>
           )}
 

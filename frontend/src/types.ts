@@ -115,12 +115,10 @@ export interface JournalOverlap {
 }
 
 export interface Coauthorship {
+  /** Subconjunto del grupo comparado que co-autora el work. */
   orcids: string[];
-  work_title: string;
-  pub_year: number;
-  doi: string | null;
-  journal_title: string | null;
-  quartile: Quartile | null;
+  /** EnrichedWork completo para poder reutilizar el drawer de detalle. */
+  work: EnrichedWork;
 }
 
 export interface EditorialCrossRef {

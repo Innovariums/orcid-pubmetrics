@@ -168,17 +168,8 @@ def _compute_coauthorships(
 
     out: list[Coauthorship] = []
     for shared, ew in seen.values():
-        out.append(
-            Coauthorship(
-                orcids=sorted(shared),
-                work_title=ew.work.title,
-                pub_year=ew.work.pub_year,
-                doi=ew.work.doi,
-                journal_title=ew.work.journal_title,
-                quartile=ew.metric.quartile if ew.metric else None,
-            )
-        )
-    out.sort(key=lambda c: (-c.pub_year, c.work_title))
+        out.append(Coauthorship(orcids=sorted(shared), work=ew))
+    out.sort(key=lambda c: (-c.work.work.pub_year, c.work.work.title))
     return out
 
 

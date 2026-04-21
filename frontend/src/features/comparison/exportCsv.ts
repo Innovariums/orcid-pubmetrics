@@ -65,8 +65,16 @@ function build(result: ComparisonResult): string {
   lines.push("# Coautorías entre investigadores del grupo");
   lines.push(["year", "quartile", "title", "journal_title", "doi", "orcids"].join(","));
   for (const ca of result.coauthorships) {
+    const w = ca.work;
     lines.push(
-      [ca.pub_year, ca.quartile ?? "", ca.work_title, ca.journal_title ?? "", ca.doi ?? "", ca.orcids.join("|")]
+      [
+        w.work.pub_year,
+        w.metric?.quartile ?? "",
+        w.work.title,
+        w.work.journal_title ?? "",
+        w.work.doi ?? "",
+        ca.orcids.join("|"),
+      ]
         .map(esc)
         .join(","),
     );

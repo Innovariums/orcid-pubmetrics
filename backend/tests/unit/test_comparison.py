@@ -118,7 +118,7 @@ def test_coauthorships_detects_shared_work() -> None:
 
     assert len(result.coauthorships) == 1
     assert set(result.coauthorships[0].orcids) == {a, b}
-    assert result.coauthorships[0].work_title == "Joint paper"
+    assert result.coauthorships[0].work.work.title == "Joint paper"
 
 
 def test_editorial_cross_flags_suspicious_pattern() -> None:

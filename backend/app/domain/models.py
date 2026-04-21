@@ -88,14 +88,15 @@ class JournalOverlap(BaseModel):
 
 
 class Coauthorship(BaseModel):
-    """Par (o n-upla) de investigadores co-autores en un mismo trabajo."""
+    """Par (o n-upla) de investigadores co-autores en un mismo trabajo.
+
+    `work` contiene la EnrichedWork completa (mismo shape que en el análisis
+    individual) para poder reutilizar el drawer de detalle en la UI.
+    `orcids` es el subconjunto del grupo comparado que co-autora el work.
+    """
 
     orcids: list[str]
-    work_title: str
-    pub_year: int
-    doi: str | None = None
-    journal_title: str | None = None
-    quartile: Literal["Q1", "Q2", "Q3", "Q4"] | None = None
+    work: EnrichedWork
 
 
 class EditorialCrossRef(BaseModel):

@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Btn, Card, Chip, Icon } from "../../components/primitives";
 import { ShareButton } from "../../components/ShareButton";
-import type { ComparisonResult } from "../../types";
+import { DetailDrawer } from "../analysis/DetailDrawer";
+import type { ComparisonResult, EnrichedWork } from "../../types";
 import { TONES } from "./CompareForm";
 import { CoopGraph } from "./CoopGraph";
 import { downloadComparisonCsv } from "./exportCsv";
@@ -15,6 +16,10 @@ interface Props {
 export function CompareView({ result, onNewQuery }: Props) {
   const rs = result.researchers;
   const [pdfLoading, setPdfLoading] = useState(false);
+  const [drawerWork, setDrawerWork] = useState<{
+    work: EnrichedWork;
+    coauthorOrcids: string[];
+  } | null>(null);
 
   const handlePdf = async () => {
     setPdfLoading(true);
@@ -292,49 +297,72 @@ export function CompareView({ result, onNewQuery }: Props) {
       {/* Coauthorships */}
       {result.coauthorships.length > 0 && (
         <>
-          <Card title="Publicaciones conjuntas" subtitle="Works donde dos o más investigadores del grupo figuran como coautores.">
+          <Card
+            title="Publicaciones conjuntas"
+            subtitle="Click en una fila para ver el detalle del trabajo y resaltado de coautores del grupo."
+          >
             <div className="op-table-wrap">
               <table className="op-table">
                 <thead>
                   <tr>
                     <th style={{ width: 60 }}>Año</th>
-                    <th style={{ width: 120 }}>Autores</th>
+                    <th style={{ width: 120 }}>Autores del grupo</th>
                     <th>Título</th>
                     <th style={{ width: 200 }}>Revista</th>
                     <th style={{ width: 80 }}>Cuartil</th>
-                    <th style={{ width: 160 }}>DOI</th>
+                    <th style={{ width: 40 }}></th>
                   </tr>
                 </thead>
                 <tbody>
-                  {result.coauthorships.map((ca, i) => (
-                    <tr key={i} style={{ cursor: "default" }}>
-                      <td className="mono">{ca.pub_year}</td>
-                      <td>
-                        <div style={{ display: "flex", gap: 4 }}>
-                          {ca.orcids.map((o) => {
-                            const idx = rs.findIndex((r) => r.orcid === o);
-                            return idx >= 0 ? <AuthorBadge key={o} index={idx} researchers={rs} compact /> : null;
-                          })}
-                        </div>
-                      </td>
-                      <td>{ca.work_title}</td>
-                      <td>{ca.journal_title ?? <span className="op-muted">—</span>}</td>
-                      <td><Chip q={ca.quartile ?? "unindexed"} size="sm" /></td>
-                      <td>
-                        {ca.doi ? (
-                          <a
-                            className="op-link mono"
-                            href={`https://doi.org/${ca.doi}`}
-                            target="_blank"
-                            rel="noreferrer"
-                            style={{ fontSize: 11.5 }}
-                          >
-                            {ca.doi.length > 22 ? ca.doi.slice(0, 22) + "…" : ca.doi}
-                          </a>
-                        ) : <span className="op-muted">—</span>}
-                      </td>
-                    </tr>
-                  ))}
+                  {result.coauthorships.map((ca, i) => {
+                    const w = ca.work;
+                    return (
+                      <tr
+                        key={i}
+                        onClick={() =>
+                          setDrawerWork({ work: w, coauthorOrcids: ca.orcids })
+                        }
+                      >
+                        <td className="mono">{w.work.pub_year}</td>
+                        <td>
+                          <div style={{ display: "flex", gap: 4 }}>
+                            {ca.orcids.map((o) => {
+                              const idx = rs.findIndex((r) => r.orcid === o);
+                              return idx >= 0 ? (
+                                <AuthorBadge key={o} index={idx} researchers={rs} compact />
+                              ) : null;
+                            })}
+                          </div>
+                        </td>
+                        <td>
+                          <div className="op-table__title" style={{ fontSize: 13.5 }}>
+                            {w.work.title}
+                          </div>
+                          <div className="op-table__meta" style={{ marginTop: 2 }}>
+                            {w.work.authors.length} autor
+                            {w.work.authors.length !== 1 ? "es" : ""}
+                            {w.work.work_type &&
+                              ` · ${
+                                w.work.work_type === "book-chapter"
+                                  ? "Capítulo de libro"
+                                  : w.work.work_type === "article"
+                                  ? "Artículo"
+                                  : w.work.work_type
+                              }`}
+                          </div>
+                        </td>
+                        <td>
+                          {w.work.journal_title ?? (
+                            <span className="op-muted">sin título de revista</span>
+                          )}
+                        </td>
+                        <td>
+                          <Chip q={w.metric?.quartile ?? "unindexed"} size="sm" />
+                        </td>
+                        <td style={{ color: "var(--ink-300)" }}>{Icon.arrowRight(14)}</td>
+                      </tr>
+                    );
+                  })}
                 </tbody>
               </table>
             </div>
@@ -390,6 +418,18 @@ export function CompareView({ result, onNewQuery }: Props) {
           </dd>
         </dl>
       </Card>
+
+      {drawerWork && (
+        <DetailDrawer
+          work={drawerWork.work}
+          onClose={() => setDrawerWork(null)}
+          compareContext={{
+            orcids: result.orcids,
+            coauthorOrcids: drawerWork.coauthorOrcids,
+            tones: TONES,
+          }}
+        />
+      )}
     </div>
   );
 }

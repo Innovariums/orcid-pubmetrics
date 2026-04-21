@@ -2,7 +2,22 @@ import { useEffect } from "react";
 import { Btn, Chip, Icon } from "../../components/primitives";
 import type { EnrichedWork } from "../../types";
 
-export function DetailDrawer({ work, onClose }: { work: EnrichedWork; onClose: () => void }) {
+export interface CompareContext {
+  /** ORCIDs del grupo comparado, en el orden A, B, C... */
+  orcids: string[];
+  /** ORCIDs del grupo que son coautores de este work (subset de orcids). */
+  coauthorOrcids: string[];
+  /** Paleta tonal para los badges de investigador A/B/C/... */
+  tones: string[];
+}
+
+interface Props {
+  work: EnrichedWork;
+  onClose: () => void;
+  compareContext?: CompareContext;
+}
+
+export function DetailDrawer({ work, onClose, compareContext }: Props) {
   const m = work.metric;
   const allCats = work.all_metrics;
   const workTypeLabel =
@@ -74,6 +89,10 @@ export function DetailDrawer({ work, onClose }: { work: EnrichedWork; onClose: (
               <em className="op-muted">Sin título de revista</em>
             )}
           </div>
+
+          {compareContext && compareContext.coauthorOrcids.length >= 2 && (
+            <CooperationPanel context={compareContext} />
+          )}
 
           <section style={{ marginTop: 24 }}>
             <div className="t-h3" style={{ marginBottom: 10 }}>
@@ -172,60 +191,79 @@ export function DetailDrawer({ work, onClose }: { work: EnrichedWork; onClose: (
               Autores ({work.work.authors.length})
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-              {work.work.authors.map((a, i) => (
-                <div
-                  key={`${a.name}-${i}`}
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: 10,
-                    padding: "8px 10px",
-                    borderRadius: "var(--r-sm)",
-                    background:
-                      a.orcid === work.work.orcid ? "var(--accent-tint)" : "transparent",
-                  }}
-                >
-                  <span
+              {work.work.authors.map((a, i) => {
+                const isConsulted = a.orcid === work.work.orcid;
+                const compareIdx = compareContext
+                  ? compareContext.orcids.indexOf(a.orcid ?? "")
+                  : -1;
+                const isInGroup = compareIdx >= 0;
+                const tone = isInGroup ? compareContext!.tones[compareIdx % compareContext!.tones.length] : null;
+                const bg = isInGroup
+                  ? tone + "22" // 13% opacity variation via hex alpha
+                  : isConsulted
+                  ? "var(--accent-tint)"
+                  : "transparent";
+                return (
+                  <div
+                    key={`${a.name}-${i}`}
                     style={{
-                      width: 24,
-                      height: 24,
-                      borderRadius: 12,
-                      background: "var(--ink-100)",
                       display: "flex",
                       alignItems: "center",
-                      justifyContent: "center",
-                      fontSize: 11,
-                      fontWeight: 600,
-                      color: "var(--ink-500)",
-                      flexShrink: 0,
+                      gap: 10,
+                      padding: "8px 10px",
+                      borderRadius: "var(--r-sm)",
+                      background: bg,
                     }}
                   >
-                    {a.name
-                      .split(" ")
-                      .map((p) => p[0])
-                      .join("")
-                      .slice(0, 2)
-                      .toUpperCase()}
-                  </span>
-                  <div style={{ flex: 1, minWidth: 0 }}>
-                    <div style={{ fontSize: 13.5 }}>
-                      {a.name}
-                      {a.orcid === work.work.orcid && (
-                        <span
-                          style={{ color: "var(--accent)", fontSize: 11, marginLeft: 4 }}
-                        >
-                          autor consultado
-                        </span>
+                    <span
+                      style={{
+                        width: 24,
+                        height: 24,
+                        borderRadius: 12,
+                        background: isInGroup ? tone! : "var(--ink-100)",
+                        color: isInGroup ? "#fff" : "var(--ink-500)",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        fontSize: 11,
+                        fontWeight: 600,
+                        flexShrink: 0,
+                      }}
+                    >
+                      {isInGroup
+                        ? String.fromCharCode(65 + compareIdx)
+                        : a.name
+                            .split(" ")
+                            .map((p) => p[0])
+                            .join("")
+                            .slice(0, 2)
+                            .toUpperCase()}
+                    </span>
+                    <div style={{ flex: 1, minWidth: 0 }}>
+                      <div style={{ fontSize: 13.5 }}>
+                        {a.name}
+                        {isInGroup && (
+                          <span style={{ color: tone!, fontSize: 11, marginLeft: 6, fontWeight: 600 }}>
+                            Investigador {String.fromCharCode(65 + compareIdx)}
+                          </span>
+                        )}
+                        {isConsulted && !compareContext && (
+                          <span
+                            style={{ color: "var(--accent)", fontSize: 11, marginLeft: 4 }}
+                          >
+                            autor consultado
+                          </span>
+                        )}
+                      </div>
+                      {a.orcid && (
+                        <div className="mono" style={{ fontSize: 11, color: "var(--ink-500)" }}>
+                          {a.orcid}
+                        </div>
                       )}
                     </div>
-                    {a.orcid && (
-                      <div className="mono" style={{ fontSize: 11, color: "var(--ink-500)" }}>
-                        {a.orcid}
-                      </div>
-                    )}
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </section>
 
@@ -318,5 +356,72 @@ export function DetailDrawer({ work, onClose }: { work: EnrichedWork; onClose: (
         </div>
       </aside>
     </>
+  );
+}
+
+function CooperationPanel({ context }: { context: CompareContext }) {
+  const coauthors = context.coauthorOrcids
+    .map((o) => ({ orcid: o, idx: context.orcids.indexOf(o) }))
+    .filter((x) => x.idx >= 0)
+    .sort((a, b) => a.idx - b.idx);
+
+  return (
+    <section
+      style={{
+        marginTop: 20,
+        padding: "14px 14px",
+        border: "1px solid var(--ink-200)",
+        borderRadius: "var(--r-sm)",
+        background: "var(--ink-50)",
+      }}
+    >
+      <div className="t-h3" style={{ marginBottom: 8 }}>
+        Cooperación del grupo
+      </div>
+      <div style={{ fontSize: 13, color: "var(--ink-700)", marginBottom: 10 }}>
+        Este trabajo tiene a <strong>{coauthors.length}</strong> investigadores del grupo
+        comparado como coautores directos.
+      </div>
+      <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
+        {coauthors.map(({ orcid, idx }) => {
+          const tone = context.tones[idx % context.tones.length];
+          return (
+            <span
+              key={orcid}
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 6,
+                padding: "3px 8px 3px 3px",
+                background: "var(--paper)",
+                border: `1px solid ${tone}33`,
+                borderRadius: "var(--r-pill)",
+                fontSize: 12,
+              }}
+            >
+              <span
+                style={{
+                  width: 20,
+                  height: 20,
+                  borderRadius: 10,
+                  background: tone,
+                  color: "#fff",
+                  fontSize: 10,
+                  fontWeight: 600,
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                {String.fromCharCode(65 + idx)}
+              </span>
+              <span className="mono" style={{ fontSize: 11, color: "var(--ink-700)" }}>
+                {orcid}
+              </span>
+            </span>
+          );
+        })}
+      </div>
+    </section>
   );
 }
