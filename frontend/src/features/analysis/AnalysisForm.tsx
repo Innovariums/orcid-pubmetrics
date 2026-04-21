@@ -117,29 +117,6 @@ export function AnalysisForm({ initialOrcid, loading, onSubmit }: Props) {
           </div>
         )}
       </form>
-
-      <div
-        style={{
-          marginTop: 14,
-          padding: "12px 16px",
-          borderRadius: "var(--r-sm)",
-          border: "1px solid var(--ink-200)",
-          background: "var(--paper)",
-          display: "flex",
-          gap: 10,
-          alignItems: "flex-start",
-          fontSize: 12.5,
-          color: "var(--ink-500)",
-          lineHeight: 1.5,
-        }}
-      >
-        <span style={{ marginTop: 2, color: "var(--ink-400)" }}>{Icon.info()}</span>
-        <div style={{ flex: 1 }}>
-          Los cuartiles mostrados provienen de{" "}
-          <strong style={{ color: "var(--ink-700)" }}>Scimago Journal Rank (SJR)</strong>, no de
-          JCR/Clarivate. Solo se analizan publicaciones públicas indexadas en OpenAlex.
-        </div>
-      </div>
     </div>
   );
 }

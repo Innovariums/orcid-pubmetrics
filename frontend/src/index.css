@@ -444,7 +444,7 @@ body.drawer-open { overflow: hidden; }
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 20px;
+  gap: 16px 20px;
   flex-wrap: wrap;
   margin-bottom: 24px;
 }
@@ -501,10 +501,25 @@ body.drawer-open { overflow: hidden; }
   flex-shrink: 0;
   flex-wrap: wrap;
 }
-@media (max-width: 640px) {
-  .page-head { flex-direction: column; gap: 12px; }
-  .page-head__actions { width: 100%; }
-  .page-head__actions > .op-btn { flex: 1 1 auto; }
+@media (max-width: 720px) {
+  /* Stack título → acciones sin crecer el título vertical */
+  .page-head { flex-direction: column; gap: 12px; align-items: stretch; }
+  .page-head__title { flex: 0 0 auto; }
+  .page-head__actions {
+    width: 100%;
+    gap: 6px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .page-head__actions::-webkit-scrollbar { display: none; }
+  .page-head__actions > .op-btn {
+    flex: 0 0 auto;
+    padding: 0 10px;
+    height: 34px;
+    font-size: 12.5px;
+  }
 }
 
 /* Breadcrumb común */
