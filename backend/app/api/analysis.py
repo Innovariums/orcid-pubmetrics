@@ -1,5 +1,11 @@
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, status
 from pydantic import BaseModel, Field, field_validator
+
+from app.domain.analytics import analyze
+from app.domain.models import AnalysisResult
+from app.infra.container import get_metrics_provider, get_publication_provider
+from app.ports.journal_metrics import JournalMetricsProvider
+from app.ports.publications import PublicationProvider
 
 router = APIRouter()
 
@@ -20,10 +26,19 @@ class AnalysisRequest(BaseModel):
         return v
 
 
-@router.post("", status_code=202)
-def create_analysis(req: AnalysisRequest) -> dict:
-    """
-    Stub Fase 0: recibe la request válida y devuelve un id placeholder.
-    Implementación completa en Fase 1.
-    """
-    raise HTTPException(status_code=501, detail="Fase 1: implementar pipeline completo")
+@router.post("", response_model=AnalysisResult)
+def create_analysis(
+    req: AnalysisRequest,
+    publications: PublicationProvider = Depends(get_publication_provider),
+    metrics: JournalMetricsProvider = Depends(get_metrics_provider),
+) -> AnalysisResult:
+    try:
+        return analyze(
+            orcid=req.orcid,
+            start_year=req.start_year,
+            end_year=req.end_year,
+            publications=publications,
+            metrics=metrics,
+        )
+    except ValueError as e:
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=str(e))
