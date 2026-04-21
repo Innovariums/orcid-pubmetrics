@@ -58,20 +58,34 @@ export function CompareView({ result, onNewQuery }: Props) {
           </p>
         </div>
         <div className="page-head__actions">
-          <ShareButton variant="secondary" />
-          <Btn variant="ghost" iconLeft={Icon.download()} onClick={() => downloadComparisonCsv(result)}>
+          <ShareButton />
+          <Btn
+            variant="secondary"
+            className="tb-btn tb-btn--keep-label"
+            iconLeft={Icon.download()}
+            onClick={() => downloadComparisonCsv(result)}
+            title="Descargar CSV"
+          >
             CSV
           </Btn>
           <Btn
             variant="secondary"
+            className="tb-btn tb-btn--keep-label"
             iconLeft={Icon.download()}
             onClick={handlePdf}
             disabled={pdfLoading}
+            title="Descargar informe PDF"
           >
-            {pdfLoading ? "Generando…" : "PDF"}
+            {pdfLoading ? "…" : "PDF"}
           </Btn>
-          <Btn variant="ghost" onClick={onNewQuery}>
-            Nueva comparación
+          <Btn
+            variant="secondary"
+            className="tb-btn"
+            iconLeft={Icon.refresh()}
+            onClick={onNewQuery}
+            title="Nueva comparación"
+          >
+            <span className="tb-label">Nueva comparación</span>
           </Btn>
         </div>
       </div>

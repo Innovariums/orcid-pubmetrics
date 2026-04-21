@@ -36,7 +36,7 @@ export function Chip({
 type BtnVariant = "primary" | "secondary" | "ghost";
 type BtnSize = "sm" | "md" | "lg";
 
-interface BtnProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, "className"> {
+interface BtnProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: BtnVariant;
   size?: BtnSize;
   iconLeft?: ReactNode;
@@ -50,9 +50,15 @@ export function Btn({
   iconRight,
   children,
   type = "button",
+  className,
   ...rest
 }: BtnProps) {
-  const cls = ["op-btn", `op-btn--${variant}`, size !== "md" ? `op-btn--${size}` : ""]
+  const cls = [
+    "op-btn",
+    `op-btn--${variant}`,
+    size !== "md" ? `op-btn--${size}` : "",
+    className,
+  ]
     .filter(Boolean)
     .join(" ");
   return (
@@ -208,6 +214,26 @@ export const Icon = {
   check: (s = 14) => (
     <svg {...svg(s)} viewBox="0 0 14 14" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
       <path d="M2.5 7.5l3 3 6-7" />
+    </svg>
+  ),
+  share: (s = 14) => (
+    <svg {...svg(s)} viewBox="0 0 14 14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M10 4.5L7 1.5L4 4.5" />
+      <path d="M7 1.5V9" />
+      <path d="M2 9V11.5C2 12.05 2.45 12.5 3 12.5H11C11.55 12.5 12 12.05 12 11.5V9" />
+    </svg>
+  ),
+  refresh: (s = 14) => (
+    <svg {...svg(s)} viewBox="0 0 14 14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 6.5a5 5 0 1 1-1.4-3.2" />
+      <path d="M12 1.5v3h-3" />
+    </svg>
+  ),
+  fileText: (s = 14) => (
+    <svg {...svg(s)} viewBox="0 0 14 14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M8 1.5H3.5C3.22 1.5 3 1.72 3 2V12C3 12.28 3.22 12.5 3.5 12.5H10.5C10.78 12.5 11 12.28 11 12V4.5L8 1.5Z" />
+      <path d="M8 1.5V4.5H11" />
+      <path d="M5 7.5H9M5 9.5H8" />
     </svg>
   ),
   spinner: (s = 14) => (

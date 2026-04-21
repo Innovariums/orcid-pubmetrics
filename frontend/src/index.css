@@ -501,7 +501,11 @@ body.drawer-open { overflow: hidden; }
   flex-shrink: 0;
   flex-wrap: wrap;
 }
-@media (max-width: 720px) {
+/* Toolbar button: icon + label siempre en desktop; en móvil oculta label
+   salvo los que tienen .tb-btn--keep-label (CSV/PDF que SON su label). */
+.tb-btn { gap: 6px; }
+.tb-label { display: inline; }
+@media (max-width: 640px) {
   /* Stack título → acciones sin crecer el título vertical */
   .page-head { flex-direction: column; gap: 12px; align-items: stretch; }
   .page-head__title { flex: 0 0 auto; }
@@ -516,9 +520,16 @@ body.drawer-open { overflow: hidden; }
   .page-head__actions::-webkit-scrollbar { display: none; }
   .page-head__actions > .op-btn {
     flex: 0 0 auto;
-    padding: 0 10px;
-    height: 34px;
-    font-size: 12.5px;
+    height: 36px;
+    font-size: 13px;
+  }
+  /* Icon-only: ocultar label, colapsar a cuadrado 36 */
+  .tb-btn:not(.tb-btn--keep-label) .tb-label { display: none; }
+  .tb-btn:not(.tb-btn--keep-label) {
+    width: 36px;
+    padding: 0;
+    justify-content: center;
+    gap: 0;
   }
 }
 

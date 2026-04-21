@@ -68,20 +68,34 @@ export function ResultsView({
           </div>
         </div>
         <div className="page-head__actions">
-          <ShareButton variant="secondary" />
-          <Btn variant="ghost" iconLeft={Icon.download()} onClick={() => downloadCsv(result)}>
+          <ShareButton />
+          <Btn
+            variant="secondary"
+            className="tb-btn tb-btn--keep-label"
+            iconLeft={Icon.download()}
+            onClick={() => downloadCsv(result)}
+            title="Descargar CSV"
+          >
             CSV
           </Btn>
           <Btn
             variant="secondary"
+            className="tb-btn tb-btn--keep-label"
             iconLeft={Icon.download()}
             onClick={handlePdf}
             disabled={pdfLoading}
+            title="Descargar informe PDF"
           >
-            {pdfLoading ? "Generando…" : "PDF"}
+            {pdfLoading ? "…" : "PDF"}
           </Btn>
-          <Btn variant="ghost" onClick={onNewQuery}>
-            Nueva consulta
+          <Btn
+            variant="secondary"
+            className="tb-btn"
+            iconLeft={Icon.refresh()}
+            onClick={onNewQuery}
+            title="Nueva consulta"
+          >
+            <span className="tb-label">Nueva consulta</span>
           </Btn>
         </div>
       </div>
