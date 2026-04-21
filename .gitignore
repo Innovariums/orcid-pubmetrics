@@ -35,9 +35,8 @@ build/
 Thumbs.db
 desktop.ini
 
-# Data (download locally, too large for git)
-data/sjr/*.csv
-data/sjr/*.xlsx
+# Data: SJR CSVs se commitean para que el build funcione fuera de la máquina de dev
+# data/open_editors/ (Fase 2, sigue gitignored hasta que la cargemos)
 data/open_editors/*.csv
 data/open_editors/*.json
 !data/**/.gitkeep

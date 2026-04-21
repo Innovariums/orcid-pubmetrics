@@ -1,5 +1,11 @@
 import type { AnalysisRequest, AnalysisResult } from "../types";
 
+/**
+ * Base de la API. En dev usa el proxy `/api` → backend local (vite.config.ts).
+ * En prod se inyecta VITE_API_BASE al build (docker-compose ARG).
+ */
+const API_BASE = (import.meta.env.VITE_API_BASE as string | undefined) ?? "/api";
+
 export class ApiError extends Error {
   constructor(public status: number, public detail: string) {
     super(`[${status}] ${detail}`);
@@ -7,7 +13,7 @@ export class ApiError extends Error {
 }
 
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
-  const res = await fetch(`/api${path}`, {
+  const res = await fetch(`${API_BASE}${path}`, {
     ...init,
     headers: {
       "Content-Type": "application/json",
