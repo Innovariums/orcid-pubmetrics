@@ -3,7 +3,7 @@
 **Stakeholder:** Dr. Oswaldo Langs (profesor universitario)
 **Responsable técnico:** José Gaspar
 **Fecha de arranque de documentación:** 2026-04-20
-**Estado:** Aprobado — arrancamos desarrollo por Ruta A (OpenAlex + SJR + Open Editors)
+**Estado:** Fase 1 desplegada + Fase 2 desplegada (comparación + grafo + cruce con comités editoriales Open Editors Plus 2026)
 **Plan de desarrollo detallado:** ver [`plan.md`](./plan.md)
 
 ---
@@ -292,8 +292,10 @@ Se compromete además a consultar en paralelo con biblioteca/investigación si l
 
 **Tomadas:**
 - [x] **Ruta A** (OpenAlex + SJR + Open Editors) — 2026-04-20
-- [x] Presupuesto aprobado (~$0/mes para Fase 1)
+- [x] Presupuesto aprobado (~$0/mes para Fase 1+2)
 - [x] Arquitectura con interfaces abstractas para futura migración a JCR
+- [x] Fase 1 deployada en https://orcid-pubmetrics.innovarium.site
+- [x] Fase 2 deployada: comparación multi-ORCID, grafo de cooperación, cruce con comités editoriales (dataset Open Editors Plus 2026, 922k miembros, 14.8k revistas)
 
 **Pendientes:**
 - [ ] Hosting concreto (Vercel/Render/VPS) — a definir al cierre de Fase 1
