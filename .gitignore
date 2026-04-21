@@ -13,9 +13,11 @@ htmlcov/
 # Node
 node_modules/
 dist/
+dist-tsc/
 build/
 .next/
 .turbo/
+*.tsbuildinfo
 
 # Env
 .env
