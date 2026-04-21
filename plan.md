@@ -129,6 +129,13 @@ Implementaciones:
 
 ## 3. Modelo de datos (agnóstico de fuente)
 
+> **Nota de estado actual:** el schema SQL de abajo es el plan para cuando
+> entre el cache persistente (Fase 3). **Hoy no está implementado** — el
+> backend es stateless y responde síncrono sin persistir nada. El
+> `DATABASE_URL` apunta a un SQLite que nadie escribe. Las decisiones de
+> tipado (columna `source` polimórfica) siguen siendo válidas cuando toque
+> materializar.
+
 SQLite en Fase 1. PostgreSQL en Fase 3. El schema es idéntico.
 
 ```sql
@@ -245,10 +252,18 @@ JCR_API_KEY=
 JCR_API_BASE=https://api.clarivate.com/apis/wos-journal/v1
 
 EDITORIAL_BOARDS_PROVIDER=open_editors      # open_editors | manual | composite
-OPEN_EDITORS_DATA_PATH=./data/open_editors/dataset.csv
+OPEN_EDITORS_DATA_PATH=/data/open_editors/openeditors_plus.parquet
 
-DATABASE_URL=sqlite:///./data/app.db
+DATABASE_URL=sqlite:////data/app.db
+
+# CORS (whitelist de orígenes autorizados)
+CORS_ORIGINS=["https://orcid-pubmetrics.innovarium.site"]
 ```
+
+**En producción** estas variables viven en Dokploy (`compose.env`);
+el `docker-compose.yml` las consume con `${VAR:-default}`. Para cambiar
+un dominio o la API key de Clarivate basta con editarlo en la UI de
+Dokploy y redeployar — no requiere recommit.
 
 El contenedor de dependencias resuelve los providers al arrancar:
 
@@ -276,52 +291,74 @@ Nada más toca.
 orcid/
 ├── project.md
 ├── plan.md
+├── README.md                        # público, con badges y demo link
+├── LICENSE                          # MIT
+├── docker-compose.yml               # backend + frontend para Dokploy
 ├── backend/
+│   ├── Dockerfile                   # COPY data /data para bake de datasets
+│   ├── pyproject.toml
+│   ├── .env.example
 │   ├── app/
-│   │   ├── main.py                  # FastAPI entry
-│   │   ├── api/                     # routers (HTTP)
+│   │   ├── main.py                  # FastAPI + CORS
+│   │   ├── api/
 │   │   │   ├── analysis.py
-│   │   │   └── comparison.py
-│   │   ├── domain/                  # modelo + reglas (puro, sin I/O)
-│   │   │   ├── models.py
-│   │   │   ├── analytics.py         # agregaciones
+│   │   │   ├── comparison.py
+│   │   │   └── og.py                # /og/preview, /og/image.png (PIL)
+│   │   ├── domain/                  # puro, sin I/O
+│   │   │   ├── models.py            # pydantic: EnrichedWork, ComparisonResult, ...
+│   │   │   ├── analytics.py         # análisis individual
 │   │   │   └── comparison.py        # Fase 2
-│   │   ├── ports/                   # interfaces
+│   │   ├── ports/
 │   │   │   ├── journal_metrics.py
 │   │   │   ├── publications.py
 │   │   │   └── editorial_boards.py
-│   │   ├── adapters/                # implementaciones
-│   │   │   ├── openalex.py
-│   │   │   ├── sjr_csv.py
-│   │   │   ├── jcr_clarivate.py     # STUB Fase 1, real cuando haya API
-│   │   │   ├── open_editors.py
-│   │   │   └── orcid_direct.py
-│   │   ├── infra/                   # DB, cache, settings
-│   │   │   ├── db.py
-│   │   │   ├── settings.py
-│   │   │   └── container.py
-│   │   └── jobs/                    # ETL y carga de datasets
-│   │       ├── load_sjr.py
-│   │       └── load_open_editors.py
-│   ├── tests/
-│   │   ├── unit/
-│   │   ├── contract/                # contratos de ports (mismos tests para SJR y JCR)
-│   │   └── e2e/
-│   ├── pyproject.toml
-│   └── .env.example
+│   │   ├── adapters/
+│   │   │   ├── openalex.py          # httpx + cursor pagination
+│   │   │   ├── sjr_csv.py           # pandas vectorizado
+│   │   │   ├── jcr_clarivate.py     # stub, esperando API key
+│   │   │   └── open_editors.py      # parquet + pyarrow + dict lookups
+│   │   └── infra/
+│   │       ├── settings.py          # pydantic-settings desde env
+│   │       └── container.py         # lru_cache de providers
+│   └── tests/
+│       ├── unit/                    # 14 OpenAlex + 5 comparison + 5 analytics + fakes
+│       ├── contract/                # tests parametrizados SJR/JCR
+│       └── test_api_analysis.py, test_health.py
 ├── frontend/
-│   ├── src/
-│   │   ├── api/                     # cliente HTTP tipado
-│   │   ├── features/
-│   │   │   ├── analysis/            # vista 1 ORCID
-│   │   │   └── comparison/          # vista N ORCIDs (Fase 2)
-│   │   ├── components/
-│   │   └── App.tsx
+│   ├── Dockerfile                   # multi-stage node build + nginx serve
+│   ├── nginx.conf                   # SPA fallback + UA routing a /og/preview
 │   ├── package.json
-│   └── .env.example
+│   ├── index.html                   # SEO estático + fuentes Google
+│   ├── public/                      # favicon.svg, og-image.jpg, robots.txt, sitemap.xml
+│   └── src/
+│       ├── api/client.ts            # fetch tipado
+│       ├── App.tsx                  # state machine (tab, stage, drawer)
+│       ├── urlParams.ts             # serialización URL ↔ estado
+│       ├── types.ts                 # espejo de pydantic models
+│       ├── hooks/useMeasure.ts      # ResizeObserver para charts
+│       ├── components/
+│       │   ├── primitives.tsx       # Chip, Btn, Card, StatCard, Icon, Sparkline
+│       │   ├── charts.tsx           # 4 SVG charts responsive
+│       │   ├── Shell.tsx            # shell con tabs
+│       │   └── ShareButton.tsx      # copy-to-clipboard con feedback
+│       └── features/
+│           ├── analysis/
+│           │   ├── AnalysisForm.tsx
+│           │   ├── LoadingView.tsx
+│           │   ├── ResultsView.tsx
+│           │   ├── DetailDrawer.tsx      # reusado desde compare con compareContext
+│           │   ├── ErrorState.tsx
+│           │   ├── exportCsv.ts
+│           │   └── pdfReport.tsx         # @react-pdf/renderer
+│           └── comparison/
+│               ├── CompareForm.tsx
+│               ├── CompareView.tsx
+│               ├── CoopGraph.tsx         # grafo bipartito SVG
+│               ├── exportCsv.ts
+│               └── pdfReport.tsx
 └── data/
-    ├── sjr/                         # CSVs por año
-    └── open_editors/                # dataset Zenodo
+    ├── sjr/                         # 12 CSVs 2013-2024 (commiteados, 132 MB)
+    └── open_editors/                # parquet Open Editors Plus 2026 (57 MB)
 ```
 
 ---
@@ -330,82 +367,86 @@ orcid/
 
 Cada fase tiene **criterio de aceptación** concreto (lo que el profe puede ver funcionando).
 
-### Fase 0 — Setup (2-3 días)
+### Fase 0 — Setup ✅
 
-- Repo GitHub privado
-- Estructura de carpetas
-- FastAPI + SQLite + React + Vite corriendo
-- CI mínimo (lint + tests)
-- Descargar CSVs SJR (últimos 10 años)
-- Descargar dataset Open Editors
+- [x] Repo público en Innovariums/orcid-pubmetrics
+- [x] Estructura de carpetas (ver §5 al final)
+- [x] FastAPI + SQLite + React + Vite + pytest corriendo
+- [x] CSVs SJR 2013-2024 (132 MB) committed y bakeados en la imagen
+- [x] Open Editors Plus 2026 parquet (57 MB) committed y bakeado
 
-**Entregable:** `curl localhost:8000/health` → `{"status":"ok"}`
-
-### Fase 1 — MVP: un investigador (2 semanas)
+### Fase 1 — MVP: un investigador ✅
 
 **Backend:**
-- Endpoint `POST /analysis` con `{orcid, start_year, end_year}`
-- `OpenAlexPublicationProvider` implementado y con tests
-- `ScimagoSjrProvider` implementado con lookup por ISSN+año, fallback ±1
-- Dominio: `analytics.group_by_year_quartile`, `top_journals`, `avg_score_evolution`
-- Endpoint `GET /analysis/{id}/results` devuelve agregados listos para charts
-- Endpoint `GET /analysis/{id}/export.csv`
-- Endpoint `GET /analysis/{id}/status` (síncrono por ahora; campo para asíncrono después)
-- Marcado correcto de publicaciones no-indexadas
+- [x] Endpoint `POST /analysis` con validación pydantic
+- [x] `OpenAlexPublicationProvider` con paginación cursor + tests httpx mock (14 unit)
+- [x] `ScimagoSjrProvider` vectorizado con pandas, ~566k (issn, year) keys,
+  load <1s tras bake
+- [x] Dominio: `analytics.analyze` con `quartile_totals`, `by_year_quartile`,
+  `score_evolution`, `top_journals`, `works` enriquecidos
+- [x] Marcado de no-indexados con `not_found_reason ∈ {no_issn, not_in_source, incomplete_metadata}`
 
 **Frontend:**
-- Formulario (ORCID + años)
-- Vista de carga
-- 4 gráficos: publicaciones/año apilado por cuartil, distribución total cuartil, top revistas, evolución score promedio
-- Tabla de publicaciones con filtro por cuartil/año/indexada-sí/no
-- Botón exportar CSV
-- Badge en UI: "Fuente del cuartil: SJR 2023" (lee de `JournalMetric.source`)
+- [x] Formulario + loading state con pasos simulados + skeleton
+- [x] 4 gráficos SVG custom (StackedBar, Doughnut, HBar, Line)
+- [x] Tabla de publicaciones con filter pills por cuartil, click-to-open
+- [x] Export CSV client-side
+- [x] DetailDrawer lateral con cuartil por categoría, autores, IDs, CTAs
 
-**Criterio de aceptación:**
-- Cargar el ORCID del Dr. Langs
-- Ver sus publicaciones de 2015-2026 agrupadas por cuartil
-- Datos cuadran con su CV
-- CSV exportable descargable
+### Fase 1.5 — Robustez (parcial)
 
-### Fase 1.5 — Robustez (1 semana)
+- [x] **Export PDF** con `@react-pdf/renderer`: cover + KPIs + 4 charts
+  SVG + tabla paginada. Fuentes built-in de PDF para cero dependencias
+  de red
+- [x] **Tests de contrato parametrizados** (`tests/contract/test_journal_metrics_provider.py`):
+  mismo suite corre contra SJR (4 verdes) y JCR (skipped por diseño
+  hasta que haya API key)
+- [x] **Manejo elegante de ORCIDs sin publicaciones / sin ISSN**
+- [x] **URL compartible** (`/?tab=...&orcid=...&from=...&to=...`) con
+  auto-ejecución al montar + back/forward vía `popstate`
+- [x] **Open Graph dinámico** con nginx UA-sniffing y backend endpoint
+  (/og/preview + /og/image.png + /og/compare.png)
+- [ ] Cache persistente de resultados (pendiente)
+- [ ] Logging estructurado (pendiente)
 
-- Export PDF
-- Cache de resultados por `(orcid, start_year, end_year, provider, provider_version)` — si alguien vuelve a consultar lo mismo, respuesta instantánea
-- Tests de contrato: un único `test_journal_metrics_provider.py` se corre contra `ScimagoSjrProvider` y (cuando exista) `ClarivateJcrProvider` y **ambos deben pasar**
-- Manejo elegante de ORCIDs sin publicaciones / sin ISSN
-- Logging estructurado
-
-### Fase 2 — Comparación y comités editoriales (3-4 semanas)
+### Fase 2 — Comparación y comités editoriales ✅
 
 **Backend:**
-- Endpoint `POST /comparison` con `{orcids: [...], start_year, end_year}`
-- Dominio: `comparison.journal_overlap`, `coauthorship_pairs`, `editorial_cross_refs`
-- `OpenEditorsProvider` implementado
-- Cargador de Open Editors (`jobs/load_open_editors.py`)
-- Endpoint `GET /comparison/{id}/editorial-overlap` devuelve:
-  - Revistas donde A y B ambos publican
-  - Revistas donde A es miembro del comité y B publica (y viceversa)
-  - Coautorías directas A↔B
+- [x] Endpoint `POST /comparison` (2-5 ORCIDs, validación estricta)
+- [x] Dominio `comparison.compare_researchers()` con:
+  - `_compute_journal_overlap` (dedup por (issn, title_norm))
+  - `_compute_coauthorships` (dedup por openalex_id/doi, devuelve EnrichedWork completo)
+  - `_compute_editorial_cross` (cruces publisher↔editor por revista)
+  - `has_editorial_conflict` flag propagado a JournalOverlap
+- [x] `OpenEditorsProvider` sobre Open Editors Plus 2026 (Zenodo 19590816,
+  parquet 57 MB, 922k miembros, 14.8k revistas, 247k ORCIDs indexados)
+- [x] Tests unit con FakeEditorialBoards (5 verdes)
 
 **Frontend:**
-- Vista comparación 2-3 ORCIDs
-- Grafo de red (Cytoscape.js) investigador ↔ revista ↔ comité
-- Tabla de solapamientos ordenada por gravedad
-- UI **neutra**: muestra datos, no emite juicios ("publica 7 veces en revista X donde Y es editor" — no "colude")
+- [x] Vista comparación 2-5 ORCIDs (CompareForm con badges dinámicos A-E)
+- [x] Grafo bipartito SVG custom (no Cytoscape — más control, sin deps)
+- [x] Tabla de solapamiento con matriz por investigador + badges
+  "X en comité"
+- [x] Tabla de cruces editoriales
+- [x] Tabla de coautorías click-to-open reutilizando el mismo
+  `DetailDrawer` de Analysis, con prop `compareContext` que agrega panel
+  "Cooperación del grupo" y tonaliza autores del grupo
+- [x] CSV + PDF de comparación
+- [x] UI neutra: datos sin juicios, tonos sin alarmas
 
-**Criterio de aceptación:**
-- Cargar 2 ORCIDs conocidos por el profe
-- La visualización de red muestra relaciones correctas
-- Exportación PDF del reporte comparativo
+### Fase 3 — Escalamiento y despliegue (parcial)
 
-### Fase 3 — Escalamiento y despliegue (2 semanas)
-
-- Migración a PostgreSQL
-- Cola asíncrona Celery + Redis
-- Endpoint `POST /analysis` devuelve `{id, status:"pending"}` inmediatamente; front polea `/status`
-- Dockerización (backend + frontend + postgres + redis)
-- Deploy a Render/Railway/VPS (a decidir)
-- Dominio custom si aplica
+- [x] **Dockerización**: backend Dockerfile con data bakeada, frontend
+  multi-stage (Node build + Nginx serve), docker-compose.yml
+- [x] **Dokploy** compose en el proyecto Herramientas, auto-deploy en
+  push a `main`, env vars centralizadas en Dokploy UI
+- [x] **Cloudflare DNS**: dos A records hacia el VPS, TLS vía Traefik
+  + Let's Encrypt (proxied false para validación HTTP-01)
+- [x] **Nginx** del frontend con SPA fallback, gzip, cache agresivo de
+  assets, UA routing para bots sociales vía `map` + `resolver`
+- [x] **CORS** en backend con whitelist de dominios
+- [ ] Migración a PostgreSQL (pendiente; SQLite sirve para stateless MVP)
+- [ ] Cola asíncrona Celery + Redis (endpoint aún síncrono)
 
 ### Fase 4 (condicional) — Migración a JCR
 

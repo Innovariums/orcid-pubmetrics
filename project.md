@@ -3,7 +3,13 @@
 **Stakeholder:** Dr. Oswaldo Langs (profesor universitario)
 **Responsable técnico:** José Gaspar
 **Fecha de arranque de documentación:** 2026-04-20
-**Estado:** Fase 1 desplegada + Fase 2 desplegada (comparación + grafo + cruce con comités editoriales Open Editors Plus 2026)
+**Estado:** Fases 1, 1.5 y 2 en producción — una y multi-investigador, comités editoriales, export CSV/PDF, URL compartibles, Open Graph dinámico.
+
+**URLs productivas:**
+- App: https://orcid-pubmetrics.innovarium.site
+- API: https://api-orcid-pubmetrics.innovarium.site (Swagger en `/docs`)
+- Repo: https://github.com/Innovariums/orcid-pubmetrics (público, MIT, auto-deploy en push a `main`)
+
 **Plan de desarrollo detallado:** ver [`plan.md`](./plan.md)
 
 ---
@@ -34,42 +40,56 @@ Herramienta de **transparencia académica** que permita a rectorías, vicerrecto
 
 ## 2. Alcance por fases
 
-### Fase 1 — MVP (objetivo inmediato)
+### Fase 1 — MVP (✅ en producción)
 
-- Un único ORCID como input
-- Rango de años configurable
-- Backend consulta ORCID + API JCR (Clarivate) y resuelve cuartil por publicación
-- Dashboard con:
-  - Histograma publicaciones/año por cuartil
-  - Frecuencia por cuartil (total)
-  - Frecuencia por JIF en bins
-  - Top revistas
-  - Evolución temporal del JIF promedio
-- Tabla de publicaciones con filtros
-- Exportación CSV + PDF
+Un solo ORCID como input, rango de años configurable, pipeline
+OpenAlex → SJR (Ruta A, ver §9). Dashboard con:
 
-**Criterio de éxito de Fase 1:** cargar el ORCID del profesor Langs, visualizar su propia producción, que los datos cuadren con su CV oficial.
+- Banda de 7 KPIs (Total, Indexadas, Q1-Q4, Sin indexar) con tono cromático
+- Stacked bar publicaciones/año × cuartil (SVG custom, sin Chart.js)
+- Doughnut distribución por cuartil
+- HBar top 10 revistas
+- Line chart evolución del SJR promedio
+- Tabla de publicaciones con filtro por cuartil y click-to-open del detalle
+- DetailDrawer con todas las categorías SJR + autores + identificadores + CTAs
 
-### Fase 2 — Comparación y detección de redes (donde está el valor real)
+Export CSV y PDF funcionales. **Criterio cumplido:** ORCIDs reales validados
+(0000-0002-0170-462X, 0000-0002-9489-0520, etc.).
 
-- Input: **2 a 3 ORCIDs** lado a lado
-- Métricas nuevas:
-  - Solapamiento de revistas donde publican (¿publican en las mismas?)
-  - Frecuencia con la que se coautorean entre sí
-  - Distribución de cuartiles comparada
-- **Detección de comités editoriales cruzados** ⚠️ (feature central):
-  - ¿El investigador A pertenece al comité editorial de alguna revista donde publica el investigador B?
-  - ¿Y viceversa?
-  - Visualización de red (grafo) de relaciones autor ↔ revista ↔ comité
+### Fase 1.5 — Robustez (parcial, ver §7)
 
-**Nota técnica crítica:** Los datos de comités editoriales **no están en ORCID, Scopus ni WoS** como dato estructurado. Hay que resolverlos por scraping dirigido a sitios de revistas o bases especializadas. Esto es investigación aparte (ver §8).
+- [x] Export PDF (react-pdf/renderer con fuentes built-in, gráficos vectoriales)
+- [x] Manejo elegante de ORCIDs sin publicaciones / sin ISSN
+- [x] Tests de contrato parametrizados SJR/JCR (4 tests verdes en SJR, skipped JCR)
+- [x] URL parametrizable y compartible; Open Graph dinámico por análisis (§4.6)
+- [ ] Cache persistente (hoy `@lru_cache` en memoria; se pierde al reiniciar)
+- [ ] Logging estructurado
 
-### Fase 3 — Escalamiento
+### Fase 2 — Comparación y detección de redes (✅ en producción)
 
-- Cache persistente en DB (evitar recargar ORCIDs consultados)
-- Procesamiento asíncrono (cola Celery/BullMQ + Redis) para ORCIDs con muchas publicaciones
-- Dashboard comparativo más rico
-- Posible autenticación institucional si llega a desplegarse a nivel universidad
+- Input: **2–5 ORCIDs** (validación en backend y frontend)
+- Dominio `comparison.compare_researchers()` calcula:
+  - `journal_overlap`: revistas donde publican ≥2 del grupo, con cuartil best y conteo por investigador
+  - `coauthorships`: works donde ≥2 del grupo son coautores directos (dedupeados por openalex_id/doi)
+  - `editorial_cross`: (publisher, editor, revista, pub_count) — "A publica en revista donde B está en comité"
+  - `has_editorial_conflict`: flag por revista (para coloreo sospechoso en grafo y tabla)
+- UI:
+  - Cards por investigador con MiniQDist tonalizado A/B/C/D/E
+  - Tabla de solapamiento con badges "X en comité"
+  - Grafo bipartito (SVG custom) autor ↔ revista, grosor ∝ frecuencia, revista con comité cruzado en **rojo**
+  - Tabla de cruces editoriales
+  - Tabla de coautorías click-to-open → mismo DetailDrawer con panel "Cooperación del grupo"
+- Export CSV (4 secciones) y PDF de 2-3 páginas
+- Fuente de comités: **Open Editors Plus 2026** (dataset Zenodo, 922k miembros, 14.8k revistas, 26 editoriales grandes; ver §8)
+
+### Fase 3 — Escalamiento (parcial)
+
+- [x] Dockerización (backend + frontend), compose en Dokploy con auto-deploy desde GitHub
+- [x] Cloudflare DNS + Traefik + Let's Encrypt para TLS
+- [x] CORS configurado para dominio productivo
+- [ ] Migración a PostgreSQL (hoy SQLite no-persistente; no se persisten queries, solo resultados live)
+- [ ] Cola asíncrona Celery + Redis (hoy endpoint síncrono; respuesta 5-60s según volumen)
+- [ ] Autenticación institucional (si llega el caso)
 
 ---
 
@@ -90,33 +110,44 @@ Herramienta de **transparencia académica** que permita a rectorías, vicerrecto
 
 ## 4. Arquitectura técnica (consolidada del PDF + llamada)
 
-### 4.1 Stack
+### 4.1 Stack (estado actual)
 
-- **Frontend:** React (SPA)
-- **Charts:** Chart.js para MVP; migración eventual a Plotly/ECharts si se requieren gráficos de red (Fase 2)
-- **UI framework:** MUI o Tailwind (decisión pendiente — preferencia: Tailwind por ligereza)
-- **Backend:** Python + FastAPI
-- **Base de datos:** SQLite para MVP, PostgreSQL cuando se despliegue
-- **Cache:** tabla local en MVP; Redis cuando se meta cola (Fase 3)
-- **Cola asíncrona:** Celery + Redis (Fase 3, no en MVP)
+- **Frontend:** React 18 + TypeScript strict + Vite 5 (SPA)
+- **Charts:** SVG custom propios (no Chart.js) — 4 componentes en `frontend/src/components/charts.tsx` + 1 en `frontend/src/features/comparison/CoopGraph.tsx`. Decisión: cero dependencias de charts, responsive vía `ResizeObserver`, colores exactos del design system
+- **Estilos:** CSS plano con tokens (`op-*`), fuentes Inter + Newsreader serif + JetBrains Mono desde Google Fonts
+- **PDF export:** `@react-pdf/renderer` con fuentes built-in PDF (Helvetica, Times-Roman, Courier). Gráficos re-implementados en `<Svg>` nativo de react-pdf
+- **Backend:** Python 3.12 + FastAPI + pydantic v2 + pandas (vectorized SJR loader) + pyarrow (parquet Open Editors) + Pillow (OG images)
+- **Base de datos:** SQLite no persistente (no se persisten queries, todo live). Postgres pendiente (Fase 3)
+- **Cache:** `@lru_cache(maxsize=1)` en el container de providers — SJR y Open Editors se cargan una vez por proceso. Cache persistente por consulta: pendiente
+- **Deploy:** Docker Compose → Dokploy (auto-deploy en push a `main`) → Traefik → Cloudflare DNS (Innovarium)
 
-### 4.2 Endpoints REST (propuestos)
+### 4.2 Endpoints REST (actuales, en producción)
 
 ```
+GET   /health                       estado + provider configurado
+
 POST  /analysis                     body: { orcid, start_year, end_year }
-GET   /analysis/{id}/status
-GET   /analysis/{id}/results
-GET   /analysis/{id}/export.csv
-GET   /analysis/{id}/export.pdf
-```
+                                    → AnalysisResult (síncrono)
 
-Para Fase 2:
-
-```
 POST  /comparison                   body: { orcids: [...], start_year, end_year }
-GET   /comparison/{id}/results
-GET   /comparison/{id}/editorial-overlap
+                                    → ComparisonResult (síncrono, 2-5 ORCIDs)
+
+# Open Graph dinámico (consumido por nginx cuando detecta bot social)
+GET   /og/preview?tab=...&orcid=... → HTML con meta tags og:* específicos
+GET   /og/preview?tab=compare&orcids=... → idem para comparación
+GET   /og/image.png?orcid=...       → PNG 1200×630 generado con PIL
+GET   /og/compare.png?orcids=...    → PNG 1200×630 comparación
+
+GET   /docs                         Swagger auto-generado
+GET   /openapi.json                 OpenAPI schema
 ```
+
+Export CSV y PDF viven 100% client-side: el frontend recibe el JSON
+completo y genera los archivos sin ida-y-vuelta al backend.
+
+No hay endpoints `/status` ni `/results/{id}` — la arquitectura es
+síncrona hoy. Cuando entre Celery (Fase 3) se agrega el patrón
+`{id, status:"pending"}` + polling.
 
 ### 4.3 Módulos lógicos
 
@@ -138,7 +169,39 @@ GET   /comparison/{id}/editorial-overlap
 3. **Publicaciones no indexadas en JCR:** marcar con `indexed_in_jcr = false` y `jcr_not_found_reason ∈ {no_issn, not_in_jcr, incomplete_metadata}`. No descartarlas; mostrarlas como "no indexadas" en la visualización.
 4. **Cuartil por categoría múltiple:** default = mejor cuartil; exponer las demás categorías en el detalle.
 
-### 4.5 Modelo de datos (borrador)
+### 4.5 Compartir: URL parametrizable + Open Graph dinámico
+
+La pantalla de resultados es **idempotente sobre la URL**:
+
+```
+/?tab=analysis&orcid=0000-...&from=2010&to=2026
+/?tab=compare&orcids=A,B,C,D,E&from=2015&to=2025
+```
+
+Al abrir la URL el formulario se pre-llena y la consulta se ejecuta
+automáticamente. El back/forward del navegador re-ejecuta según los
+params nuevos. El botón **Compartir** copia `window.location.href` al
+portapapeles con feedback "Copiado ✓".
+
+**Open Graph dinámico para previews de WhatsApp / X / LinkedIn / Slack
+/ Discord / Telegram / Facebook**:
+
+- Nginx tiene un `map $http_user_agent $is_social_bot` que detecta
+  ~15 UAs de crawlers sociales.
+- Si el UA matchea, nginx hace `proxy_pass http://backend:8000/og/preview$args`
+  en vez de servir la SPA.
+- El backend devuelve HTML mínimo con `<title>`, `og:title`,
+  `og:description`, `og:image` personalizados según los params +
+  un `<script>window.location.replace(...)>` por si llega un humano
+  con UA raro.
+- `og:image` apunta a `/og/image.png?orcid=...` o `/og/compare.png?orcids=...`
+  que PIL genera on-the-fly con la paleta del design system (título
+  serif, chip ORCID mono, 5 cards Q1-Q4 + sin-indexar, footer con
+  dominio). Cacheado 24 h.
+
+Humanos no ven el HTML dinámico — reciben la SPA. Solo los bots lo reciben.
+
+### 4.6 Modelo de datos (borrador — aún no implementado)
 
 ```
 researchers (id, orcid, name, affiliation_last_known)
@@ -180,33 +243,71 @@ Documentadas de cara al usuario en `README.md`. Resumen técnico:
 
 ---
 
-## 7. Roadmap inmediato
+## 7. Roadmap: qué sigue
 
-1. **[COMPLETADO]** Investigación de precios y factibilidad de APIs → §9
-2. **[SIGUIENTE]** Enviar al profesor resumen: no puede comprar JCR API personalmente. Presentarle las 2 rutas (A: SJR+OpenAlex gratis / B: esperar JCR institucional)
-3. Con su decisión: montar repo, iniciar Fase 1 con la ruta elegida
-4. En paralelo, que él consulte con biblioteca/investigación si la universidad ya tiene JCR (por si se puede hacer Ruta B sin costo extra)
+Fase 1, 1.5 y 2 están **en producción**. Lo siguiente en prioridad:
 
-### Próximos 7 días
+### Corto plazo (Fase 1.5 lo que falta)
 
-- [ ] Completar investigación de APIs
-- [ ] Enviar al profesor reporte de costos con 2-3 opciones
-- [ ] Esperar decisión de presupuesto
-- [ ] Crear repo con esqueleto FastAPI + React
-- [ ] Endpoint `POST /analysis` funcional con ORCID mock (sin JCR aún)
+- [ ] **Cache persistente** por `(orcid, start_year, end_year, provider)`.
+  Hoy cada consulta pega a OpenAlex live; una segunda consulta del mismo
+  ORCID reprocesa todo. Con SQLite/Postgres se puede resolver en ms.
+- [ ] **Logging estructurado** (JSON logs, correlation ID por request).
+
+### Medio plazo (Fase 3)
+
+- [ ] **Postgres** reemplaza SQLite. Tablas del §4.6 se materializan
+  cuando entra el cache persistente.
+- [ ] **Cola asíncrona** (Celery o BullMQ con Redis): el endpoint pasa
+  a patrón 202 + polling cuando el pipeline tarda más de ~10s.
+- [ ] **Comités editoriales en revistas latinoamericanas**: scraping
+  dirigido con Playwright contra una lista seed que aporte el profe
+  (Open Editors Plus no las cubre bien).
+
+### Largo plazo (Fase 4 — condicional)
+
+- [ ] **Migración a JCR** si la universidad activa Clarivate. Escribir
+  `ClarivateJcrProvider` en `adapters/jcr_clarivate.py` (ya hay stub),
+  pasar tests de contrato, girar env var. Estimado 3-5 días netos.
+
+### Pendiente por el profesor
+
+- Consultar a biblioteca / vicerrectoría de investigación si la universidad
+  tiene acceso institucional a JCR/InCites (para evaluar Fase 4).
+- Aportar lista semilla de revistas / investigadores sospechosos para
+  validar detección editorial con casos conocidos.
 
 ---
 
-## 8. Investigación especial: comités editoriales (Fase 2)
+## 8. Comités editoriales (resuelto con Open Editors Plus 2026)
 
-**Estado:** pendiente. Posibles fuentes a explorar:
+**Estado:** en producción con el dataset **Open Editors Plus 2026** (Zenodo
+record 19590816), descargado como parquet (57 MB) y bakeado en la imagen
+Docker. El `OpenEditorsProvider` (`backend/app/adapters/open_editors.py`)
+lo carga lazy con pandas + pyarrow e indexa por `(issn, orcid, nombre)`
+para lookups O(1).
 
-- **Scraping directo de sitios editoriales** (cada revista lista su comité; no hay formato estándar). Requiere parser por dominio.
-- **OpenAlex:** tiene `institutions` y `authors` pero no modela `editorial_boards` explícitamente.
-- **Researchfish / ORCID (membership):** ORCID permite declarar membresías (incluye comités); depende de que el investigador lo haya registrado (alta variabilidad).
-- **Publons / Web of Science Researcher Profile (Clarivate):** históricamente rastreaba reviewer activity y editorships. Estado post-merge de Publons: verificar qué sobrevivió.
+**Cobertura:**
+- 14.881 revistas únicas
+- 246.782 ORCIDs de editores
+- 613.212 nombres de editores
+- 922k posiciones editoriales totales (editor, associate editor,
+  editor-in-chief, etc.)
+- 26 editoriales grandes: Elsevier, Springer, Wiley, Taylor & Francis,
+  SAGE, Nature Research, Cambridge, Oxford Academic, Frontiers, PLOS,
+  MDPI, IEEE, ACM, Hindawi, AMS, etc.
 
-**Decisión provisional:** para MVP asumir scraping ad-hoc + pedir al profesor una lista manual de revistas y comités sospechosos como seed data para validar el concepto.
+**Qué cubre bien:** revistas mainstream anglosajonas / internacionales.
+**Qué NO cubre:** revistas latinoamericanas pequeñas, sociedades científicas
+regionales, publicaciones de editoriales independientes. Fallback futuro:
+scraping dirigido con Playwright a lista seed del profesor (Fase 3).
+
+El cruce `editorial_cross` en `ComparisonResult` emite una tupla por
+cada patrón *"publisher publica en revista donde editor está en comité"*
+con el conteo de publicaciones. El flag `has_editorial_conflict` en
+`JournalOverlap` se activa cuando hay solapamiento revista ↔ comité
+para al menos un investigador del grupo, y dispara el coloreo rojo en
+UI y el badge "COMITÉ" en el grafo.
 
 ---
 
@@ -292,13 +393,31 @@ Se compromete además a consultar en paralelo con biblioteca/investigación si l
 
 **Tomadas:**
 - [x] **Ruta A** (OpenAlex + SJR + Open Editors) — 2026-04-20
-- [x] Presupuesto aprobado (~$0/mes para Fase 1+2)
-- [x] Arquitectura con interfaces abstractas para futura migración a JCR
-- [x] Fase 1 deployada en https://orcid-pubmetrics.innovarium.site
-- [x] Fase 2 deployada: comparación multi-ORCID, grafo de cooperación, cruce con comités editoriales (dataset Open Editors Plus 2026, 922k miembros, 14.8k revistas)
+- [x] Presupuesto aprobado (~$0/mes para Fases 1-2)
+- [x] Arquitectura Ports & Adapters con `JournalMetricsProvider`
+  intercambiable para migración futura a JCR sin tocar dominio/UI
+- [x] Fase 1 en producción
+- [x] Fase 1.5 parcial: PDF, URL compartibles, Open Graph dinámico, tests de contrato
+- [x] Fase 2 en producción: comparación multi-ORCID (2-5), grafo de
+  cooperación, cruce con comités editoriales (Open Editors Plus 2026,
+  922k miembros)
+- [x] Regla de cuartil por categoría múltiple: **mejor cuartil como
+  headline**, todas las categorías en `all_metrics` para el detalle
+- [x] Repo público en **Innovariums/orcid-pubmetrics** (GitHub)
+- [x] Hosting: **Dokploy** sobre VPS Innovarium, subdominios
+  `orcid-pubmetrics.innovarium.site` (front) y
+  `api-orcid-pubmetrics.innovarium.site` (back), TLS vía Traefik +
+  Let's Encrypt
+- [x] Data bakeada en la imagen Docker (SJR 2013-2024 + Open Editors
+  Plus 2026) para evitar volume mounts frágiles
 
 **Pendientes:**
-- [ ] Hosting concreto (Vercel/Render/VPS) — a definir al cierre de Fase 1
-- [ ] Regla final de cuartil por categoría múltiple (default: mejor cuartil; confirmar al ver UI)
-- [ ] Repositorio creado (GitHub privado)
-- [ ] Consulta del profesor a biblioteca sobre JCR institucional (paralelo)
+- [ ] Cache persistente de consultas → Postgres (Fase 3)
+- [ ] Cola asíncrona Celery/Redis si el profesor consulta ORCIDs con
+  cientos de publicaciones (hoy tope síncrono cómodo ≈ 100 pubs × 5
+  investigadores en compare)
+- [ ] Consulta del profesor a biblioteca sobre JCR institucional
+- [ ] Lista seed de revistas/investigadores sospechosos para validar
+  detección editorial con casos conocidos (aporta el profesor)
+- [ ] Scraping dirigido de comités editoriales de revistas
+  latinoamericanas que Open Editors no cubre
