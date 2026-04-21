@@ -3,6 +3,7 @@ import { CHART_COLORS, DoughnutChart, HBarChart, LineChart, StackedBarChart } fr
 import { Btn, Card, Chip, Icon, StatCard } from "../../components/primitives";
 import type { AnalysisResult, EnrichedWork } from "../../types";
 import { downloadCsv } from "./exportCsv";
+import { downloadPdfReport } from "./pdfReport";
 
 type FilterKey = "all" | "q1" | "q2" | "q3" | "q4" | "unindexed";
 
@@ -16,6 +17,16 @@ export function ResultsView({
   onNewQuery: () => void;
 }) {
   const [filter, setFilter] = useState<FilterKey>("all");
+  const [pdfLoading, setPdfLoading] = useState(false);
+
+  const handlePdf = async () => {
+    setPdfLoading(true);
+    try {
+      await downloadPdfReport(result);
+    } finally {
+      setPdfLoading(false);
+    }
+  };
 
   const works = useMemo(() => {
     const sorted = [...result.works].sort(
@@ -59,6 +70,14 @@ export function ResultsView({
         <div className="page-head__actions">
           <Btn variant="ghost" iconLeft={Icon.download()} onClick={() => downloadCsv(result)}>
             CSV
+          </Btn>
+          <Btn
+            variant="secondary"
+            iconLeft={Icon.download()}
+            onClick={handlePdf}
+            disabled={pdfLoading}
+          >
+            {pdfLoading ? "Generando…" : "PDF"}
           </Btn>
           <Btn variant="secondary" onClick={onNewQuery}>
             Nueva consulta
