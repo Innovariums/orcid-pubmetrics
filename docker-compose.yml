@@ -18,6 +18,14 @@ services:
       CORS_ORIGINS: ${CORS_ORIGINS:-["http://localhost:5173","https://orcid-pubmetrics.innovarium.site"]}
     expose:
       - "8000"
+    labels:
+      - "traefik.enable=true"
+      # Router único para el API en api-orcid-pubmetrics.innovarium.site
+      - "traefik.http.routers.orcid-api.rule=Host(`api-orcid-pubmetrics.innovarium.site`)"
+      - "traefik.http.routers.orcid-api.entrypoints=websecure"
+      - "traefik.http.routers.orcid-api.tls.certresolver=letsencrypt"
+      - "traefik.http.services.orcid-api-svc.loadbalancer.server.port=8000"
+      - "traefik.http.routers.orcid-api.service=orcid-api-svc"
 
   frontend:
     build:
@@ -30,3 +38,11 @@ services:
       - backend
     expose:
       - "80"
+    labels:
+      - "traefik.enable=true"
+      # Router único para la web en orcid-pubmetrics.innovarium.site
+      - "traefik.http.routers.orcid-web.rule=Host(`orcid-pubmetrics.innovarium.site`)"
+      - "traefik.http.routers.orcid-web.entrypoints=websecure"
+      - "traefik.http.routers.orcid-web.tls.certresolver=letsencrypt"
+      - "traefik.http.services.orcid-web-svc.loadbalancer.server.port=80"
+      - "traefik.http.routers.orcid-web.service=orcid-web-svc"
