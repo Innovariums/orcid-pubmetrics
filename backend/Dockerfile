@@ -1,3 +1,4 @@
+# rev: 2026-04-21T18:30 — force rebuild to kill orphan containers
 FROM python:3.12-slim
 
 ENV PYTHONUNBUFFERED=1 \
