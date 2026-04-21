@@ -23,18 +23,6 @@ export function Shell({ right, children }: { right?: ReactNode; children: ReactN
             </div>
           </div>
         </div>
-        <nav className="app-header__nav" aria-label="Navegación principal">
-          <a href="#" className="is-active">Análisis</a>
-          <a href="#" aria-disabled="true" title="Fase 2">Comparación</a>
-          <a href="#" aria-disabled="true">Historial</a>
-          <a
-            href="https://github.com/anthropics/orcid-pubmetrics"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Docs
-          </a>
-        </nav>
         <div style={{ flex: 1 }} />
         <div className="app-header__right">
           <span
