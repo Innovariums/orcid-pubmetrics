@@ -362,9 +362,9 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   .t-hero { font-size: 26px; }
 }
 
-/* Drawer on mobile */
+/* Drawer fijo al viewport (no scrollea con la página) */
 .detail-drawer {
-  position: absolute;
+  position: fixed;
   top: 0; right: 0; bottom: 0;
   width: 480px;
   max-width: 100%;
@@ -376,12 +376,13 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   z-index: 30;
 }
 .detail-drawer__overlay {
-  position: absolute;
+  position: fixed;
   inset: 0;
   background: rgba(14,17,22,.35);
   backdrop-filter: blur(2px);
   z-index: 29;
 }
+body.drawer-open { overflow: hidden; }
 @media (max-width: 540px) {
   .detail-drawer { width: 100%; }
 }

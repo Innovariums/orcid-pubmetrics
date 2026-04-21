@@ -17,7 +17,16 @@ export function DetailDrawer({ work, onClose }: { work: EnrichedWork; onClose: (
       if (e.key === "Escape") onClose();
     };
     document.addEventListener("keydown", onKey);
-    return () => document.removeEventListener("keydown", onKey);
+
+    // Bloquear scroll del fondo mientras el drawer está abierto
+    const scrollable = document.querySelector<HTMLElement>(".app-shell__main");
+    const prev = scrollable?.style.overflow;
+    if (scrollable) scrollable.style.overflow = "hidden";
+
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      if (scrollable) scrollable.style.overflow = prev ?? "";
+    };
   }, [onClose]);
 
   return (
