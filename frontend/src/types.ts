@@ -167,6 +167,11 @@ export interface PublindexEntry {
   latest_year: number;
   latest_category: PublindexCategory;
   history: PublindexYearItem[];
+  /** Enriquecimiento desde el portal MinCiencias (sólo revistas vigentes 2024). */
+  homepage_url: string | null;
+  email: string | null;
+  editorial_team_url: string | null;
+  is_ojs: boolean;
 }
 
 export interface PublindexLookupResponse {

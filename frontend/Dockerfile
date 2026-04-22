@@ -1,4 +1,4 @@
-# rev: 2026-04-21T19:30 — publindex drawer always shows line (found/not-found)
+# rev: 2026-04-22T10:30 — publindex fase A: botones Sitio oficial y Comité editorial
 # Build stage
 FROM node:20-alpine AS build
 

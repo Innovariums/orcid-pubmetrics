@@ -1,0 +1,4883 @@
+[
+  {
+    "id": 20,
+    "name": "REVISTA DE ESTUDIOS SOCIALES",
+    "homepage_url": "https://revistas.uniandes.edu.co/journal/res",
+    "email": "res@uniandes.edu.co",
+    "address": "Cra. 1 No. 18A-12 Edificio Franco Of. GB-417",
+    "phone": "3394949",
+    "issns": [
+      "0123885X",
+      "19005180"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DE LOS ANDES"
+    ],
+    "current_category": "A1",
+    "current_year": 2024
+  },
+  {
+    "id": 45,
+    "name": "Colombia Internacional",
+    "homepage_url": "https://revistas.uniandes.edu.co/journal/colombiaint",
+    "email": "colombiainternacional@uniandes.edu.co",
+    "address": "Carrera 1 N° 18A 10 Ed Franco 4 piso oficina GB-417",
+    "phone": "3324532",
+    "issns": [
+      "19006004",
+      "01215612"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DE LOS ANDES"
+    ],
+    "current_category": "A1",
+    "current_year": 2024
+  },
+  {
+    "id": 50,
+    "name": "HISTORIA CRÍTICA",
+    "homepage_url": "https://revistas.uniandes.edu.co/journal/histcrit",
+    "email": "hcritica@uniandes.edu.co",
+    "address": "Cra 1 Nº 18A- 12 Edificio Franco, Of.GB 417",
+    "phone": "3394949",
+    "issns": [
+      "19006152",
+      "01211161",
+      "01211617"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DE LOS ANDES"
+    ],
+    "current_category": "A1",
+    "current_year": 2024
+  },
+  {
+    "id": 73,
+    "name": "ESTUDIOS DE LITERATURA COLOMBIANA",
+    "homepage_url": "https://revistas.udea.edu.co/index.php/elc/",
+    "email": "revistaelc.fcf@udea.edu.co",
+    "address": "Universidad de Antioquia Calle 67 No. 53-108, Facultad de Comunicaciones y Filología, Bloque 12, Oficina 234",
+    "phone": "(4) 219 5915",
+    "issns": [
+      "01234412",
+      "26653273"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DE ANTIOQUIA"
+    ],
+    "current_category": "A1",
+    "current_year": 2024
+  },
+  {
+    "id": 266,
+    "name": "ANÁLISIS POLÍTICO",
+    "homepage_url": "http://www.revistas.unal.edu.co/index.php/anpol",
+    "email": "revap_bog@unal.edu.co",
+    "address": "Ciudad Universitaria. Edificio Manuel Ancizar. Oficina 3032",
+    "phone": "3165246",
+    "issns": [
+      "01214705"
+    ],
+    "institutions": [
+      "UNIVERSIDAD NACIONAL DE COLOMBIA"
+    ],
+    "current_category": "A1",
+    "current_year": 2024
+  },
+  {
+    "id": 370,
+    "name": "Profile",
+    "homepage_url": "http://www.revistas.unal.edu.co/index.php/profile/index",
+    "email": "rprofile_fchbog@unal.edu.co;profilejournal@gmail.com",
+    "address": "Cra.30 No.45-03 Ciudad Universitaria. Universidad Nacional de Colombia -Departamento de Lenguas Extranjeras - Grupo PROFILE",
+    "phone": "3165000",
+    "issns": [
+      "22565760",
+      "16570790"
+    ],
+    "institutions": [
+      "UNIVERSIDAD NACIONAL DE COLOMBIA"
+    ],
+    "current_category": "A1",
+    "current_year": 2024
+  },
+  {
+    "id": 590,
+    "name": "KEPES",
+    "homepage_url": "http://kepes.ucaldas.edu.co/",
+    "email": "revistakepes@ucaldas.edu.co;revistascientificas@ucaldas.edu.co",
+    "address": "Calle 65 No 26 -10 Universidad de Caldas. Edificio Orlando Sierra.l Departamento de Diseño",
+    "phone": "8781544",
+    "issns": [
+      "17947111",
+      "24628115"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DE CALDAS"
+    ],
+    "current_category": "A1",
+    "current_year": 2024
+  },
+  {
+    "id": 117,
+    "name": "DESARROLLO Y SOCIEDAD",
+    "homepage_url": "https://revistas.uniandes.edu.co/journal/dys",
+    "email": "revistadesarrolloysociedad@uniandes.edu.co",
+    "address": "Calle 19 A No. 1-37 Este Bloque W",
+    "phone": "3394949",
+    "issns": [
+      "19007760",
+      "01203584"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DE LOS ANDES"
+    ],
+    "current_category": "A2",
+    "current_year": 2024
+  },
+  {
+    "id": 125,
+    "name": "Palabra Clave",
+    "homepage_url": "http://palabraclave.unisabana.edu.co/",
+    "email": "palabra.clave@unisabana.edu.co",
+    "address": "Campus del Puente del Común, Km 7, Autopista Norte de Bogotá",
+    "phone": "8615555",
+    "issns": [
+      "2027534X",
+      "01228285"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DE LA SABANA"
+    ],
+    "current_category": "A2",
+    "current_year": 2024
+  },
+  {
+    "id": 134,
+    "name": "Cuadernos de Música, Artes Visuales y Artes Escénicas",
+    "homepage_url": "https://revistas.javeriana.edu.co/index.php/cma",
+    "email": "revista.mavae@gmail.com",
+    "address": "Calle 40b # 5-37 Edificio Gerardo Arango.",
+    "phone": "(571) 3208320",
+    "issns": [
+      "17946670",
+      "22159959"
+    ],
+    "institutions": [
+      "PONTIFICIA UNIVERSIDAD JAVERIANA"
+    ],
+    "current_category": "A2",
+    "current_year": 2024
+  },
+  {
+    "id": 216,
+    "name": "REVISTA COLOMBIANA DE ANTROPOLOGÍA",
+    "homepage_url": "https://revistas.icanh.gov.co/index.php/rca/index",
+    "email": "rca.icanh@icanh.gov.co",
+    "address": "Calle 12 No. 2-41",
+    "phone": "4440544",
+    "issns": [
+      "2539472X",
+      "04866525"
+    ],
+    "institutions": [
+      "Instituto Colombiano De Antropología E Historia - Icanh"
+    ],
+    "current_category": "A2",
+    "current_year": 2024
+  },
+  {
+    "id": 223,
+    "name": "Íkala, Revista de Lenguaje y Cultura",
+    "homepage_url": "http://www.udea.edu.co/ikala",
+    "email": "revistaikala@udea.edu.co",
+    "address": "Calle 67 No. 53-108, Oficina 11-202",
+    "phone": "2198791",
+    "issns": [
+      "01233432",
+      "2145566X"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DE ANTIOQUIA"
+    ],
+    "current_category": "A2",
+    "current_year": 2024
+  },
+  {
+    "id": 336,
+    "name": "REVISTA LATINOAMERICANA DE PSICOLOGÍA",
+    "homepage_url": "https://revistalatinoamericanadepsicologia.konradlorenz.edu.co/",
+    "email": "direccion.rlp@konradlorenz.edu.co",
+    "address": "Carrera 9bis No. 62-43",
+    "phone": "3472311",
+    "issns": [
+      "01200534"
+    ],
+    "institutions": [
+      "Fundacion Universitaria Konrad Lorenz"
+    ],
+    "current_category": "A2",
+    "current_year": 2024
+  },
+  {
+    "id": 425,
+    "name": "REVISTA COLOMBIANA DE PSICOLOGÍA",
+    "homepage_url": "http://www.revistas.unal.edu.co/index.php/psicologia/index",
+    "email": "revpsico_fchbog@unal.edu.co;revistacoldepsicologia@gmail.com",
+    "address": "Cra 30 # 45 - 03, edificio 212, oficina 220",
+    "phone": "3165000",
+    "issns": [
+      "23448644",
+      "01215469"
+    ],
+    "institutions": [
+      "UNIVERSIDAD NACIONAL DE COLOMBIA"
+    ],
+    "current_category": "A2",
+    "current_year": 2024
+  },
+  {
+    "id": 441,
+    "name": "REVISTA DE DERECHO PRIVADO",
+    "homepage_url": "https://www.uexternado.edu.co/derechoprivado",
+    "email": "revderprivado@uexternado.edu.co",
+    "address": "Calle 12 No. 1-17 este, Bloque A, piso 2, Depto. Derecho Civil, Bogota-Colombia",
+    "phone": "2826066",
+    "issns": [
+      "01234366",
+      "23462442"
+    ],
+    "institutions": [
+      "UNIVERSIDAD EXTERNADO DE COLOMBIA"
+    ],
+    "current_category": "A2",
+    "current_year": 2024
+  },
+  {
+    "id": 537,
+    "name": "Trashumante",
+    "homepage_url": "https://revistas.udea.edu.co/index.php/trashumante/",
+    "email": "revistatrashumante@udea.edu.co",
+    "address": "Calle 67 # 53-108, Ciudad Universitaria, Bloque 14, Oficina 204",
+    "phone": "(4)2198778",
+    "issns": [
+      "23229381",
+      "23229675"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DE ANTIOQUIA"
+    ],
+    "current_category": "A2",
+    "current_year": 2024
+  },
+  {
+    "id": 555,
+    "name": "BOLETÍN CIENTÍFICO CENTRO DE MUSEOS MUSEO DE HISTORIA NATURAL",
+    "homepage_url": "http://boletincientifico.ucaldas.edu.co/",
+    "email": "julianmantis@gmail.com;\r\nrevistascientificas@ucaldas.edu.co",
+    "address": "Cra. 23 Nº 58-65.  Edificio Palogrande. Centro de Museos.",
+    "phone": "8781500",
+    "issns": [
+      "24628190",
+      "01233068"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DE CALDAS"
+    ],
+    "current_category": "A2",
+    "current_year": 2024
+  },
+  {
+    "id": 574,
+    "name": "CO-HERENCIA",
+    "homepage_url": "http://publicaciones.eafit.edu.co/index.php/co-herencia",
+    "email": "coherencia@eafit.edu.co",
+    "address": "Cra 49 7 sur 50",
+    "phone": "4-2619500",
+    "issns": [
+      "25391208",
+      "17945887"
+    ],
+    "institutions": [
+      "UNIVERSIDAD EAFIT"
+    ],
+    "current_category": "A2",
+    "current_year": 2024
+  },
+  {
+    "id": 667,
+    "name": "Antípoda",
+    "homepage_url": "https://revistas.uniandes.edu.co/journal/antipoda",
+    "email": "antipoda@uniandes.edu.co",
+    "address": "Cra 1  No 18 A-12 Edificio Franco, Bloque Gb, piso 4, of gb 417 (Bogotá D.C, Colombia)",
+    "phone": "(571)3394949",
+    "issns": [
+      "20114273",
+      "19005407"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DE LOS ANDES"
+    ],
+    "current_category": "A2",
+    "current_year": 2024
+  },
+  {
+    "id": 840,
+    "name": "HiSTOReLo. Revista de Historia Regional y Local",
+    "homepage_url": "http://www.revistas.unal.edu.co/index.php/historelo/index",
+    "email": "historelo@unal.edu.co",
+    "address": "Carrera 65 No. 59A-110. Bloque 43, Oficina 450. Medellín, Colombia",
+    "phone": "4309888",
+    "issns": [
+      "2145132X"
+    ],
+    "institutions": [
+      "UNIVERSIDAD NACIONAL DE COLOMBIA"
+    ],
+    "current_category": "A2",
+    "current_year": 2024
+  },
+  {
+    "id": 851,
+    "name": "Historia Y MEMORIA",
+    "homepage_url": "http://revistas.uptc.edu.co/revistas/index.php/historia_memoria",
+    "email": "historiaymemoria@uptc.edu.co",
+    "address": "Avenida Central del Norte. Edificio Administrativo, Piso 2, oficina del Doctorado en Historia",
+    "phone": "(057)-87400683",
+    "issns": [
+      "2322777X",
+      "20275137"
+    ],
+    "institutions": [
+      "UNIVERSIDAD PEDAGÓGICA Y TECNOLÓGICA DE COLOMBIA"
+    ],
+    "current_category": "A2",
+    "current_year": 2024
+  },
+  {
+    "id": 875,
+    "name": "Mutatis Mutandis. Revista Latinoamericana de Traducción",
+    "homepage_url": "https://revistas.udea.edu.co/index.php/mutatismutandis/",
+    "email": "revistamutatismutandis@udea.edu.co;andrea.montoya@udea.edu.co",
+    "address": "Calle 67 # 53-108 Bloque 11, oficina 202",
+    "phone": "2198791",
+    "issns": [
+      "2011799X"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DE ANTIOQUIA"
+    ],
+    "current_category": "A2",
+    "current_year": 2024
+  },
+  {
+    "id": 1293,
+    "name": "BITÁCORA URBANO TERRITORIAL",
+    "homepage_url": "http://www.bitacora.unal.edu.co",
+    "email": "catorrest@unal.edu.co;\r\nbitacora_farbog@unal.edu.co",
+    "address": "Ciudad Universitaria, Carrera 30 No. 45-03 Edificio 314 Ofic. 106 (SINDU)",
+    "phone": "3165000",
+    "issns": [
+      "01247913",
+      "2027145X"
+    ],
+    "institutions": [
+      "UNIVERSIDAD NACIONAL DE COLOMBIA"
+    ],
+    "current_category": "A2",
+    "current_year": 2024
+  },
+  {
+    "id": 1294,
+    "name": "ANUARIO COLOMBIANO DE HISTORIA SOCIAL Y DE LA CULTURA",
+    "homepage_url": "http://www.revistas.unal.edu.co/index.php/achsc",
+    "email": "anuhisto_fchbog@unal.edu.co",
+    "address": "Cra. 30 No. 45-03, edificio 224, oficina 3064",
+    "phone": "3165000",
+    "issns": [
+      "22565647",
+      "01202456"
+    ],
+    "institutions": [
+      "UNIVERSIDAD NACIONAL DE COLOMBIA"
+    ],
+    "current_category": "A2",
+    "current_year": 2024
+  },
+  {
+    "id": 1,
+    "name": "REVISTA DE ECONOMÍA INSTITUCIONAL",
+    "homepage_url": "https://revistas.uexternado.edu.co/index.php/ecoins",
+    "email": "ecoinstitucional@uexternado.edu.co",
+    "address": "Calle 12 No. 1-17 Este, piso 2, Universidad Externado de Colombia",
+    "phone": "3419900",
+    "issns": [
+      "23462450",
+      "01245996"
+    ],
+    "institutions": [
+      "UNIVERSIDAD EXTERNADO DE COLOMBIA"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 2,
+    "name": "REVISTA U.D.C.A ACTUALIDAD & DIVULGACIÓN CIENTÍFICA",
+    "homepage_url": "https://revistas.udca.edu.co/index.php/ruadc",
+    "email": "rev.udca@udca.edu.co",
+    "address": "UNIVERSIDAD DE CIENCIAS APLICADAS Y AMBIENTALES",
+    "phone": "6684700",
+    "issns": [
+      "01234226",
+      "26192551"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DE CIENCIAS APLICADAS Y AMBIENTALES U.D.C.A"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 3,
+    "name": "REVISTA ESCUELA DE ADMINISTRACIÓN DE NEGOCIOS",
+    "homepage_url": "http://journal.ean.edu.co/index.php/Revista",
+    "email": "revistas@universidadean.edu.co",
+    "address": "Calle 79 # 11-45",
+    "phone": "5936464",
+    "issns": [
+      "01208160",
+      "2590521X"
+    ],
+    "institutions": [
+      "UNIVERSIDAD EAN"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 12,
+    "name": "Revista de Investigacion Agraria y Ambiental",
+    "homepage_url": "http://hemeroteca.unad.edu.co/index.php/riaa",
+    "email": "riaa@unad.edu.co",
+    "address": "Calle 14 Sur No.14 No. 23 Sede Nacional José Celestino Mutis",
+    "phone": "3443700",
+    "issns": [
+      "21456453",
+      "21456097"
+    ],
+    "institutions": [
+      "UNIVERSIDAD NACIONAL ABIERTA Y A DISTANCIA"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 14,
+    "name": "Praxis & Saber",
+    "homepage_url": "http://revistas.uptc.edu.co/revistas/index.php/praxis_saber",
+    "email": "praxis.saber@uptc.edu.co",
+    "address": "Avenida Central del Norte. Edificio administrativo 2o piso. Tunja/ Boyacá",
+    "phone": "(8)7434853",
+    "issns": [
+      "24628603",
+      "22160159"
+    ],
+    "institutions": [
+      "UNIVERSIDAD PEDAGÓGICA Y TECNOLÓGICA DE COLOMBIA"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 15,
+    "name": "Ingeniería y Desarrollo",
+    "homepage_url": "http://rcientificas.uninorte.edu.co/index.php/ingenieria",
+    "email": "ingydes@uninorte.edu.co; lucyr@uninorte.edu.co",
+    "address": "Km 5 Vía Puerto Colombia",
+    "phone": "3509509",
+    "issns": [
+      "21459371"
+    ],
+    "institutions": [
+      "FUNDACIÓN UNIVERSIDAD DEL NORTE"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 25,
+    "name": "AGRONOMÍA COLOMBIANA",
+    "homepage_url": "http://revistas.unal.edu.co/index.php/agrocol",
+    "email": "agrocol_fabog@unal.edu.co",
+    "address": "Universidad Nacional de Colombia - Unidad Camilo Torres, Bloque A3, oficina 101, Calle 44 45-67 Bogotá, D.C.",
+    "phone": "3165000",
+    "issns": [
+      "01209965",
+      "23573732"
+    ],
+    "institutions": [
+      "UNIVERSIDAD NACIONAL DE COLOMBIA"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 28,
+    "name": "PSICOGENTE",
+    "homepage_url": "http://revistas.unisimon.edu.co/index.php/psicogente",
+    "email": "revpsicogente@unisimon.edu.co",
+    "address": "Universidad Simón Bolívar carrera 54  número 58-28 Instituto de Investigaciones-Sede 1 Edificio 1-2do Piso-Oficina Revista Psicogente",
+    "phone": "3444333",
+    "issns": [
+      "01240137",
+      "2027212X"
+    ],
+    "institutions": [
+      "UNIVERSIDAD SIMÓN BOLÍVAR"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 31,
+    "name": "UNIVERSITAS SCIENTIARUM",
+    "homepage_url": "https://revistas.javeriana.edu.co/index.php/scientarium",
+    "email": "scientiarum@javeriana.edu.co",
+    "address": "Carrera 7 No 43-82  Edificio 52  oficina 627",
+    "phone": "5713208320",
+    "issns": [
+      "20271352",
+      "01227483"
+    ],
+    "institutions": [
+      "PONTIFICIA UNIVERSIDAD JAVERIANA"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 35,
+    "name": "Colombia Forestal",
+    "homepage_url": "http://revistas.udistrital.edu.co/ojs/index.php/colfor",
+    "email": "colombiaforestal.ud@udistrital.edu.co",
+    "address": "Universidad Distrital Sede Vivero. Avenida Circunvalar-Venado de Oro. Bogotá, Colombia.",
+    "phone": "3239300",
+    "issns": [
+      "2256201X",
+      "01200739"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DISTRITAL FRANCISCO JOSÉ DE CALDAS"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 38,
+    "name": "JURÍDICAS CUC",
+    "homepage_url": "https://revistascientificas.cuc.edu.co/juridicascuc/index",
+    "email": "revistajuridicas@cuc.edu.co",
+    "address": "CALLE 58 N°55-66",
+    "phone": "3362215",
+    "issns": [
+      "23897716",
+      "16923030"
+    ],
+    "institutions": [
+      "CORPORACION UNIVERSIDAD DE LA COSTA"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 55,
+    "name": "CUADERNOS DE LINGÜÍSTICA HISPÁNICA",
+    "homepage_url": "http://revistas.uptc.edu.co/index.php/linguistica_hispanica",
+    "email": "cuadernos.linguistica@uptc.edu.co",
+    "address": "Avenida Central del Norte, Edificio Central, Oficina C-213",
+    "phone": "7405626",
+    "issns": [
+      "23461829",
+      "0121053X"
+    ],
+    "institutions": [
+      "UNIVERSIDAD PEDAGÓGICA Y TECNOLÓGICA DE COLOMBIA"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 62,
+    "name": "Academia & Derecho",
+    "homepage_url": "http://www.unilibrecucuta.edu.co/ojs/index.php/derecho/index",
+    "email": "dirinvestigaciones@unilibrecucuta.edu.co",
+    "address": "Avenida 4 # 12N-91. El Bosque",
+    "phone": "5829810",
+    "issns": [
+      "22158944",
+      "25394983"
+    ],
+    "institutions": [
+      "UNIVERSIDAD LIBRE DE COLOMBIA"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 64,
+    "name": "REVISTA FACULTAD NACIONAL DE SALUD PÚBLICA",
+    "homepage_url": "https://revistas.udea.edu.co/index.php/fnsp/index",
+    "email": "revistasaludpublica@udea.edu.co",
+    "address": "Calle 62 N 52 - 59",
+    "phone": "2196867",
+    "issns": [
+      "22563334",
+      "0120386X"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DE ANTIOQUIA"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 65,
+    "name": "TERRITORIOS",
+    "homepage_url": "http://revistas.urosario.edu.co/index.php/territorios/",
+    "email": "revistaterritorios@gmail.com",
+    "address": "Carrera 6 A Nº 14- 13, Edificio Santa Fe",
+    "phone": "2970200",
+    "issns": [
+      "01238418",
+      "22157484"
+    ],
+    "institutions": [
+      "COLEGIO MAYOR NUESTRA SEÑORA DEL ROSARIO"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 66,
+    "name": "Revista UIS Ingenierías",
+    "homepage_url": "http://revistas.uis.edu.co/index.php/revistauisingenierias",
+    "email": "revistaingenierias@uis.edu.co",
+    "address": "Cra 27 Cll 9, Universidad Industrial de Santander, Edificio de Laboratorios Pesados (LP), Decanato de Ingenierías Fisicomecánicas",
+    "phone": "6344000",
+    "issns": [
+      "21458456",
+      "16574583"
+    ],
+    "institutions": [
+      "UNIVERSIDAD  INDUSTRIAL DE SANTANDER"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 70,
+    "name": "Revista Colombiana de Ciencias Pecuarias",
+    "homepage_url": "http://rccp.udea.edu.co/",
+    "email": "rccpecuarias@gmail.com",
+    "address": "Carrera 75 N.º 65-87 Bloque 47-233",
+    "phone": "2199113",
+    "issns": [
+      "22562958",
+      "01200690"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DE ANTIOQUIA"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 72,
+    "name": "CALDASIA",
+    "homepage_url": "http://www.revistas.unal.edu.co/index.php/cal",
+    "email": "revcaldasia_bog@unal.edu.co",
+    "address": "Cra 30 # 45 - 03 Instituto de Ciencias Naturales piso 3, oficina 314",
+    "phone": "3165000",
+    "issns": [
+      "03665232",
+      "23573759"
+    ],
+    "institutions": [
+      "UNIVERSIDAD NACIONAL DE COLOMBIA"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 78,
+    "name": "Psicología desde el Caribe",
+    "homepage_url": "http://rcientificas.uninorte.edu.co/index.php/psicologia/index",
+    "email": "psicaribe@uninorte.edu.co; cdelosreyes@uninorte.edu.co",
+    "address": "Km 5 Vía Puerto Colombia",
+    "phone": "3509509",
+    "issns": [
+      "20117485"
+    ],
+    "institutions": [
+      "FUNDACIÓN UNIVERSIDAD DEL NORTE"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 82,
+    "name": "CUADERNOS DE ECONOMÍA",
+    "homepage_url": "http://www.revistas.unal.edu.co/index.php/ceconomia;http://fce.unal.edu.co/cuadernos",
+    "email": "revcuaeco_bog@unal.edu.co",
+    "address": "Carrera 30 No.45 -03, Ciudad Universitaria, Facultad de Ciencias Económicas Ed. 310, Primer piso, Centro Editorial",
+    "phone": "3165000",
+    "issns": [
+      "01214772",
+      "22484337"
+    ],
+    "institutions": [
+      "UNIVERSIDAD NACIONAL DE COLOMBIA"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 83,
+    "name": "INNOVAR",
+    "homepage_url": "https://revistas.unal.edu.co/index.php/innovar",
+    "email": "revinnova_bog@unal.edu.co",
+    "address": "Ciudad Universitaria. Cra 30 No. 45-03 Facultad de Ciencias Económicas, Edificio 310, oficina Centro Editoria",
+    "phone": "3165000",
+    "issns": [
+      "01215051",
+      "22486968"
+    ],
+    "institutions": [
+      "UNIVERSIDAD NACIONAL DE COLOMBIA"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 85,
+    "name": "VITAE",
+    "homepage_url": "https://revistas.udea.edu.co/index.php/vitae",
+    "email": "vitae.cifal@udea.edu.co",
+    "address": "Universidad de Antioquia - Calle 70 No.52-72 Oficina 303",
+    "phone": "574-2198455",
+    "issns": [
+      "21452660",
+      "01214004"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DE ANTIOQUIA"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 92,
+    "name": "REVISTA DE CIENCIAS AGRÍCOLAS",
+    "homepage_url": "http://revistas.udenar.edu.co/index.php/rfacia",
+    "email": "revistafacia@udenar.edu.co",
+    "address": "Ciudad Universitaria Torobajo - Facultad de Ciencias Agrícolas - Bloque 2 Piso 2",
+    "phone": "0927313315",
+    "issns": [
+      "01200135",
+      "22562273"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DE NARIÑO"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 95,
+    "name": "COLOMBIA MÉDICA",
+    "homepage_url": "http://colombiamedica.univalle.edu.co/",
+    "email": "colombiamedica@correounivalle.edu.co; \r\neditor.colombiamedica@correounivalle.edu.co",
+    "address": "Calle 4B 36-00 edificio 118 oficina 314, Universidad del Valle sede San Fernanado",
+    "phone": "(57-2) 558 1939",
+    "issns": [
+      "01208322",
+      "16579534"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DEL VALLE"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 100,
+    "name": "REVISTA FACULTAD NACIONAL DE AGRONOMÍA MEDELLIN",
+    "homepage_url": "http://www.revistas.unal.edu.co/index.php/refame",
+    "email": "rfnagron_med@unal.edu.co",
+    "address": "Carrera 65 No. 59A - 10",
+    "phone": "4309006",
+    "issns": [
+      "03042847",
+      "22487026"
+    ],
+    "institutions": [
+      "UNIVERSIDAD NACIONAL DE COLOMBIA"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 120,
+    "name": "SIGNO Y PENSAMIENTO",
+    "homepage_url": "http://revistas.javeriana.edu.co/index.php/signoypensamiento",
+    "email": "signoyp@javeriana.edu.co",
+    "address": "Transversal 4 No. 42-00 Piso 6 Edificio José Rafael Arboleda, S.J. (67)",
+    "phone": "3208320",
+    "issns": [
+      "20272731",
+      "01204823"
+    ],
+    "institutions": [
+      "PONTIFICIA UNIVERSIDAD JAVERIANA",
+      "PONTIFICIA UNIVERSIDAD JAVERIANA - PUJ - SEDE CALI"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 126,
+    "name": "ENTRAMADO",
+    "homepage_url": "https://revistas.unilibre.edu.co/index.php/entramado",
+    "email": "comunicacion.ayc.1@gmail.com;investdir@unilibrecali.edu.co;investdir@gmail.com",
+    "address": "Diagonal 37A 3-29     Santiago de Cali",
+    "phone": "5240007",
+    "issns": [
+      "19003803",
+      "25390279"
+    ],
+    "institutions": [
+      "UNIVERSIDAD LIBRE DE COLOMBIA",
+      "Sin Afiliación"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 137,
+    "name": "Estudios Políticos",
+    "homepage_url": "https://revistas.udea.edu.co/index.php/estudiospoliticos/",
+    "email": "revistaepoliticos@udea.edu.co",
+    "address": "Universidad de Antioquia, Instituto de Estudios Políticos, calle 67 #53-108, bloque 14, oficina 207",
+    "phone": "2198691",
+    "issns": [
+      "24628433",
+      "01210157",
+      "01215167"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DE ANTIOQUIA"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 139,
+    "name": "Ideas y Valores",
+    "homepage_url": "https://www.ideasyvalores.unal.edu.co/",
+    "email": "ideasyvalores@gmail.com;revideva_fchbog@unal.edu.co",
+    "address": "Ideas y Valores. Departamento de Filosofía. Universidad Nacional de Colombia. Bogotá, Colombia.",
+    "phone": "3165000",
+    "issns": [
+      "01200062",
+      "20113668"
+    ],
+    "institutions": [
+      "UNIVERSIDAD NACIONAL DE COLOMBIA"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 148,
+    "name": "MAGIS - REVISTA INTERNACIONAL DE INVESTIGACIÓN EN EDUCACIÓN",
+    "homepage_url": "https://revistas.javeriana.edu.co/index.php/MAGIS",
+    "email": "articulosmagis@gmail.com",
+    "address": "Carrera 7 N° 42-27, Bogotá, D.C - Edificio 07, Lorenzo Uribe S.J.",
+    "phone": "320 83 20",
+    "issns": [
+      "20271174",
+      "20271182"
+    ],
+    "institutions": [
+      "PONTIFICIA UNIVERSIDAD JAVERIANA"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 174,
+    "name": "INGENIERÍA Y COMPETITIVIDAD",
+    "homepage_url": "https://revistaingenieria.univalle.edu.co/index.php/ingenieria_y_competitividad",
+    "email": "inycompe@correounivalle.edu.co",
+    "address": "Ciudad Universitaria Meléndez - Calle 13 No. 100 - 00   Edificio 331 Torre de Ingeniería - 5° piso",
+    "phone": "57(2) 3393195",
+    "issns": [
+      "20278284",
+      "01233033"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DEL VALLE"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 184,
+    "name": "REVISTA COLOMBIANA DE PSIQUIATRÍA",
+    "homepage_url": "https://www.psiquiatria.org.co",
+    "email": "revista@psiquiatria.org.co",
+    "address": "Cra 18 #84-87 of 404",
+    "phone": "2561148",
+    "issns": [
+      "00347450",
+      "25303139"
+    ],
+    "institutions": [
+      "Asociación Colombiana de Psiquiatría"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 189,
+    "name": "INGE CUC",
+    "homepage_url": "http://revistascientificas.cuc.edu.co/ingecuc",
+    "email": "revistaingecuc@cuc.edu.co",
+    "address": "Calle 58 N° 55-66 Barranquilla- Atlantico",
+    "phone": "+57 5 336 2200",
+    "issns": [
+      "01226517",
+      "23824700"
+    ],
+    "institutions": [
+      "CORPORACION UNIVERSIDAD DE LA COSTA"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 191,
+    "name": "INGENIERÍA",
+    "homepage_url": "http://revistas.udistrital.edu.co/ojs/index.php/reving/index",
+    "email": "revingenieria.ud@udistrital.edu.co",
+    "address": "Carrera 7a. Nº 40-53 Piso 7 Cubículo 1",
+    "phone": "3238400",
+    "issns": [
+      "23448393",
+      "0121750X"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DISTRITAL FRANCISCO JOSÉ DE CALDAS"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 215,
+    "name": "AVANCES EN ENFERMERÍA",
+    "homepage_url": "http://www.revistas.unal.edu.co/index.php/avenferm",
+    "email": "revavenf_febog@unal.edu.co",
+    "address": "Carrera 30 No. 45-03, Edificio 228, Oficina 402, Facultad de Enfermería, Universidad Nacional de Colombia - Bogotá",
+    "phone": "3165000",
+    "issns": [
+      "23460261",
+      "01214500"
+    ],
+    "institutions": [
+      "UNIVERSIDAD NACIONAL DE COLOMBIA"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 220,
+    "name": "Ensayos Sobre Política Económica",
+    "homepage_url": "https://investiga.banrep.gov.co/es/espe",
+    "email": "espe@banrep.gov.co",
+    "address": "Carrera 7a # 14-78 Piso 11",
+    "phone": "3431111",
+    "issns": [
+      "01204483",
+      "26651327"
+    ],
+    "institutions": [
+      "Banco De La República - Bogotá"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 225,
+    "name": "SUMA PSICOLÓGICA",
+    "homepage_url": "https://sumapsicologica.konradlorenz.edu.co/",
+    "email": "sumapsi@konradlorenz.edu.co",
+    "address": "Carrera 9 Bis #62-43",
+    "phone": "3472311",
+    "issns": [
+      "21459797",
+      "01214381"
+    ],
+    "institutions": [
+      "Fundacion Universitaria Konrad Lorenz"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 235,
+    "name": "NÓMADAS",
+    "homepage_url": "http://nomadas.ucentral.edu.co/",
+    "email": "nomadas@ucentral.edu.co",
+    "address": "Carrera 5 No. 21-38 Edificio Principal",
+    "phone": "+57 601-7442680",
+    "issns": [
+      "01217550",
+      "25394762"
+    ],
+    "institutions": [
+      "UNIVERSIDAD CENTRAL"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 244,
+    "name": "PEDAGOGÍA Y SABERES",
+    "homepage_url": "http://revistas.pedagogica.edu.co/index.php/PYS",
+    "email": "pedagosaberes@pedagogica.edu.co; pedagogiaysaberes@gmail.com",
+    "address": "Calle 72 N.° 11-86 Edificio P",
+    "phone": "3471190",
+    "issns": [
+      "01212494",
+      "25006436"
+    ],
+    "institutions": [
+      "UNIVERSIDAD PEDAGÓGICA NACIONAL"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 264,
+    "name": "Ciencia e Ingeniería Neogranadina",
+    "homepage_url": "http://revistas.unimilitar.edu.co/index.php/rcin",
+    "email": "revistaing@unimilitar.edu.co",
+    "address": "Carrera 11 No.101-80  Facultad de Ingeniería",
+    "phone": "6500000",
+    "issns": [
+      "19097735",
+      "01248170"
+    ],
+    "institutions": [
+      "UNIVERSIDAD MILITAR NUEVA GRANADA"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 270,
+    "name": "REVISTA COLOMBIANA DE BIOTECNOLOGÍA",
+    "homepage_url": "http://www.revistas.unal.edu.co/index.php/biotecnologia",
+    "email": "revcbib_bog@unal.edu.co",
+    "address": "Ciudad Universitaria  Ed. Manuel Ancízar (224)- Insituto de Biotecnología, Universidad Nacional de Colombia",
+    "phone": "3165000",
+    "issns": [
+      "19098758",
+      "01233475"
+    ],
+    "institutions": [
+      "UNIVERSIDAD NACIONAL DE COLOMBIA"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 271,
+    "name": "Salud UIS",
+    "homepage_url": "https://revistas.uis.edu.co/index.php/revistasaluduis",
+    "email": "saluduis1@uis.edu.co; rev.saluduis@gmail.com",
+    "address": "Cra 32 # 29 -31 Of. 105 Ed. Roberto Serpa",
+    "phone": "6344000",
+    "issns": [
+      "21458464",
+      "01210807"
+    ],
+    "institutions": [
+      "UNIVERSIDAD  INDUSTRIAL DE SANTANDER"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 272,
+    "name": "REVISTA DE DERECHO",
+    "homepage_url": "http://rcientificas.uninorte.edu.co/index.php/derecho",
+    "email": "rderecho@uninorte.edu.co",
+    "address": "Km.5 Carretera a Puerto Colombia, Bloque C segundo piso",
+    "phone": "(5) 3509509",
+    "issns": [
+      "07175345",
+      "01218697",
+      "21459355"
+    ],
+    "institutions": [
+      "FUNDACIÓN UNIVERSIDAD DEL NORTE"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 276,
+    "name": "Tecnura",
+    "homepage_url": "http://revistas.udistrital.edu.co/ojs/index.php/Tecnura",
+    "email": "tecnura.ud@udistrital.edu.co",
+    "address": "Universidad Distrital Calle 68 d bis A sur #49 F 70, Bloque 5, Oficina 305",
+    "phone": "3239300",
+    "issns": [
+      "22487638",
+      "0123921X"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DISTRITAL FRANCISCO JOSÉ DE CALDAS"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 285,
+    "name": "Biomédica",
+    "homepage_url": "https://www.revistabiomedica.org",
+    "email": "biomedica@ins.gov.co",
+    "address": "Av. Calle 26 No. 51-20 CAN, oficina B-245, Bogotá D.C.",
+    "phone": "2207700",
+    "issns": [
+      "01204157",
+      "25907379"
+    ],
+    "institutions": [
+      "INSTITUTO NACIONAL DE SALUD"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 295,
+    "name": "Boletín de Geología",
+    "homepage_url": "https://revistas.uis.edu.co/index.php/revistaboletindegeologia",
+    "email": "bolgeo@uis.edu.co; boletindegeologia.uis@gmail.com",
+    "address": "CARRERA 27, CALLE 9 CIUDAD UNIVERSITARIA",
+    "phone": "6343457-6344000",
+    "issns": [
+      "00066281",
+      "21458553",
+      "01200283"
+    ],
+    "institutions": [
+      "UNIVERSIDAD  INDUSTRIAL DE SANTANDER"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 301,
+    "name": "COLOMBIAN APPLIED LINGUISTICS JOURNAL",
+    "homepage_url": "http://revistas.udistrital.edu.co/ojs/index.php/calj/index",
+    "email": "caljournal.ud@correo.udistrital.edu.co",
+    "address": "Avenida Ciudad de Quito No 64-81 of. 704",
+    "phone": "323 93 00",
+    "issns": [
+      "01234641"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DISTRITAL FRANCISCO JOSÉ DE CALDAS"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 305,
+    "name": "Acta Biológica Colombiana",
+    "homepage_url": "http://www.revistas.unal.edu.co/index.php/actabiol/",
+    "email": "racbiocol_fcbog@unal.edu.co",
+    "address": "Carrera 30 calle 45-03 Universidad Nacional de Colombia, Departamento de Biología Edificio 421, oficina 205",
+    "phone": "57-1 3165000",
+    "issns": [
+      "19001649",
+      "0120548X"
+    ],
+    "institutions": [
+      "UNIVERSIDAD NACIONAL DE COLOMBIA"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 309,
+    "name": "Desafíos",
+    "homepage_url": "http://revistas.urosario.edu.co/index.php/desafios",
+    "email": "revistadesafios@urosario.edu.co",
+    "address": "Carrera 6 A No 12C-13, Edificio Santafe, oficina 206",
+    "phone": "2970200",
+    "issns": [
+      "01244035",
+      "21455112"
+    ],
+    "institutions": [
+      "COLEGIO MAYOR NUESTRA SEÑORA DEL ROSARIO"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 310,
+    "name": "REVISTA INTERAMERICANA DE INVESTIGACIÓN EDUCACIÓN Y PEDAGOGÍA",
+    "homepage_url": "http://revistas.usta.edu.co/index.php/riiep",
+    "email": "revistariiep@usantotomas.edu.co",
+    "address": "Carrera 7#51-13",
+    "phone": "5878797",
+    "issns": [
+      "25005421",
+      "1657107X"
+    ],
+    "institutions": [
+      "UNIVERSIDAD NACIONAL ABIERTA Y A DISTANCIA",
+      "UNIVERSIDAD SANTO TOMAS"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 314,
+    "name": "INGENIERÍA E INVESTIGACIÓN",
+    "homepage_url": "http://revistas.unal.edu.co/index.php/ingeinv/",
+    "email": "revii_bog@unal.edu.co",
+    "address": "Ciudad Universitaria - Edifico CADE de Ingeniería, piso 1",
+    "phone": "3165000(13374)",
+    "issns": [
+      "01205609",
+      "01295608",
+      "22488723"
+    ],
+    "institutions": [
+      "UNIVERSIDAD NACIONAL DE COLOMBIA"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 318,
+    "name": "INVESTIGACIÓN Y EDUCACIÓN EN ENFERMERÍA",
+    "homepage_url": "https://revistas.udea.edu.co/index.php/iee",
+    "email": "revistaiee@udea.edu.co",
+    "address": "Calle 64 No 53 - 09",
+    "phone": "2196337",
+    "issns": [
+      "22160280",
+      "01205307"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DE ANTIOQUIA"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 339,
+    "name": "CIENCIA EN DESARROLLO",
+    "homepage_url": "http://www.uptc.edu.co/enlaces/rcienciaed",
+    "email": "revista.cienciaendesarrollo@uptc.edu.co",
+    "address": "Avenida Central del Norte 39-115",
+    "phone": "7405626",
+    "issns": [
+      "01217488",
+      "24627658"
+    ],
+    "institutions": [
+      "UNIVERSIDAD PEDAGÓGICA Y TECNOLÓGICA DE COLOMBIA"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 341,
+    "name": "Revista Científica",
+    "homepage_url": "http://revistas.udistrital.edu.co/ojs/index.php/revcie",
+    "email": "revcientifica-cidc@udistrital.edu.co",
+    "address": "Carrera 7 No. 40-53 Piso 3",
+    "phone": "323 93 00",
+    "issns": [
+      "01242253",
+      "23448350"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DISTRITAL FRANCISCO JOSÉ DE CALDAS"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 369,
+    "name": "Tecné, episteme y didaxis",
+    "homepage_url": "http://revistas.pedagogica.edu.co/index.php/TED",
+    "email": "revistated@pedagogica.edu.co",
+    "address": "Calle 72 No. 11-86 oficina 223B",
+    "phone": "3471190 ext.237",
+    "issns": [
+      "23230126",
+      "01213814"
+    ],
+    "institutions": [
+      "UNIVERSIDAD PEDAGÓGICA NACIONAL"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 417,
+    "name": "REVISTA HISTORIA DE LA EDUCACIÓN LATINOAMERICANA",
+    "homepage_url": "https://www.uptc.edu.co/enlaces/rhela",
+    "email": "rhela@uptc.edu.co",
+    "address": "Avenida Central del Norte. Km 3 vía a Paipa - UPTC - Edf. Administrativo segundo piso Doctorado en Ciencias de la Educación",
+    "phone": "(098) 7448215",
+    "issns": [
+      "22565248",
+      "01227238"
+    ],
+    "institutions": [
+      "UNIVERSIDAD PEDAGÓGICA Y TECNOLÓGICA DE COLOMBIA"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 420,
+    "name": "REVISTA COLOMBIANA DE EDUCACIÓN",
+    "homepage_url": "http://revistas.pedagogica.edu.co/index.php/RCE",
+    "email": "rce@pedagogica.edu.co",
+    "address": "Carrera 16 A número 79-08 piso 6",
+    "phone": "5941894",
+    "issns": [
+      "01203916",
+      "23230134"
+    ],
+    "institutions": [
+      "UNIVERSIDAD PEDAGÓGICA NACIONAL"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 428,
+    "name": "Educación y Humanismo",
+    "homepage_url": "https://revistas.unisimon.edu.co/index.php/educacion/index",
+    "email": "reveduhumanismo@unisimonbolivar.edu.co;wendys.almendrales@unisimonbolivar.edu.co",
+    "address": "Carrera 54 No. 64-223",
+    "phone": "3160921",
+    "issns": [
+      "26652420",
+      "01242121"
+    ],
+    "institutions": [
+      "UNIVERSIDAD SIMÓN BOLÍVAR"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 433,
+    "name": "HACIA LA PROMOCIÓN DE LA SALUD",
+    "homepage_url": "http://promocionsalud.ucaldas.edu.co/",
+    "email": "reprosa@ucaldas.edu.co; revistascientificas@ucaldas.edu.co",
+    "address": "Carrera 25 No. 48-57 Edificio Miguel Arango Soto 1. Piso",
+    "phone": "8783060",
+    "issns": [
+      "24628425",
+      "01217577"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DE CALDAS"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 435,
+    "name": "INFORMES PSICOLÓGICOS",
+    "homepage_url": "https://revistas.upb.edu.co/index.php/informespsicologicos",
+    "email": "revista.infpsi@upb.edu.co",
+    "address": "Kilómetro 7 vía a Piedecuesta",
+    "phone": "+(577) 679 6220",
+    "issns": [
+      "24223271",
+      "21453535",
+      "01244906"
+    ],
+    "institutions": [
+      "UNIVERSIDAD PONTIFICIA BOLIVARIANA SECCIONAL BUCARAMANGA"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 445,
+    "name": "Psychologia. avances de la disciplina",
+    "homepage_url": "http://revistas.usb.edu.co/index.php/Psychologia",
+    "email": "psychologia@usb.edu.co",
+    "address": "Carrera 8 H # 172-20 Bogotá, D.C. Colombia",
+    "phone": "6671098",
+    "issns": [
+      "19002386",
+      "26654202"
+    ],
+    "institutions": [
+      "Universidad De San Buenaventura"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 448,
+    "name": "UNIVERSITAS HUMANISTICA",
+    "homepage_url": "http://universitas-humanistica.javeriana.edu.co\r\n\r\n\r\nhttp://www.javeriana.edu.co/Facultades/C_Sociales/universitas/numeros.html",
+    "email": "universitas.humanistica1@gmail.com",
+    "address": "Carrera 5 No. 39-00 Piso 4 of. 403",
+    "phone": "3208320",
+    "issns": [
+      "01204807"
+    ],
+    "institutions": [
+      "PONTIFICIA UNIVERSIDAD JAVERIANA"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 463,
+    "name": "Educación y Educadores",
+    "homepage_url": "http://educacionyeducadores.unisabana.edu.co",
+    "email": "educacion.educadores@unisabana.edu.co",
+    "address": "Campus del Puente del Común, Km 7, Autopista Norte de Bogotá",
+    "phone": "8615555/6666",
+    "issns": [
+      "20275358",
+      "01231294"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DE LA SABANA"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 464,
+    "name": "Revista Guillermo de Ockham",
+    "homepage_url": "http://revistas.usb.edu.co/index.php/GuillermoOckham",
+    "email": "revistaguillermodeo@usbcali.edu.co",
+    "address": "Universidad San Buenaventura-Cali.  Av. 10 de Mayo, la Umbría vía a Pance. Cali, Valle.",
+    "phone": "4882222",
+    "issns": [
+      "22563202",
+      "1794192X"
+    ],
+    "institutions": [
+      "Universidad De San Buenaventura"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 468,
+    "name": "AD-MINISTER",
+    "homepage_url": "http://publicaciones.eafit.edu.co/index.php/administer",
+    "email": "ad-minister@eafit.edu.co",
+    "address": "Cra. 49  7 Sur 50. Bloque 26 Oficina 417",
+    "phone": "2619500",
+    "issns": [
+      "22564322",
+      "16920279"
+    ],
+    "institutions": [
+      "UNIVERSIDAD EAFIT"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 474,
+    "name": "REVISTA DERECHO DEL ESTADO",
+    "homepage_url": "https://www.uexternado.edu.co/derechodelestado",
+    "email": "derconst@uexternado.edu.co; paola.acosta@uexternado.edu.co; derechodelestado@uexternado.edu.co",
+    "address": "Calle 12 No. 1-17 este, Bogotá, Colombia",
+    "phone": "2826066",
+    "issns": [
+      "23462051",
+      "01229893"
+    ],
+    "institutions": [
+      "UNIVERSIDAD EXTERNADO DE COLOMBIA"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 481,
+    "name": "REVISTA COLOMBIANA DE TECNOLOGÍAS DE AVANZADA",
+    "homepage_url": "https://ojs.unipamplona.edu.co/index.php/rcta",
+    "email": "rcta@unipamplona.edu.co",
+    "address": "Universidad de Pamplona, Ciudadela Universitaria, Pamplona.",
+    "phone": "(7)5685303",
+    "issns": [
+      "16927257",
+      "25008625"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DE PAMPLONA"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 487,
+    "name": "REVISTA MVZ CÓRDOBA",
+    "homepage_url": "http://revistas.unicordoba.edu.co/index.php/revistamvz/index",
+    "email": "revistamvz@correo.unicordoba.edu.co",
+    "address": "Kilómetro 28 Vía Montería-Ciénaga de Oro, Córdoba, Colombia",
+    "phone": "(4) 7569027",
+    "issns": [
+      "01220268",
+      "19090544"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DE CORDOBA"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 501,
+    "name": "CS",
+    "homepage_url": "http://www.icesi.edu.co/revista_cs/",
+    "email": "cs@icesi.edu.co",
+    "address": "Calle 18 No. 122-135 (Pance), Cali-Colombia",
+    "phone": "5552334",
+    "issns": [
+      "26654814",
+      "20110324"
+    ],
+    "institutions": [
+      "UNIVERSIDAD ICESI"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 503,
+    "name": "UNIVERSITAS PSYCHOLOGICA",
+    "homepage_url": "https://www.javeriana.edu.co/universitaspsychologica",
+    "email": "universitas.psych@javeriana.edu.co",
+    "address": "Carrera 5 # 39-00 Edificio Manuel Briceño. Piso2",
+    "phone": "5713208142",
+    "issns": [
+      "16579267",
+      "20112777"
+    ],
+    "institutions": [
+      "PONTIFICIA UNIVERSIDAD JAVERIANA"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 510,
+    "name": "EL ÁGORA USB",
+    "homepage_url": "http://revistas.usb.edu.co/index.php/Agora/index",
+    "email": "revistaelagorausb@usbmed.edu.co;alfonso.insuasty@usbmed.edu.co;asistente.agora@usbmed.edu.co",
+    "address": "carrera 56c N° 51 - 90",
+    "phone": "5145600",
+    "issns": [
+      "16578031",
+      "26653354"
+    ],
+    "institutions": [
+      "Universidad De San Buenaventura"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 514,
+    "name": "Universidad & Empresa",
+    "homepage_url": "http://revistas.urosario.edu.co/index.php/empresa/index",
+    "email": "universidadyempresa@urosario.edu.co",
+    "address": "Universidad del Rosario, Sede Complementaria: Calle 200, entre la Autopista Norte y la Carrera 7. Módulo B. Bogotá, Colombia.",
+    "phone": "2970200",
+    "issns": [
+      "01244639",
+      "21454558"
+    ],
+    "institutions": [
+      "COLEGIO MAYOR NUESTRA SEÑORA DEL ROSARIO"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 530,
+    "name": "EQUIDAD Y DESARROLLO",
+    "homepage_url": "https://equidad.lasalle.edu.co/",
+    "email": "aotalora@unisalle.edu.co;equidad.desarrollo@lasalle.edu.co",
+    "address": "Carrera 5 No. 59 A 44 Sede Chapinero",
+    "phone": "3488000",
+    "issns": [
+      "16927311",
+      "23898844"
+    ],
+    "institutions": [
+      "Universidad de La Salle"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 535,
+    "name": "Acta Agrono´mica",
+    "homepage_url": "https://revistas.unal.edu.co/index.php/acta_agronomica",
+    "email": "actagronomica_pal@unal.edu.co",
+    "address": "Cra 32 No. 12 - 00 Chapinero Palmira",
+    "phone": "(57)(2) 2868888",
+    "issns": [
+      "23230118",
+      "00445959",
+      "01202812"
+    ],
+    "institutions": [
+      "UNIVERSIDAD NACIONAL DE COLOMBIA"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 558,
+    "name": "Revista CEA",
+    "homepage_url": "https://revistacea.itm.edu.co",
+    "email": "revistacea@itm.edu.co",
+    "address": "Calle 73 No 76A -354 Vía al Volador - Medellín - Colombia",
+    "phone": "4405100",
+    "issns": [
+      "24223182"
+    ],
+    "institutions": [
+      "INSTITUTO TECNOLÓGICO METROPOLITANO DE MEDELLÍN"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 578,
+    "name": "ENCUENTROS",
+    "homepage_url": "http://ojs.uac.edu.co/index.php/encuentros/index",
+    "email": "revistaencuentros@uac.edu.co;alejandro.espinosa@uac.edu.co",
+    "address": "Calle 90 Nº 46-112- Barranquilla-Colombia.",
+    "phone": "3671268",
+    "issns": [
+      "16925858",
+      "2216135X",
+      "25393502"
+    ],
+    "institutions": [
+      "UNIVERSIDAD AUTONOMA DEL CARIBE"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 599,
+    "name": "REVISTA EIA",
+    "homepage_url": "https://revista.eia.edu.co/index.php/reveia",
+    "email": "revista@eia.edu.co",
+    "address": "Las Palmas Km 2+200 vía aeropuerto José María Córdova",
+    "phone": "604 354 90 90",
+    "issns": [
+      "24630950",
+      "17941237"
+    ],
+    "institutions": [
+      "UNIVERSIDAD EIA"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 605,
+    "name": "TecnoLógicas",
+    "homepage_url": "https://tecnologicas.itm.edu.co",
+    "email": "tecnologicas@itm.edu.co;gloriadiaz@itm.edu.co",
+    "address": "Cll 73 No 76A-354 vía al volador",
+    "phone": "(4) 440 5100",
+    "issns": [
+      "22565337",
+      "01237799"
+    ],
+    "institutions": [
+      "INSTITUTO TECNOLÓGICO METROPOLITANO DE MEDELLÍN"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 627,
+    "name": "Revista Facultad de Ciencias Económicas",
+    "homepage_url": "http://revistas.unimilitar.edu.co/index.php/rfce/issue/archive",
+    "email": "economia.neogranadina@unimilitar.edu.co",
+    "address": "Carrera 11 No. 101-80, Bloque C, piso1, Centro de investigaciones Facultad de ciencias económicas, Universidad Militar Nueva Granada, Bogotá DC",
+    "phone": "6500000",
+    "issns": [
+      "01216805",
+      "19097719"
+    ],
+    "institutions": [
+      "UNIVERSIDAD MILITAR NUEVA GRANADA"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 633,
+    "name": "Revista de Arquitectura (Bogotá)",
+    "homepage_url": "https://revistadearquitectura.ucatolica.edu.co/",
+    "email": "revistadearquitectura@ucatolica.edu.co",
+    "address": "Avenida Caracas N° 46-72. Universidad Católica de Colombia. Bogotá D.C.- Colombia  Código postal: 111311",
+    "phone": "3277300",
+    "issns": [
+      "2357626X",
+      "16570308"
+    ],
+    "institutions": [
+      "UNIVERSIDAD CATOLICA DE COLOMBIA"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 635,
+    "name": "Investigación e Innovación en Ingenierías",
+    "homepage_url": "https://revistas.unisimon.edu.co/index.php/innovacioning/index",
+    "email": "revingenieria@unisimon.edu.co",
+    "address": "Cra 59 No. 59-65, Barranquilla - Atlantico",
+    "phone": "3444333",
+    "issns": [
+      "23448652"
+    ],
+    "institutions": [
+      "UNIVERSIDAD SIMÓN BOLÍVAR"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 662,
+    "name": "Pensamiento & Gestión",
+    "homepage_url": "http://rcientificas.uninorte.edu.co/index.php/pensamiento",
+    "email": "Revpensamientoygestion@uninorte.edu.co",
+    "address": "Kilómetro 5, Antigua vía Puerto Colombia",
+    "phone": "3509509",
+    "issns": [
+      "2145941X"
+    ],
+    "institutions": [
+      "FUNDACIÓN UNIVERSIDAD DEL NORTE"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 676,
+    "name": "Revista Latinoamericana de Bioética",
+    "homepage_url": "https://revistas.unimilitar.edu.co/index.php/rlbi",
+    "email": "revista.bioetica@unimilitar.edu.co",
+    "address": "CARRERA 11 No 101-80 BOGOTA",
+    "phone": "6500000",
+    "issns": [
+      "2462859X",
+      "16574702"
+    ],
+    "institutions": [
+      "UNIVERSIDAD MILITAR NUEVA GRANADA"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 677,
+    "name": "NOVA",
+    "homepage_url": "https://revistas.unicolmayor.edu.co/index.php/nova",
+    "email": "revistanova@unicolmayor.edu.co",
+    "address": "Calle 28 No 6-02",
+    "phone": "2418800",
+    "issns": [
+      "24629448",
+      "17942470"
+    ],
+    "institutions": [
+      "UNIVERSIDAD COLEGIO MAYOR DE CUNDINAMARCA",
+      "UNIVERSIDAD NACIONAL ABIERTA Y A DISTANCIA"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 683,
+    "name": "PENSAMIENTO PSICOLÓGICO",
+    "homepage_url": "http://revistas.javerianacali.edu.co/index.php/pensamientopsicologico",
+    "email": "psicorevista@javerianacali.edu.co;\r\npsicorevistaeditor@javerianacali.edu.co",
+    "address": "Calle 18 No.118-250 Vía Pance. Cali, Valle del Cauca (Colombia). Facultad de Humanidades y Ciencias Sociales, Dpto. de Ciencias Sociales",
+    "phone": "3218200",
+    "issns": [
+      "26653281",
+      "16578961"
+    ],
+    "institutions": [
+      "PONTIFICIA UNIVERSIDAD JAVERIANA - PUJ - SEDE CALI"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 701,
+    "name": "INGENIERÍA Y CIENCIA",
+    "homepage_url": "http://www.eafit.edu.co/ingciencia",
+    "email": "ingciencia@eafit.edu.co",
+    "address": "Carrera 49 7sur-50, oficina 38-325",
+    "phone": "4-2619500",
+    "issns": [
+      "17949165",
+      "22564314"
+    ],
+    "institutions": [
+      "UNIVERSIDAD EAFIT"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 710,
+    "name": "Análisis. Revista Colombiana de Humanidades",
+    "homepage_url": "http://revistas.usta.edu.co/index.php/analisis/index",
+    "email": "revistaanalisis@usantotomas.edu.co",
+    "address": "Carrera 9 No.51-11",
+    "phone": "5878797",
+    "issns": [
+      "01208454",
+      "01236814",
+      "21459169"
+    ],
+    "institutions": [
+      "UNIVERSIDAD SANTO TOMAS"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 727,
+    "name": "LA PALABRA",
+    "homepage_url": "https://revistas.uptc.edu.co/index.php/la_palabra",
+    "email": "lapalabra@uptc.edu.co",
+    "address": "Avenida Central del Norte",
+    "phone": "7 40 56 26",
+    "issns": [
+      "01218530",
+      "23463864",
+      "16579380"
+    ],
+    "institutions": [
+      "UNIVERSIDAD PEDAGÓGICA Y TECNOLÓGICA DE COLOMBIA"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 779,
+    "name": "Revista de Investigación, Desarrollo e Innovación",
+    "homepage_url": "http://revistas.uptc.edu.co/index.php/investigacion_duitama/index",
+    "email": "revista.idi@gmail.com; flaviofm1@gmail.com; revista.idi@uptc.edu.co",
+    "address": "Calle 23 Carrera 18. Duitama, Boyacá - Colombia",
+    "phone": "098 7604100",
+    "issns": [
+      "23899417",
+      "20278306"
+    ],
+    "institutions": [
+      "UNIVERSIDAD PEDAGÓGICA Y TECNOLÓGICA DE COLOMBIA"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 801,
+    "name": "Módulo Arquitectura CUC",
+    "homepage_url": "http://revistascientificas.cuc.edu.co/index.php/moduloarquitecturacuc/index",
+    "email": "revistamodulo@cuc.edu.co",
+    "address": "Calle 58 #55-66 Barranquilla - Colombia",
+    "phone": "3362232",
+    "issns": [
+      "01246542",
+      "23897732"
+    ],
+    "institutions": [
+      "CORPORACION UNIVERSIDAD DE LA COSTA"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 829,
+    "name": "SABER, CIENCIA Y LIBERTAD",
+    "homepage_url": "https://www.sabercienciaylibertad.org",
+    "email": "zilathromero@yahoo.com",
+    "address": "PIE DE LA POPA, CALLE 30 NO 20-177",
+    "phone": "6661147",
+    "issns": [
+      "17947154",
+      "23823240"
+    ],
+    "institutions": [
+      "UNIVERSIDAD LIBRE DE COLOMBIA"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 861,
+    "name": "Revista Facultad de Ingeniería",
+    "homepage_url": "http://www.uptc.edu.co/enlaces/rfingenieria;https://revistas.uptc.edu.co/index.php/ingenieria",
+    "email": "revista.ingenieria@uptc.edu.co",
+    "address": "Avenida Central del Norte 39-115",
+    "phone": "7405626",
+    "issns": [
+      "01211129",
+      "23575328"
+    ],
+    "institutions": [
+      "UNIVERSIDAD PEDAGÓGICA Y TECNOLÓGICA DE COLOMBIA"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 882,
+    "name": "Zona Próxima",
+    "homepage_url": "https://rcientificas.uninorte.edu.co/index.php/zona",
+    "email": "zonaproxima@uninorte.edu.co",
+    "address": "Km 5 Vía Puerto Colombia",
+    "phone": "3509509",
+    "issns": [
+      "21459444"
+    ],
+    "institutions": [
+      "FUNDACIÓN UNIVERSIDAD DEL NORTE"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 887,
+    "name": "Cultura Educación y Sociedad",
+    "homepage_url": "https://revistascientificas.cuc.edu.co/culturaeducacionysociedad",
+    "email": "cultedusoc@cuc.edu.co",
+    "address": "Calle 58 No. 55-66",
+    "phone": "3362222",
+    "issns": [
+      "21459258",
+      "23897724"
+    ],
+    "institutions": [
+      "CORPORACION UNIVERSIDAD DE LA COSTA"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 916,
+    "name": "HISTORIA CARIBE",
+    "homepage_url": "http://investigaciones.uniatlantico.edu.co/revistas/index.php/Historia_Caribe/index",
+    "email": "historiacaribe95@gmail.com; luchoalarconmeneses@gmail.com; historiacaribe@mail.uniatlantico.edu.co",
+    "address": "Revista Historia Caribe, Programa de Historia, Facultad de Ciencias Humanas, Universidad del Atlántico, Bloque D, 2do Piso, Km 7 Vía a Puerto Colombia. Barranquilla-Col",
+    "phone": "3197010",
+    "issns": [
+      "23226889",
+      "01228803"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DEL ATLÁNTICO"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 927,
+    "name": "Revista Colombiana de Ciencias Hortícolas",
+    "homepage_url": "http://www.soccolhort.com/revista/html/home.html;https://revistas.uptc.edu.co/index.php/ciencias_horticolas/index",
+    "email": "rcch@uptc.edu.co",
+    "address": "Avenida carrera 30 No. 45-03 edificio 500 oficina 327",
+    "phone": "3165000",
+    "issns": [
+      "20112173",
+      "24223719"
+    ],
+    "institutions": [
+      "UNIVERSIDAD PEDAGÓGICA Y TECNOLÓGICA DE COLOMBIA",
+      "Sociedad Colombiana de Ciencias Hortícolas"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 934,
+    "name": "Pensamiento, palabra y obra",
+    "homepage_url": "http://revistas.pedagogica.edu.co/index.php/revistafba",
+    "email": "rev.pensamientopalabrayobra@pedagogica.edu.co",
+    "address": "Calle 78 No. 9-92",
+    "phone": "3474762/59",
+    "issns": [
+      "24628441",
+      "2011804X"
+    ],
+    "institutions": [
+      "UNIVERSIDAD PEDAGÓGICA NACIONAL"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 937,
+    "name": "REVISTA COLOMBIANA DE SOCIOLOGÍA",
+    "homepage_url": "http://revistas.unal.edu.co/index.php/recs",
+    "email": "revcolso_fchbog@unal.edu.co",
+    "address": "Departamento de Sociología, Universidad Nacional de Colombia, ciudad universitaria, Edificio de Sociología (205) Oficina 230",
+    "phone": "3165000",
+    "issns": [
+      "0120159X",
+      "22565485"
+    ],
+    "institutions": [
+      "UNIVERSIDAD NACIONAL DE COLOMBIA"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 952,
+    "name": "LIVESTOCK RESEARCH FOR RURAL DEVELOPMENT",
+    "homepage_url": "http://www.lrrd.org/",
+    "email": "lrrd@lrrd.org",
+    "address": "Carrera 25 No 6-62",
+    "phone": "5243061",
+    "issns": [
+      "01213784"
+    ],
+    "institutions": [
+      "CENTRO PARA LA INVESTIGACIÓN EN SISTEMAS SOSTENIBLES DE PRODUCCIÓN AGROPECUARIA  CIPAV"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 960,
+    "name": "REVISTA LATINOAMERICANA DE CIENCIAS SOCIALES, NIÑEZ Y JUVENTUD",
+    "homepage_url": "http://revistaumanizales.cinde.org.co/index.php",
+    "email": "revistaumanizales@cinde.org.co",
+    "address": "Calle 59 No. 22 - 24 Barrio los Rosales, Manizales - Colombia",
+    "phone": "(576) 8933180",
+    "issns": [
+      "1692715X",
+      "20277679"
+    ],
+    "institutions": [
+      "Universidad De Manizales - Umanizales",
+      "FUNDACIÓN CENTRO INTERNACIONAL DE EDUCACIÓN Y DESARROLLO HUMANO-CINDE"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 1011,
+    "name": "Cuadernos de Geografia: Revista Colombiana de Geografia",
+    "homepage_url": "https://www.cuadernosdegeografia.unal.edu.co",
+    "email": "rcgeogra_fchbog@unal.edu.co;georevista.unal@gmail.com",
+    "address": "Carrera 30 No. 45-03. Universidad Nacional de Colombia, Facultad de Ciencias Humanas, Departamento de Geografía. Edif. Aulas de Ciencias Humanas - 212 Of. 324. Bogotá, Colombia.",
+    "phone": "3165000",
+    "issns": [
+      "0121215X",
+      "22565442"
+    ],
+    "institutions": [
+      "UNIVERSIDAD NACIONAL DE COLOMBIA"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 1014,
+    "name": "DIVERSITAS : PERSPECTIVAS EN PSICOLOGÍA",
+    "homepage_url": "http://revistas.usta.edu.co/index.php/diversitas/index",
+    "email": "revistadiversitas@usta.edu.co",
+    "address": "Cra. 9 No. 51 - 11, Facultad de Psicología, Universidad Sto Tomás",
+    "phone": "5878797",
+    "issns": [
+      "22563067",
+      "17949998"
+    ],
+    "institutions": [
+      "UNIVERSIDAD SANTO TOMAS"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 1017,
+    "name": "Sophia",
+    "homepage_url": "http://revistas.ugca.edu.co/index.php/sophia",
+    "email": "produccionbibliografica@ugca.edu.co",
+    "address": "Cra. 14 Nº 7-46",
+    "phone": "746 26 46",
+    "issns": [
+      "23460806",
+      "17948932"
+    ],
+    "institutions": [
+      "UNIVERSIDAD LA GRAN COLOMBIA SECCIONAL ARMENIA"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 1033,
+    "name": "INTERNATIONAL JOURNAL OF PSYCHOLOGICAL RESEARCH",
+    "homepage_url": "http://revistas.usb.edu.co/index.php/IJPR",
+    "email": "ijpr@usb.edu.co",
+    "address": "Carrera 56 C, No. 51-90",
+    "phone": "5145600",
+    "issns": [],
+    "institutions": [
+      "Universidad De San Buenaventura"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 1037,
+    "name": "Revista Científica General José María Córdova",
+    "homepage_url": "https://www.revistacientificaesmic.com",
+    "email": "revistacientifica@esmic.edu.co",
+    "address": "Calle 80 No.38-00",
+    "phone": "3770850",
+    "issns": [
+      "19006586",
+      "25007645"
+    ],
+    "institutions": [
+      "Escuela Militar de Cadetes \"General José María Córdova\""
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 1043,
+    "name": "Jurídicas",
+    "homepage_url": "http://juridicas.caldas.edu.co",
+    "email": "revistajuridicas@ucaldas.edu.co",
+    "address": "Calle 65 No. 26 - 10 Vicerrectoria de Investigaciones y Postgrados",
+    "phone": "8781500",
+    "issns": [
+      "25908928",
+      "17942918"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DE CALDAS"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 1053,
+    "name": "Ánfora",
+    "homepage_url": "http://publicaciones.autonoma.edu.co/index.php/anfora",
+    "email": "anfora@autonoma.edu.co",
+    "address": "Antigua Estación del Ferrocarril",
+    "phone": "(6)8727272",
+    "issns": [
+      "01216538",
+      "22482261",
+      "22486941"
+    ],
+    "institutions": [
+      "UNIVERSIDAD AUTONOMA DE MANIZALES"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 1090,
+    "name": "PROSPECTIVA",
+    "homepage_url": "http://ojs.uac.edu.co/index.php/prospectiva",
+    "email": "rprospectiva@gmail.com",
+    "address": "Calle 90 No. 46-112",
+    "phone": "(5)3671000",
+    "issns": [
+      "22161368",
+      "16928261"
+    ],
+    "institutions": [
+      "Institución Universitaria de Barranquilla",
+      "UNIVERSIDAD AUTONOMA DEL CARIBE"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 1119,
+    "name": "Fronteras de la Historia",
+    "homepage_url": "https://revistas.icanh.gov.co/index.php/fh/index",
+    "email": "rfh@icanh.gov.co",
+    "address": "Calle 12 # 2-41",
+    "phone": "(571) 4440544",
+    "issns": [
+      "20274688",
+      "25394711"
+    ],
+    "institutions": [
+      "Instituto Colombiano De Antropología E Historia - Icanh"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 1141,
+    "name": "Literatura: teoría, historia, crítica",
+    "homepage_url": "https://www.literaturathc.unal.edu.co",
+    "email": "revliter_fchbog@unal.edu.co",
+    "address": "Carrera 30 n.º 45-03 - Departamento de Literatura, Edificio Manuel Ancízar, of. 3019, Universidad Nacional de Colombia",
+    "phone": "3165227",
+    "issns": [
+      "01235931",
+      "0122011X",
+      "22565450"
+    ],
+    "institutions": [
+      "UNIVERSIDAD NACIONAL DE COLOMBIA"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 1171,
+    "name": "Desarrollo Gerencial",
+    "homepage_url": "https://revistas.unisimon.edu.co/index.php/desarrollogerencial",
+    "email": "desarrollogerencial@unisimon.edu.co",
+    "address": "Carrera 54 #64-223",
+    "phone": "3160921",
+    "issns": [
+      "21455147"
+    ],
+    "institutions": [
+      "UNIVERSIDAD SIMÓN BOLÍVAR"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 1221,
+    "name": "Tropical Grasslands-Forrajes Tropicales",
+    "homepage_url": "http://www.tropicalgrasslands.info/",
+    "email": "r.schultzekraft@cgiar.org;j.l.urrea@cgiar.org",
+    "address": "Recta Cali - Palmira, Km 17, Palmira, Valle del Cauca, Colombia.",
+    "phone": "(2) 4450100",
+    "issns": [
+      "23463775"
+    ],
+    "institutions": [
+      "CENTRO INTERNACIONAL DE AGRICULTURA TROPICAL"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 1320,
+    "name": "Revista Virtual Universidad Católica del Norte",
+    "homepage_url": "http://revistavirtual.ucn.edu.co/index.php/RevistaUCN",
+    "email": "editorialucn@ucn.edu.co",
+    "address": "Calle 52 No.47-42 Medellín Ed. Coltejer Piso 5",
+    "phone": "6051535",
+    "issns": [
+      "01245821"
+    ],
+    "institutions": [
+      "FUNDACIÓN UNIVERSITARIA CATÓLICA DEL NORTE"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 1323,
+    "name": "FOLIOS",
+    "homepage_url": "http://revistas.pedagogica.edu.co/index.php/RF",
+    "email": "revista_folios@pedagogica.edu.co",
+    "address": "Calle 72 No. 11-86 Edificio P",
+    "phone": "3471190",
+    "issns": [
+      "01202146",
+      "01234870",
+      "24628417"
+    ],
+    "institutions": [
+      "UNIVERSIDAD PEDAGÓGICA NACIONAL"
+    ],
+    "current_category": "B",
+    "current_year": 2024
+  },
+  {
+    "id": 5,
+    "name": "ACADEMIA. REVISTA LATINOAMERICANA DE ADMINISTRACIÓN",
+    "homepage_url": "https://www.administracion.uniandes.edu.co#http://www.administracion.uniandes.edu.co#",
+    "email": "www.administracion.uniandes.edu.co",
+    "address": "Carrera 1 No.18A-70, Edificio RGC, Bogotá 2, COLOMBIA",
+    "phone": null,
+    "issns": [
+      "10128255",
+      "20565127"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DE LOS ANDES"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 6,
+    "name": "Apuntes Del Cenes",
+    "homepage_url": "http://revistas.uptc.edu.co/revistas/index.php/cenes",
+    "email": "apuntes.cenes@uptc.edu.co",
+    "address": "Avenida Central del Norte, UPTC, Ed. Central, Of. C-342A",
+    "phone": "7441550",
+    "issns": [
+      "22565779",
+      "01203053"
+    ],
+    "institutions": [
+      "UNIVERSIDAD PEDAGÓGICA Y TECNOLÓGICA DE COLOMBIA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 26,
+    "name": "ESTUDIOS GERENCIALES",
+    "homepage_url": "http://www.icesi.edu.co/estudios_gerenciales/",
+    "email": "estgerencial@icesi.edu.co",
+    "address": "Calle 18  122-135 (Pance)",
+    "phone": "(572)5552334",
+    "issns": [
+      "26656744",
+      "01235923"
+    ],
+    "institutions": [
+      "UNIVERSIDAD ICESI"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 34,
+    "name": "Revista Interamericana de Bibliotecología",
+    "homepage_url": "https://revistas.udea.edu.co/index.php/RIB/index",
+    "email": "revistabibliotecologia@udea.edu.co",
+    "address": "Calle 70 N.° 52-21 Ciudad Universitaria Blq. 12-313",
+    "phone": "2195930",
+    "issns": [
+      "01200976",
+      "25389866"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DE ANTIOQUIA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 36,
+    "name": "THEOLOGICA XAVERIANA",
+    "homepage_url": "http://revistas.javeriana.edu.co/index.php/teoxaveriana",
+    "email": "revista.theologica@javeriana.edu.co",
+    "address": "Carrera 5 No. 39-00",
+    "phone": "3208320",
+    "issns": [
+      "2011219X",
+      "01203649"
+    ],
+    "institutions": [
+      "PONTIFICIA UNIVERSIDAD JAVERIANA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 37,
+    "name": "Justicia",
+    "homepage_url": "http://revistas.unisimon.edu.co/index.php/justicia",
+    "email": "revistajusticia@unisimon.edu.co",
+    "address": "Carrera 54 No.58-28",
+    "phone": "3444333",
+    "issns": [
+      "25904566",
+      "01247441"
+    ],
+    "institutions": [
+      "UNIVERSIDAD SIMÓN BOLÍVAR"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 44,
+    "name": "CUESTIONES TEOLÓGICAS",
+    "homepage_url": "http://revistas.upb.edu.co/index.php/cuestiones",
+    "email": "ivandario.toro@upb.edu.co",
+    "address": "Circular 1 N 70-01 Medellín",
+    "phone": "3544530",
+    "issns": [
+      "0120131X",
+      "23899980"
+    ],
+    "institutions": [
+      "UNIVERSIDAD PONTIFICIA BOLIVARIANA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 53,
+    "name": "Aglala",
+    "homepage_url": "http://revistas.curnvirtual.edu.co/index.php/aglala/index",
+    "email": "aglala@curnvirtual.edu.co; alain.castro@curnvirtual.edu.co; judith.herrera@curn.edu.co",
+    "address": "Centro, calle de la soledad No. 5 - 70",
+    "phone": "6641938",
+    "issns": [
+      "22157360"
+    ],
+    "institutions": [
+      "CORPORACION UNIVERSITARIA RAFAEL NUÑEZ"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 56,
+    "name": "Lecturas de Economía",
+    "homepage_url": "https://revistas.udea.edu.co/index.php/lecturasdeeconomia",
+    "email": "revistalecturas@udea.edu.co",
+    "address": "Calle 67 #53-108  B13-Of 416A",
+    "phone": "+57 (4) 2195835",
+    "issns": [
+      "01202596",
+      "23230622"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DE ANTIOQUIA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 58,
+    "name": "REVISTA DE ECONOMÍA DEL ROSARIO",
+    "homepage_url": "http://www.urosario.edu.co/FASE1/economia/econ_rev_economia.htm",
+    "email": "revecono@urosario.edu.co",
+    "address": "Calle 14 # 4-69, Facultad de Economía, Casa Pedro Fermín de Vargas",
+    "phone": "2970200 - 24103",
+    "issns": [
+      "2145454X",
+      "01235362"
+    ],
+    "institutions": [
+      "COLEGIO MAYOR NUESTRA SEÑORA DEL ROSARIO"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 75,
+    "name": "Iatreia",
+    "homepage_url": "https://revistas.udea.edu.co/index.php/iatreia",
+    "email": "revista.iatreia@udea.edu.co",
+    "address": "Carrera 51 D 62-29",
+    "phone": "2196919",
+    "issns": [
+      "20117965",
+      "01210793"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DE ANTIOQUIA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 84,
+    "name": "Revista Colombiana de Anestesiología",
+    "homepage_url": "http://www.revcolanest.com.co",
+    "email": "revcolanest@scare.org.co ; publicaciones@scare.org.co",
+    "address": "Cra. 15 A 120 - 74 Piso 4",
+    "phone": "6196091-6196077",
+    "issns": [
+      "24220248",
+      "01203347",
+      "21454604",
+      "22562087"
+    ],
+    "institutions": [
+      "SOCIEDAD COLOMBIANA DE ANESTESIOLOGÍA Y REANIMACIÓN (S.C.A.R.E)"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 86,
+    "name": "Revista de Medicina Veterinaria",
+    "homepage_url": "http://veterinaria.lasalle.edu.co",
+    "email": "revistamedicinaveterinaria@lasalle.edu.co",
+    "address": "Carrera 7 No. 179 - 03",
+    "phone": "6741684",
+    "issns": [
+      "23898526",
+      "01229354"
+    ],
+    "institutions": [
+      "Universidad de La Salle"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 93,
+    "name": "REVISTA FACULTAD DE INGENIERÍA UNIVERSIDAD DE ANTIOQUIA",
+    "homepage_url": "https://revistas.udea.edu.co/index.php/ingenieria/index",
+    "email": "revistaingenieria@udea.edu.co",
+    "address": "Cll 67 # 53-108 Ciudad Universitaria, Bloque 21, oficina 105",
+    "phone": "2195574",
+    "issns": [
+      "01206230",
+      "24222844"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DE ANTIOQUIA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 97,
+    "name": "Perspectiva Geográfica",
+    "homepage_url": "http://revistas.uptc.edu.co/index.php/perspectiva",
+    "email": "perspectiva.geografica@uptc.edu.co",
+    "address": "Carrera 30 Nº 48-51, IGAC, Bogotá",
+    "phone": null,
+    "issns": [
+      "25008684",
+      "01233769"
+    ],
+    "institutions": [
+      "UNIVERSIDAD PEDAGÓGICA Y TECNOLÓGICA DE COLOMBIA",
+      "Instituto Geografico Agustin Codazzi"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 101,
+    "name": "REVISTA COLOMBIANA DE ENTOMOLOGÍA",
+    "homepage_url": "https://revistacolombianaentomologia.univalle.edu.co/",
+    "email": "revista.entomologia@correounivalle.edu.co",
+    "address": "Transversal 24 No. 54-31 Oficina 505 Ed. Volterra Bogotá",
+    "phone": "3472320",
+    "issns": [
+      "01200488",
+      "26654385"
+    ],
+    "institutions": [
+      "Sociedad Colombiana De Entomologia",
+      "UNIVERSIDAD DEL VALLE"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 103,
+    "name": "Acta Médica Colombiana",
+    "homepage_url": "http://www.actamedicacolombiana.com/ojs/index.php/actamed",
+    "email": "acmi@acmi.org.co;eugenio.matijasevic@gmail.com",
+    "address": "Cra. 16 A No. 77-11 - Of. 204",
+    "phone": "2573463",
+    "issns": [
+      "22486054",
+      "01202448"
+    ],
+    "institutions": [
+      "Asociación Colombiana De Medicina Interna - Acmi"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 108,
+    "name": "En-Contexto",
+    "homepage_url": "http://ojs.tdea.edu.co/index.php/encontexto/index",
+    "email": "encontexto@tdea.edu.co",
+    "address": "Calle 78B 72A-220",
+    "phone": "(574)444 37 00",
+    "issns": [
+      "23463279",
+      "27110044"
+    ],
+    "institutions": [
+      "TECNOLOGICO DE ANTIOQUIA INSTITUCION UNIVERSITARIA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 118,
+    "name": "VNIVERSITAS",
+    "homepage_url": "https://revistas.javeriana.edu.co/index.php/vnijuri",
+    "email": "vniversitas@javeriana.edu.co",
+    "address": "Calle 40 No. 6-23 piso 6° Edificio Gabriel Giraldo, S.J.",
+    "phone": "3208320",
+    "issns": [
+      "00419060",
+      "20111711"
+    ],
+    "institutions": [
+      "PONTIFICIA UNIVERSIDAD JAVERIANA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 146,
+    "name": "LINGÜÍSTICA Y LITERATURA",
+    "homepage_url": "https://revistas.udea.edu.co/index.php/lyl/index",
+    "email": "revistalinylit@udea.edu.co",
+    "address": "Universidad de Antioquia, Calle 67 No. 53-108, Bloque 12, of. 12-406, Medellín",
+    "phone": "(4) 2195915",
+    "issns": [
+      "24223174",
+      "01205587"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DE ANTIOQUIA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 155,
+    "name": "REVISTA DE LA FACULTAD DE DERECHO Y CIENCIAS POLITICAS",
+    "homepage_url": "http://revistas.upb.edu.co/index.php/derecho",
+    "email": "revista.derecho@upb.edu.co",
+    "address": "Circular 1. No. 70-01 (Bloque 12, Decanatura)",
+    "phone": "3544534",
+    "issns": [
+      "01203886",
+      "23900016"
+    ],
+    "institutions": [
+      "UNIVERSIDAD PONTIFICIA BOLIVARIANA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 160,
+    "name": "ESTUDIOS DE FILOSOFÍA",
+    "homepage_url": "https://revistas.udea.edu.co/index.php/estudios_de_filosofia/",
+    "email": "revistafilosofia@udea.edu.co",
+    "address": "Calle  67  #53-108 bloque 12 of. 434",
+    "phone": "2195685",
+    "issns": [
+      "2256358X",
+      "01213628"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DE ANTIOQUIA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 176,
+    "name": "BOLETÍN DE INVESTIGACIONES MARINAS Y COSTERAS",
+    "homepage_url": "http://www.invemar.org.co/boletin",
+    "email": "boletin@invemar.org.co",
+    "address": "Calle 25 No. 2-55, Playa Salguero,Santa Marta D.T.C.H., Colombia",
+    "phone": "+57-5-4328600",
+    "issns": [
+      "25904671",
+      "01229761"
+    ],
+    "institutions": [
+      "INSTITUTO DE INVESTIGACIONES MARINAS Y COSTERAS JOSE BENITO VIVES DE ANDREIS INVEMAR"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 206,
+    "name": "Revista Facultad de Ciencias Básicas",
+    "homepage_url": "http://revistas.unimilitar.edu.co/index.php/rfcb",
+    "email": "revista.faccienbasic@unimilitar.edu.co",
+    "address": "Campus Nueva Granada - km 2 Vía Cajicá-Zipaquirá",
+    "phone": "6500000",
+    "issns": [
+      "19004699",
+      "25005316"
+    ],
+    "institutions": [
+      "UNIVERSIDAD MILITAR NUEVA GRANADA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 208,
+    "name": "Latinoamericana de Estudios Educativos",
+    "homepage_url": "http://latinoamericana.ucaldas.edu.co",
+    "email": "rlee@ucaldas.edu.co;\r\nrevistascientificas@ucaldas.edu.co",
+    "address": "Calle 65 No. 26-10. Revistas Científicas",
+    "phone": "8781500",
+    "issns": [
+      "19009895",
+      "25005324"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DE CALDAS"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 210,
+    "name": "DYNA",
+    "homepage_url": "https://revistas.unal.edu.co/index.php/dyna",
+    "email": "dyna@unal.edu.co",
+    "address": "Carrera 80 Nº 65-223",
+    "phone": "4-4255068",
+    "issns": [
+      "00127353",
+      "23462183"
+    ],
+    "institutions": [
+      "UNIVERSIDAD NACIONAL DE COLOMBIA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 219,
+    "name": "Clío América",
+    "homepage_url": "https://revistas.unimagdalena.edu.co/index.php/clioamerica/index",
+    "email": "revistaclioamerica@unimagdalena.edu.co",
+    "address": "Carrera 32 No 22 - 08 Sector San Pedro Alejandrino - Santa Marta",
+    "phone": "4217940",
+    "issns": [
+      "1909941X",
+      "23897848"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DEL MAGDALENA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 221,
+    "name": "Revista de la Facultad de Medicina",
+    "homepage_url": "http://www.revistas.unal.edu.co/index.php/revfacmed;http://www.scielo.org.co/scielo.php?script=sci_serial&pid=0120 0011&lng=es&nrm=iso",
+    "email": "revista_fmbog@unal.edu.co",
+    "address": "Av Cra. 30 No. 45-03. Revista de la Facultad de Medicina oficina 225.",
+    "phone": "3165145",
+    "issns": [
+      "07980469",
+      "23573848",
+      "01200011"
+    ],
+    "institutions": [
+      "UNIVERSIDAD NACIONAL DE COLOMBIA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 234,
+    "name": "Gestión y Ambiente",
+    "homepage_url": "https://revistas.unal.edu.co/index.php/gestion/index",
+    "email": "revgestion_bog@unal.edu.co",
+    "address": "Calle 44 No. 45-67 Unidad Camilo Torres Bloque B2",
+    "phone": "3165085",
+    "issns": [
+      "23575905",
+      "0124177X"
+    ],
+    "institutions": [
+      "UNIVERSIDAD NACIONAL DE COLOMBIA",
+      "FUNDACIÓN UNIVERSIDAD DE AMÉRICA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 237,
+    "name": "Ingeniería y Universidad",
+    "homepage_url": "https://revistas.javeriana.edu.co/index.php/IyU",
+    "email": "reving@javeriana.edu.co",
+    "address": "Calle 40 No. 5-40",
+    "phone": "571 3 20 83 20",
+    "issns": [
+      "01232126",
+      "20112769"
+    ],
+    "institutions": [
+      "PONTIFICIA UNIVERSIDAD JAVERIANA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 240,
+    "name": "REVISTA COLOMBIANA DE ESTADÍSTICA",
+    "homepage_url": "http://www.revistas.unal.edu.co/index.php/estad",
+    "email": "revcoles_fcbog@unal.edu.co",
+    "address": "Universidad Nacional de Colombia, sede Bogotá - Departamento de Estadística - Carrera 30 No. 45-03 - Bogotá Colombia",
+    "phone": "3165000",
+    "issns": [
+      "01201751",
+      "23898976"
+    ],
+    "institutions": [
+      "UNIVERSIDAD NACIONAL DE COLOMBIA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 241,
+    "name": "Revista Colombiana de Química",
+    "homepage_url": "http://www.revistas.unal.edu.co/index.php/rcolquim/index",
+    "email": "rcolquim_fcbog@unal.edu.co",
+    "address": "Carrera 30 45-03, Departamento de Química, Universidad Nacional de Colombia",
+    "phone": "3165000",
+    "issns": [
+      "01202804",
+      "23573791"
+    ],
+    "institutions": [
+      "UNIVERSIDAD NACIONAL DE COLOMBIA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 245,
+    "name": "ACTUALIDADES PEDAGÓGICAS",
+    "homepage_url": "https://ciencia.lasalle.edu.co/ap/",
+    "email": "actualidadespedagogicas@lasalle.edu.co",
+    "address": "Carrera 5 # 59A - 44",
+    "phone": "3488000",
+    "issns": [
+      "01201700",
+      "23898755"
+    ],
+    "institutions": [
+      "Universidad de La Salle"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 248,
+    "name": "INFECTIO",
+    "homepage_url": "http://revistainfectio.org/index.php/infectio",
+    "email": "infectologiacolombia@gmail.com;acin@acin.org",
+    "address": "Kra 15 N 118-03 oficina 503, Bogotá D.C., Colombia, Edificio Gallerie",
+    "phone": "6012153714",
+    "issns": [
+      "01239392",
+      "24223794"
+    ],
+    "institutions": [
+      "Asociacion Colombiana De Infectología"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 253,
+    "name": "Revista de Salud Pública",
+    "homepage_url": "http://www.revistas.unal.edu.co/index.php/revsaludpublica/index",
+    "email": "caagudeloc@unal.edu.co",
+    "address": "FACULTAD DE MEDICINA, OFICINA 318. CIUDAD UNIVERSITARIA, CARRERA 30 CALLE 45. BOGOTA, COLOMBIA.",
+    "phone": "3165000",
+    "issns": [
+      "01240064",
+      "25393596"
+    ],
+    "institutions": [
+      "UNIVERSIDAD NACIONAL DE COLOMBIA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 257,
+    "name": "REVISTA DE LA ACADEMIA COLOMBIANA DE CIENCIAS EXACTAS, FÍSICAS Y NATURALES",
+    "homepage_url": "https://www.raccefyn.co",
+    "email": "revista@accefyn.org.co",
+    "address": "Carrera 28A No. 39A-63",
+    "phone": "5550470",
+    "issns": [
+      "03703908",
+      "23824980"
+    ],
+    "institutions": [
+      "Academia Colombiana De Ciencias Exactas, Físicas Y Naturales - Accefyn"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 259,
+    "name": "CUADERNOS DE ADMINISTRACIÓN",
+    "homepage_url": "http://cuadernosadministracion.javeriana.edu.co",
+    "email": "cuadernos.admon@javeriana.edu.co; fmalaver@javeriana.edu.co",
+    "address": "AK 7 # 40B - 36 Ed. Jorge Hoyos Vásquez, S.J. , piso 4",
+    "phone": "3208320",
+    "issns": [
+      "20112440",
+      "01203592",
+      "19007205"
+    ],
+    "institutions": [
+      "PONTIFICIA UNIVERSIDAD JAVERIANA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 267,
+    "name": "Collectivus. Revista de Ciencias Sociales",
+    "homepage_url": "http://investigaciones.uniatlantico.edu.co/revistas/index.php/Collectivus/index",
+    "email": "collectivus@mail.uniatlantico.edu.co",
+    "address": "Km 7, Antigua vía a Puerto Colombia",
+    "phone": "3013566462",
+    "issns": [
+      "23824018"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DEL ATLÁNTICO"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 269,
+    "name": "REVISTA COLOMBIANA DE MATEMÁTICAS",
+    "homepage_url": "http://www.scm.org.co/\r\nhttps://revistas.unal.edu.co/index.php/recolma/user",
+    "email": "direccion_ejecutiva@scm.org.co",
+    "address": "Sociedad Colombiana de Matemáticas, Cra. 50 # 27-70, Edificio Camilo Torres, Módulo 1, Oficina 202, BOGOTA",
+    "phone": "4811338",
+    "issns": [
+      "00347426",
+      "23574100"
+    ],
+    "institutions": [
+      "UNIVERSIDAD NACIONAL DE COLOMBIA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 284,
+    "name": "CT&F Ciencia, Tecnología y Futuro",
+    "homepage_url": "https://ctyf.journal.ecopetrol.com.co/",
+    "email": "ctyf@ecopetrol.com.co",
+    "address": "Km 7 vía Bucaramanga - Piedecuesta",
+    "phone": "57-7-6847350",
+    "issns": [
+      "23824581",
+      "01225383"
+    ],
+    "institutions": [
+      "Instituto Colombiano del Petróleo"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 294,
+    "name": "ENUNCIACIÓN",
+    "homepage_url": "http://revistas.udistrital.edu.co/ojs/index.php/enunc/index",
+    "email": "revista.enunciacion@udistrital.edu.co",
+    "address": "Calle 52 No. 7-11",
+    "phone": "3158948840",
+    "issns": [
+      "01226339",
+      "22486798"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DISTRITAL FRANCISCO JOSÉ DE CALDAS"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 297,
+    "name": "ESTUDIOS SOCIO-JURÍDICOS",
+    "homepage_url": "http://revistas.urosario.edu.co/index.php/sociojuridicos/index",
+    "email": "esj@urosario.edu.co",
+    "address": "Carrera 6 No. 15-18 - Facultad de Jurisprudencia",
+    "phone": "(57-1)2970200",
+    "issns": [
+      "21454531",
+      "01240579"
+    ],
+    "institutions": [
+      "COLEGIO MAYOR NUESTRA SEÑORA DEL ROSARIO"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 307,
+    "name": "Lenguaje",
+    "homepage_url": "https://revistalenguaje.univalle.edu.co",
+    "email": "revista.lenguaje@correounivalle.edu.co",
+    "address": "Universidad del Valle -Ciudad Univesitaria-Melendez-Edificio E17 (315)-oficina 2016-CALI",
+    "phone": "3212100",
+    "issns": [
+      "16926994",
+      "25393804",
+      "01203479"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DEL VALLE"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 316,
+    "name": "REVISTA COLOMBIANA DE OBSTETRICIA Y GINECOLOGÍA",
+    "homepage_url": "https://revista.fecolsog.org/index.php/rcog",
+    "email": "rcog@fecolsog.org",
+    "address": "Carrera 15 No. 98-42 Of. 204-205",
+    "phone": "6016622",
+    "issns": [
+      "24630225",
+      "00347434"
+    ],
+    "institutions": [
+      "FEDERACIÓN COLOMBIANA DE OBSTETRICIA Y GINECOLOGÍA - FECOLSOG"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 320,
+    "name": "CRITERIO LIBRE",
+    "homepage_url": "https://revistas.unilibre.edu.co/index.php/criteriolibre",
+    "email": "revistacriteriolibre@gmail.com",
+    "address": "Av. (carrera 70),(Av.Rojas) N° 53 - 40, Bloque C",
+    "phone": "4232741",
+    "issns": [
+      "23230886",
+      "19000642"
+    ],
+    "institutions": [
+      "UNIVERSIDAD LIBRE DE COLOMBIA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 328,
+    "name": "MÉDICAS UIS",
+    "homepage_url": "http://revistas.uis.edu.co/index.php/revistamedicasuis",
+    "email": "medicas@uis.edu.co",
+    "address": "Carrera 32 # 29 – 31, Piso 2, oficina 225-A",
+    "phone": "6344000",
+    "issns": [
+      "17945240",
+      "01210319"
+    ],
+    "institutions": [
+      "UNIVERSIDAD  INDUSTRIAL DE SANTANDER"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 330,
+    "name": "REVISTA GERENCIA Y POLÍTICAS DE SALUD",
+    "homepage_url": "http://revistas.javeriana.edu.co/index.php/gerepolsal",
+    "email": "revistagpsalud@javeriana.edu.co",
+    "address": "Cra. 7 No. 40-90 Edif. Emilio Arango S.J., Piso 5. Bogotá, Colombia",
+    "phone": "3208320",
+    "issns": [
+      "25006177",
+      "16577027"
+    ],
+    "institutions": [
+      "PONTIFICIA UNIVERSIDAD JAVERIANA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 345,
+    "name": "Sociedad y Economía",
+    "homepage_url": "https://sociedadyeconomia.univalle.edu.co/",
+    "email": "revistasye@correounivalle.edu.co",
+    "address": "Universidad del Valle, Edificio 387, Oficina 1017",
+    "phone": "3212327",
+    "issns": [
+      "23899050",
+      "16576357"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DEL VALLE"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 346,
+    "name": "ACTA COLOMBIANA DE PSICOLOGÍA",
+    "homepage_url": "http://editorial.ucatolica.edu.co/ojsucatolica/revistas_ucatolica/index.php/acta-colombiana-psicologia/",
+    "email": "revistaacta@ucatolica.edu.co;elravelo@ucatolica.edu.co",
+    "address": "Avenida Caracas No.46 - 40",
+    "phone": "3277300",
+    "issns": [
+      "19099711",
+      "01239155"
+    ],
+    "institutions": [
+      "UNIVERSIDAD CATOLICA DE COLOMBIA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 347,
+    "name": "Revista colombiana de Gastroenterología",
+    "homepage_url": "https://www.revistagastrocol.com/index.php/rcg/index",
+    "email": "revistagastro@gastrocol.com",
+    "address": "Carrera 19 C No. 86-14 Of. 202 - 203",
+    "phone": "3112332240",
+    "issns": [
+      "25007440",
+      "01209957"
+    ],
+    "institutions": [
+      "Asociación Colombiana De Gastroenterología"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 349,
+    "name": "CONTADURÍA UNIVERSIDAD DE ANTIOQUIA",
+    "homepage_url": "https://aprendeenlinea.udea.edu.co/revistas/index.php/cont",
+    "email": "revistacontaduria@udea.edu.co",
+    "address": "Universidad de Antioquia, Facultad de Ciencias Económicas, Bloque 13 - Oficina 301.  Calle 67 No.53-108 (Medellín - Colombia)",
+    "phone": "(4) 2198822",
+    "issns": [
+      "25904604",
+      "01204203"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DE ANTIOQUIA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 353,
+    "name": "CUADERNOS DE DESARROLLO RURAL",
+    "homepage_url": "http://revistas.javeriana.edu.co/index.php/desarrolloRural/index",
+    "email": "cdr@javeriana.edu.co",
+    "address": "Transversal 4 No. 42-00 Piso 8o. Bogotá Colombia",
+    "phone": "(571) 3208320",
+    "issns": [
+      "23434244",
+      "01221450",
+      "22157727"
+    ],
+    "institutions": [
+      "PONTIFICIA UNIVERSIDAD JAVERIANA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 364,
+    "name": "Revista Eidos",
+    "homepage_url": "http://rcientificas.uninorte.edu.co/index.php/eidos",
+    "email": "eidos@uninorte.edu.co; revistaeidos@gmail.com",
+    "address": "Km 5 Vía Puerto Colombia",
+    "phone": "3509509",
+    "issns": [
+      "20117477",
+      "16928857"
+    ],
+    "institutions": [
+      "FUNDACIÓN UNIVERSIDAD DEL NORTE"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 365,
+    "name": "Trilogía Ciencia Tecnología Sociedad",
+    "homepage_url": "https://trilogia.itm.edu.co/",
+    "email": "trilogia@itm.edu.co",
+    "address": "Calle 73 N° 76A- 354",
+    "phone": "4405100",
+    "issns": [
+      "21457778",
+      "21454426"
+    ],
+    "institutions": [
+      "INSTITUTO TECNOLÓGICO METROPOLITANO DE MEDELLÍN"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 371,
+    "name": "Trabajo Social",
+    "homepage_url": "https://www.revtrabajosocial.unal.edu.co",
+    "email": "revtrasoc_bog@unal.edu.co",
+    "address": "Universidad Nacional de Colombia (Sede Bogotá). Departamento de Trabajo Social. Bogotá, Colombia. Calle 44 # 45-67 Unidad Camilo Torres, Bloq A1, Of. 502",
+    "phone": "3165000",
+    "issns": [
+      "01234986",
+      "22565493"
+    ],
+    "institutions": [
+      "UNIVERSIDAD NACIONAL DE COLOMBIA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 372,
+    "name": "EARTH SCIENCES RESEARCH JOURNAL",
+    "homepage_url": "http://www.revistas.unal.edu.co/index.php/esrj/index",
+    "email": "earthjour_fcbog@unal.edu.co",
+    "address": "Cra 30, Calle 45 Edif. Manuel Ancízar, Of. 207",
+    "phone": "3165000",
+    "issns": [
+      "23393459",
+      "17946190"
+    ],
+    "institutions": [
+      "UNIVERSIDAD NACIONAL DE COLOMBIA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 385,
+    "name": "Revista Republicana",
+    "homepage_url": "http://ojs.urepublicana.edu.co/index.php/revistarepublicana",
+    "email": "revistarepublicana@urepublicana.edu.co",
+    "address": "Cra 7 No.19-38",
+    "phone": "2862384",
+    "issns": [
+      "22565027",
+      "19094450"
+    ],
+    "institutions": [
+      "Corporacion Universitaria Republicana"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 392,
+    "name": "AVANCES EN PSICOLOGÍA LATINOAMERICANA",
+    "homepage_url": "http://revistas.urosario.edu.co/index.php/apl/index",
+    "email": "apl@urosario.edu.co",
+    "address": "Carrera 24 No.63C-69",
+    "phone": "2970200",
+    "issns": [
+      "21454515",
+      "17944724"
+    ],
+    "institutions": [
+      "COLEGIO MAYOR NUESTRA SEÑORA DEL ROSARIO"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 393,
+    "name": "Respuestas",
+    "homepage_url": "https://revistas.ufps.edu.co/index.php/respuestas",
+    "email": "respuestas@ufps.edu.co; gestorderevistas@ufps.edu.co",
+    "address": "Av. Gran Colombia No. 12E-96 Barrio Colsag",
+    "phone": "5776655",
+    "issns": [
+      "24225053",
+      "0122820X"
+    ],
+    "institutions": [
+      "Universidad Francisco De Paula Santander Ocaña",
+      "UNIVERSIDAD FRANCISCO DE PAULA SANTANDER"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 408,
+    "name": "VIA INVENIENDI ET IUDICANDI",
+    "homepage_url": "https://revistas.usantotomas.edu.co/index.php/viei",
+    "email": "ruthblanco@usantotomas.edu.co",
+    "address": "Carrera 9A ·  72 - 90 Bogotá - Colombia",
+    "phone": "5878797",
+    "issns": [
+      "19090528"
+    ],
+    "institutions": [
+      "UNIVERSIDAD SANTO TOMAS"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 431,
+    "name": "Perseitas",
+    "homepage_url": "http://funlam.edu.co/revistas/index.php/perseitas/issue/archive",
+    "email": "fondo.editorial@amigo.edu.co;perseitas@amigo.edu.co",
+    "address": "Transversal 51A #67B 90",
+    "phone": "+57 6044602263",
+    "issns": [
+      "23461780"
+    ],
+    "institutions": [
+      "UNIVERSIDAD CATOLICA LUIS AMIGO"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 452,
+    "name": "Cuadernos de Administración",
+    "homepage_url": "https://cuadernosdeadministracion.univalle.edu.co/",
+    "email": "cuadernosadm@correounivalle.edu.co",
+    "address": "Calle 4B N° 36-00  Edificio 126. Oficina 103",
+    "phone": null,
+    "issns": [
+      "22565078",
+      "01204645"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DEL VALLE"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 457,
+    "name": "REVISTA COLOMBIANA DE CARDIOLOGÍA",
+    "homepage_url": "http://www.revcolcard.org",
+    "email": "revista@scc.org.co",
+    "address": "Calle 127 No. 16a-76 Of. 503",
+    "phone": "5230012",
+    "issns": [
+      "29381525",
+      "23573260",
+      "01205633"
+    ],
+    "institutions": [
+      "SOCIEDAD COLOMBIANA DE CARDIOLOGIA Y CIRUGIA CARDIOVASCULAR"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 459,
+    "name": "VERBA IURIS",
+    "homepage_url": "https://revistas.unilibre.edu.co/index.php/verbaiuris/index",
+    "email": "norhys.torregrozaj@unilibre.edu.co",
+    "address": "Calle 8 no. 5- 80",
+    "phone": "3821040",
+    "issns": [
+      "01213474",
+      "26193752"
+    ],
+    "institutions": [
+      "UNIVERSIDAD LIBRE DE COLOMBIA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 460,
+    "name": "Forma y Función",
+    "homepage_url": "http://www.revistas.unal.edu.co/index.php/formayfuncion/index",
+    "email": "fyf_fchbog@unal.edu.co",
+    "address": "Departamento de Lingüística Universidad Nacional de Colombia",
+    "phone": "3165000",
+    "issns": [
+      "22565469",
+      "0120338X"
+    ],
+    "institutions": [
+      "UNIVERSIDAD NACIONAL DE COLOMBIA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 462,
+    "name": "Persona y Bioética",
+    "homepage_url": "http://personaybioetica.unisabana.edu.co",
+    "email": "bioetica@unisabana.edu.co",
+    "address": "Campus del Puente del Común, Km 7, Autopista Norte de Bogotá",
+    "phone": "8615555",
+    "issns": [
+      "01233122",
+      "20275382"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DE LA SABANA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 482,
+    "name": "Civilizar",
+    "homepage_url": "https://revistas.usergioarboleda.edu.co/index.php/ccsh",
+    "email": "revista.civilizar@usa.edu.co;diana.nino@usa.edu.co",
+    "address": "Carrera 15 No 74-96",
+    "phone": "3257500",
+    "issns": [
+      "2619189X",
+      "16578953"
+    ],
+    "institutions": [
+      "UNIVERSIDAD SERGIO ARBOLEDA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 484,
+    "name": "ANAGRAMAS RUMBOS Y SENTIDOS DE LA COMUNICACIÓN",
+    "homepage_url": "http://revistas.udem.edu.co/index.php/anagramas",
+    "email": "anagramas@udem.edu.co",
+    "address": "Carrera 87# 30-65. Bloque 10-106",
+    "phone": "3405487",
+    "issns": [
+      "22484086",
+      "16922522"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DE MEDELLIN"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 488,
+    "name": "REVISTA CIENCIAS DE LA SALUD",
+    "homepage_url": "http://revistas.urosario.edu.co/index.php/revsalud",
+    "email": "rev.cienc.salud@urosario.edu.co",
+    "address": "Carrera 24 63C-69 Quinta Mutis",
+    "phone": "3474570",
+    "issns": [
+      "21454507",
+      "16927273"
+    ],
+    "institutions": [
+      "COLEGIO MAYOR NUESTRA SEÑORA DEL ROSARIO"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 489,
+    "name": "Aquichan",
+    "homepage_url": "http://aquichan.unisabana.edu.co/",
+    "email": "aquichan@unisabana.edu.co",
+    "address": "Facultad de Enfermería y Rehabilitación Campus del Puente del Común, Km 7, Autopista Norte de Bogotá Chía",
+    "phone": "8615555",
+    "issns": [
+      "16575997",
+      "20275374"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DE LA SABANA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 494,
+    "name": "Repertorio de Medicina y Cirugía",
+    "homepage_url": "http://repertorio.fucsalud.edu.co/\r\n\r\nhttp://www.elsevier.es/es-revista-repertorio-medicina-cirugia-263\r\n\r\nhttps://revistas.fucsalud.edu.co/index.php/repertorio",
+    "email": "revista.repertorio@fucsalud.edu.co",
+    "address": "Carrera 52 No. 67A - 71",
+    "phone": "3144422769",
+    "issns": [
+      "2462991X",
+      "01217372"
+    ],
+    "institutions": [
+      "SOCIEDAD DE CIRUGÍA DE BOGOTÁ - HOSPITAL DE SAN JOSÉ",
+      "FUNDACIÓN UNIVERSITARIA DE CIENCIAS DE LA SALUD - FUCS"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 502,
+    "name": "SALUD UNINORTE",
+    "homepage_url": "http://rcientificas.uninorte.edu.co/index.php/salud/index",
+    "email": "saluduninorte@uninorte.edu.co",
+    "address": "Kilómetro 5 Vía Puerto Colombia (Barranquilla)",
+    "phone": "(57-5) 3509509",
+    "issns": [
+      "01205552",
+      "20117531"
+    ],
+    "institutions": [
+      "FUNDACIÓN UNIVERSIDAD DEL NORTE"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 513,
+    "name": "OPINIÓN JURÍDICA",
+    "homepage_url": "http://revistas.udem.edu.co/index.php/opinion",
+    "email": "opinionjuridica@udem.edu.co",
+    "address": "Carrera 87 # 30-65; bloque 16 oficina 106",
+    "phone": "(574)-3405555",
+    "issns": [
+      "16922530",
+      "22484078"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DE MEDELLIN"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 515,
+    "name": "PROSPECTIVA",
+    "homepage_url": "https://revistaprospectiva.univalle.edu.co/",
+    "email": "revista.prospectiva@correounivalle.edu.co",
+    "address": "Calle 13 No. 100-00. Ed. D10. 4 piso.",
+    "phone": "3212100",
+    "issns": [
+      "2389993X",
+      "01216953",
+      "01221213"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DEL VALLE"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 523,
+    "name": "Administración & Desarrollo",
+    "homepage_url": "https://revistas.esap.edu.co/index.php/admindesarro",
+    "email": "administracion_desarrollo@esap.edu.co",
+    "address": "Calle 44 No. 53-37 CAN",
+    "phone": "2207346",
+    "issns": [
+      "01203754",
+      "25005227"
+    ],
+    "institutions": [
+      "Escuela Superior De Administración Pública"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 525,
+    "name": "REVISTA INGENIERÍAS UNIVERSIDAD DE MEDELLÍN",
+    "homepage_url": "http://revistas.udem.edu.co/index.php/ingenierias",
+    "email": "revistaingenierias@udem.edu.co",
+    "address": "Carrera 87 # 30 65",
+    "phone": "3405555",
+    "issns": [
+      "22484094",
+      "16923324"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DE MEDELLIN"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 534,
+    "name": "DISCUSIONES FILOSÓFICAS",
+    "homepage_url": "http://discusionesfilosoficas.ucaldas.edu.co/",
+    "email": "discufilo@ucaldas.edu.co; revistascientificas@ucaldas.edu.co",
+    "address": "Cra 23 No. 58-65",
+    "phone": "8862720",
+    "issns": [
+      "01246127",
+      "24629596"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DE CALDAS"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 539,
+    "name": "ECO MATEMATICO",
+    "homepage_url": "http://revistas.ufps.edu.co/ojs/index.php/ecomatematico",
+    "email": "revistaecomatematico@ufps.edu.co",
+    "address": "Ave. Gran Colombia No. 12E - 96 B. Colsag",
+    "phone": "(57) (7) 577665",
+    "issns": [
+      "17948231",
+      "24628794"
+    ],
+    "institutions": [
+      "UNIVERSIDAD FRANCISCO DE PAULA SANTANDER"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 541,
+    "name": "SEMESTRE ECONÓMICO",
+    "homepage_url": "http://revistas.udem.edu.co/index.php/economico",
+    "email": "semestreeconomico@udem.edu.co",
+    "address": "Carrera 87#30-65 Bloque 7 Of. 111",
+    "phone": "(57 4) 3405555",
+    "issns": [
+      "01206346",
+      "22484345"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DE MEDELLIN"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 570,
+    "name": "REVISTA MED",
+    "homepage_url": "https://revistas.unimilitar.edu.co/index.php/rmed/index",
+    "email": "revista.med@unimilitar.edu.co",
+    "address": "Transversal 3ª #49-00",
+    "phone": "6500000",
+    "issns": [
+      "19097700",
+      "01215256"
+    ],
+    "institutions": [
+      "UNIVERSIDAD MILITAR NUEVA GRANADA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 586,
+    "name": "ESCRITOS",
+    "homepage_url": "http://revistas.upb.edu.co/index.php/escritos",
+    "email": "revista.escritos@upb.edu.co",
+    "address": "Circular 1. No 70-01 Laureles -Medellín",
+    "phone": "3544530",
+    "issns": [
+      "23900032",
+      "01201263"
+    ],
+    "institutions": [
+      "UNIVERSIDAD PONTIFICIA BOLIVARIANA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 593,
+    "name": "MUNDO FESC",
+    "homepage_url": "http://www.fesc.edu.co/Revistas/OJS/index.php/mundofesc",
+    "email": "revista_mundofesc@fesc.edu.co",
+    "address": "Av 5 # 15-27, Centro",
+    "phone": "5829292",
+    "issns": [
+      "22160388",
+      "22160353"
+    ],
+    "institutions": [
+      "FUNDACION DE ESTUDIOS SUPERIORES COMFANORTE"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 613,
+    "name": "REVISTA LUNA AZUL",
+    "homepage_url": "http://lunazul.ucaldas.edu.co/",
+    "email": "lesga@une.net.co; revistascientificas@ucaldas.edu.co; revista.lunazul@ucaldas.edu.co",
+    "address": "Calle 65 N 26 - 10 Vicerrectoria de Investigaciones y Postgrados Manizales",
+    "phone": "8781500",
+    "issns": [
+      "19092474",
+      "01225391"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DE CALDAS"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 614,
+    "name": "DUAZARY",
+    "homepage_url": "http://revistas.unimagdalena.edu.co/index.php/duazary/index",
+    "email": "revistaduazary@unimagdalena.edu.co",
+    "address": "Calle 32#22-08",
+    "phone": "4381000",
+    "issns": [
+      "17945992",
+      "2389783X"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DEL MAGDALENA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 616,
+    "name": "JANGWA PANA",
+    "homepage_url": "http://revistas.unimagdalena.edu.co/index.php/jangwapana/index",
+    "email": "jangwapana@unimagdalena.edu.co",
+    "address": "Carr 32 No 22-08. Santa Marta Magdalena",
+    "phone": "4365000",
+    "issns": [
+      "16574923",
+      "23897872"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DEL MAGDALENA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 628,
+    "name": "Prolegómenos",
+    "homepage_url": "http://revistas.unimilitar.edu.co/index.php/dere/index",
+    "email": "derechos.valores@unimilitar.edu.co",
+    "address": "Carrera 11 No. 101 - 80",
+    "phone": "6 50 00 00",
+    "issns": [
+      "19097727",
+      "0121182X"
+    ],
+    "institutions": [
+      "UNIVERSIDAD MILITAR NUEVA GRANADA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 629,
+    "name": "TENDENCIAS",
+    "homepage_url": "http://revistas.udenar.edu.co/index.php/rtend/index",
+    "email": "ximeor2002@yahoo.com;revistatendencias@udenar.edu.co",
+    "address": "Calle 18 No. 50 40. Ciudadela Universitaria Torobajo. Bloque 2 3er piso",
+    "phone": "7313821",
+    "issns": [
+      "01248693",
+      "25390554"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DE NARIÑO"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 632,
+    "name": "Revista de la facultad de ciencias basicas",
+    "homepage_url": "https://ojs.unipamplona.edu.co/ojsviceinves/index.php/bistua/index",
+    "email": "bistua.revistafcb@unipamplona.edu.co",
+    "address": "Universidad de Pamplona",
+    "phone": "5685303",
+    "issns": [
+      "01204211",
+      "27113027"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DE PAMPLONA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 638,
+    "name": "CUADERNOS DE FILOSOFÍA LATINOAMERICANA",
+    "homepage_url": "http://revistas.usta.edu.co/index.php/cfla",
+    "email": "cuadernosdefilosofiausta@usantotomas.edu.co",
+    "address": "Carrera 13 No. 54-39",
+    "phone": "5878797",
+    "issns": [
+      "25005375",
+      "01208462"
+    ],
+    "institutions": [
+      "UNIVERSIDAD SANTO TOMAS"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 647,
+    "name": "REVISTA LASALLISTA DE INVESTIGACIÓN",
+    "homepage_url": "http://repository.lasallista.edu.co:8080/ojs/index.php/rldi",
+    "email": "jumontoya@lasallistadocentes.edu.co",
+    "address": "Carrera 51 No. 118 Sur 57 Caldas, Antioquia",
+    "phone": "(4) 320 19 99",
+    "issns": [
+      "22563938",
+      "17944449"
+    ],
+    "institutions": [
+      "CORPORACION UNIVERSITARIA LASALLISTA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 649,
+    "name": "PAPEL POLÍTICO",
+    "homepage_url": "https://revistas.javeriana.edu.co/index.php/papelpol",
+    "email": "papelpolitico@javeriana.edu.co",
+    "address": "Calle 40 No 6-23 Ed. Gabriel Giraldo Piso 8",
+    "phone": "3208320 ext2469",
+    "issns": [
+      "01224409"
+    ],
+    "institutions": [
+      "PONTIFICIA UNIVERSIDAD JAVERIANA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 650,
+    "name": "TABULA RASA",
+    "homepage_url": "http://www.revistatabularasa.org/",
+    "email": "info@revistatabularasa.org",
+    "address": "Calle 28 No. 6-02",
+    "phone": "2418800",
+    "issns": [
+      "20112742",
+      "17942489"
+    ],
+    "institutions": [
+      "UNIVERSIDAD COLEGIO MAYOR DE CUNDINAMARCA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 654,
+    "name": "MEMORIAS",
+    "homepage_url": "https://rcientificas.uninorte.edu.co/index.php/memorias/index",
+    "email": "memorias@uninorte.edu.co",
+    "address": "Km 5 Via Puerto Colombia",
+    "phone": "3509509",
+    "issns": [
+      "09588205",
+      "01692925",
+      "17948886",
+      "23576197"
+    ],
+    "institutions": [
+      "FUNDACIÓN UNIVERSIDAD DEL NORTE"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 657,
+    "name": "Academia y virtualidad",
+    "homepage_url": "http://revistas.unimilitar.edu.co/index.php/ravi",
+    "email": "academiayvirtualidad@unimilitar.edu.co",
+    "address": "Km 2 de la vía Cajicá - Zipaquira Sede Campus Cajicá Edificio Faedis Tercer piso. Dirección electrónica: http://revistas.unimilitar.edu.co/index.php/ravi/index",
+    "phone": "7480333/6500000",
+    "issns": [
+      "20110731"
+    ],
+    "institutions": [
+      "UNIVERSIDAD MILITAR NUEVA GRANADA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 665,
+    "name": "VOCES Y SILENCIOS: Revista Latinoamericana de Educación",
+    "homepage_url": "https://revistas.uniandes.edu.co/journal/vys",
+    "email": "vocesysilencios@uniandes.edu.co",
+    "address": "Calle 18A N° 0-19",
+    "phone": "3394999",
+    "issns": [
+      "22158421"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DE LOS ANDES"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 686,
+    "name": "INVESTIGACIÓN EN ENFERMERÍA:IMAGEN Y DESARROLLO",
+    "homepage_url": "http://revistas.javeriana.edu.co/index.php/imagenydesarrollo",
+    "email": "revistaenfermeriapuj@javeriana.edu.co",
+    "address": "cra. 7 No. 40-62 7o. piso Hospital San Ignacio",
+    "phone": "573208320-2655",
+    "issns": [
+      "2027128X",
+      "01242059"
+    ],
+    "institutions": [
+      "PONTIFICIA UNIVERSIDAD JAVERIANA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 689,
+    "name": "CALLE14:Revista de Investigación en el campo del Arte",
+    "homepage_url": "http://revistas.udistrital.edu.co/ojs/index.php/c14",
+    "email": "calle14.ud@udistrital.edu.co",
+    "address": "Cra. 13 No. 14-69 Facultad de Artes ASAB. Bogotá. D.C Colombia",
+    "phone": "3239300",
+    "issns": [
+      "21450706",
+      "20113757"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DISTRITAL FRANCISCO JOSÉ DE CALDAS"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 712,
+    "name": "Revista IUSTA",
+    "homepage_url": "http://revistas.usta.edu.co/index.php/iusta/index",
+    "email": "ruthblanco@usantotomas.edu.co",
+    "address": "Carrera 9 n.° 72-90",
+    "phone": "5950000",
+    "issns": [
+      "19000448",
+      "25005286"
+    ],
+    "institutions": [
+      "UNIVERSIDAD SANTO TOMAS"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 731,
+    "name": "Revista ION",
+    "homepage_url": "http://revistas.uis.edu.co/index.php/revistaion/index",
+    "email": "revistaion@uis.edu.co;revistaion@gmail.com",
+    "address": "CARRERA 27-CALLE 9 CIUDAD UNIVERSITARIA",
+    "phone": "6344000",
+    "issns": [
+      "0120100X",
+      "21458480"
+    ],
+    "institutions": [
+      "UNIVERSIDAD  INDUSTRIAL DE SANTANDER"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 732,
+    "name": "TURISMO Y SOCIEDAD",
+    "homepage_url": "https://www.uexternado.edu.co/turismoysociedad",
+    "email": "revistaturismoysociedad@uexternado.edu.co",
+    "address": "Universidad Externado de Colombia, Calle 12 No.  1 -17 Este Bloque D",
+    "phone": "353 7000",
+    "issns": [
+      "2346206X",
+      "01207555"
+    ],
+    "institutions": [
+      "UNIVERSIDAD EXTERNADO DE COLOMBIA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 733,
+    "name": "UROLOGIA COLOMBIANA",
+    "homepage_url": "http://urologiacolombiana.com/",
+    "email": "revistaurologiacolombiana@scu.org.co",
+    "address": "Calle 93 No. 14-20 oficina 410",
+    "phone": "2186700",
+    "issns": [
+      "0120789X",
+      "20270119"
+    ],
+    "institutions": [
+      "SOCIEDAD COLOMBIANA DE UROLOGIA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 744,
+    "name": "Conservacion Colombiana",
+    "homepage_url": "https://www.proaves.org",
+    "email": "amonsalve@proaves.org; ldaza@proaves.org",
+    "address": "Cra 20 # 36-61 Bogota",
+    "phone": "2455134",
+    "issns": [
+      "19001592"
+    ],
+    "institutions": [],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 760,
+    "name": "Revista CES Derecho",
+    "homepage_url": "https://revistas.ces.edu.co/index.php/derecho",
+    "email": "revistacesderecho@ces.edu.co",
+    "address": "Calle 10A No. 22-04",
+    "phone": "4440555",
+    "issns": [
+      "21457719"
+    ],
+    "institutions": [
+      "UNIVERSIDAD CES"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 796,
+    "name": "REVISTA CES PSICOLOGÍA",
+    "homepage_url": "https://revistas.ces.edu.co/index.php/psicologia",
+    "email": "revistapsicologia@ces.edu.co",
+    "address": "Calle 10A No. 22 - 04, Medellín, Colombia",
+    "phone": "4440555 (1653)",
+    "issns": [
+      "20113080"
+    ],
+    "institutions": [
+      "UNIVERSIDAD CES"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 820,
+    "name": "Praxis",
+    "homepage_url": "http://revistas.unimagdalena.edu.co/index.php/praxis",
+    "email": "praxis@unimagdalena.edu.co",
+    "address": "Carrera 32 No. 22-08. San Pedro Alejandrino",
+    "phone": "(57-5) 4381000",
+    "issns": [
+      "23897856",
+      "17945259",
+      "22153659",
+      "16574915",
+      "25905899"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DEL MAGDALENA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 828,
+    "name": "SIGNOS - Investigación en sistemas de gestión",
+    "homepage_url": "https://revistas.usantotomas.edu.co/index.php/signos;https://revistas.usantotomas.edu.co/index.php/signos/issue/archive",
+    "email": "guillermo.pena@usantotomas.edu.co",
+    "address": "Carrera 9 No 51 - 11",
+    "phone": "315 50 18",
+    "issns": [
+      "24631140",
+      "21451389"
+    ],
+    "institutions": [
+      "UNIVERSIDAD SANTO TOMAS"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 846,
+    "name": "Aletheia. Revista de Desarrollo Humano, Educativo y Social Contemporáneo",
+    "homepage_url": "http://aletheia.cinde.org.co/index.php/ALETHEIA/index",
+    "email": "aletheia@cinde.org.co",
+    "address": "Calle 93 N. 45 A - 31 Barrio La Castellana Bogotá D.C.",
+    "phone": "7451717",
+    "issns": [
+      "21450366"
+    ],
+    "institutions": [
+      "FUNDACIÓN CENTRO INTERNACIONAL DE EDUCACIÓN Y DESARROLLO HUMANO-CINDE"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 853,
+    "name": "Revista Jurídica Mario Alario D´ Filippo",
+    "homepage_url": "http://revistas.unicartagena.edu.co/index.php/marioalariodfilippo",
+    "email": "rmarioalario@unicartagena.edu.co",
+    "address": "Centro, Calle de la Universidad Nro 36-100 Sede San Agustin, Facultad de Derecho (2do Piso)",
+    "phone": "6648325",
+    "issns": [
+      "22562796",
+      "21456054"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DE CARTAGENA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 894,
+    "name": "Face: Revista De La Facultad De Ciencias Económicas Y Empresariales De La Universidad De Pamplona",
+    "homepage_url": "http://www.unipamplona.edu.co/revistaface/",
+    "email": "viceinves@unipamplona.edu.co; comitee.face@unipamplona.edu.co",
+    "address": "Km 1 Via Bucaramanga Barrio el Buque Pamplona Norte de Santander",
+    "phone": "5685303 ext 166",
+    "issns": [
+      "17949920",
+      "25009338"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DE PAMPLONA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 914,
+    "name": "ECONÓMICAS CUC",
+    "homepage_url": "https://revistascientificas.cuc.edu.co/economicascuc",
+    "email": "revecocuc@cuc.edu.co",
+    "address": "calle 58 N° 55-66 Barranquilla- Atlantico",
+    "phone": "3362212",
+    "issns": [
+      "23823860",
+      "01203932"
+    ],
+    "institutions": [
+      "CORPORACION UNIVERSIDAD DE LA COSTA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 918,
+    "name": "Revista de Relaciones Internacionales, Estrategia y Seguridad",
+    "homepage_url": "https://revistas.unimilitar.edu.co/index.php/ries",
+    "email": "revistafaries@unimilitar.edu.co",
+    "address": "Carrera 11 No. 101-80",
+    "phone": "6500000",
+    "issns": [
+      "19097743",
+      "19093063"
+    ],
+    "institutions": [
+      "UNIVERSIDAD MILITAR NUEVA GRANADA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 930,
+    "name": "FUENTES, EL REVENTÓN ENERGÉTICO",
+    "homepage_url": "https://revistas.uis.edu.co/index.php/revistafuentes",
+    "email": "rfuentes@uis.edu.co",
+    "address": "Carrera 27 Calle 9 Ciudad Universitaria.  Bucaramanga",
+    "phone": "6344000",
+    "issns": [
+      "16576527",
+      "21458502"
+    ],
+    "institutions": [
+      "UNIVERSIDAD  INDUSTRIAL DE SANTANDER"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 931,
+    "name": "UNIVERSITAS PHILOSOPHICA",
+    "homepage_url": "https://revistas.javeriana.edu.co/index.php/vniphilosophica",
+    "email": "uniphilo@javeriana.edu.co",
+    "address": "Carrera 5 # 39 - 00 piso 6",
+    "phone": "3208320",
+    "issns": [
+      "01205323",
+      "23462426"
+    ],
+    "institutions": [
+      "PONTIFICIA UNIVERSIDAD JAVERIANA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 938,
+    "name": "PANORAMA ECONÓMICO",
+    "homepage_url": "http://revistas.unicartagena.edu.co/index.php/panoramaeconomico/index",
+    "email": "panoramaeconomico@unicartagena.edu.co",
+    "address": "Campus Piedra de Bolívar Avenida El Consulado Calle 30 No. 48-152",
+    "phone": "6754453",
+    "issns": [
+      "01228900",
+      "24630470"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DE CARTAGENA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 942,
+    "name": "Ciencia y Tecnología Agropecuaria",
+    "homepage_url": "http://revista.corpoica.org.co/index.php/revista/index",
+    "email": "revista_corpoica@corpoica.org.co; rev.corpoica@gmail.com",
+    "address": "Km 14 vía Mosquera / Centro de Investigación Tibaitatá",
+    "phone": "422 73 00",
+    "issns": [
+      "01228706",
+      "25005308"
+    ],
+    "institutions": [
+      "Corporación Colombiana De Investigación Agropecuaria - AGROSAVIA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 945,
+    "name": "CES Medicina",
+    "homepage_url": "https://revistas.ces.edu.co/index.php/medicina",
+    "email": "fochoa@ces.edu.co; revistamedica@ces.edu.co; rsanchez@ces.edu.co",
+    "address": "Calle 10 A No. 22 - 04  Medellín - Colombia - Suramérica",
+    "phone": "4440555",
+    "issns": [
+      "22159177",
+      "05586291"
+    ],
+    "institutions": [
+      "UNIVERSIDAD CES"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 946,
+    "name": "CES Odontología",
+    "homepage_url": "https://revistas.ces.edu.co/index.php/odontologia",
+    "email": "revistaodontologia@ces.edu.co;sgonzalez@ces.edu.co;mrrestrepo@ces.edu.co; rsanchez@ces.edu.co",
+    "address": "Calle 10 A No. 22 - 04  Medellín - Colombia - Suramérica",
+    "phone": "4440555",
+    "issns": [
+      "22159185"
+    ],
+    "institutions": [
+      "UNIVERSIDAD CES"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 955,
+    "name": "ANUARIO DE HISTORIA REGIONAL Y DE LAS FRONTERAS",
+    "homepage_url": "http://revistas.uis.edu.co/index.php/anuariohistoria",
+    "email": "anuariohistoria@uis.edu.co ; ahistoriauis@gmail.com",
+    "address": "Escuela de Historia, UIS.Carrera 27 con 9ª Bucaramanga",
+    "phone": "(7)6451639",
+    "issns": [
+      "21458499",
+      "01222066"
+    ],
+    "institutions": [
+      "UNIVERSIDAD  INDUSTRIAL DE SANTANDER"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 985,
+    "name": "ENTRE CIENCIA E INGENIERIA",
+    "homepage_url": "https://revistas.ucp.edu.co/index.php/entrecienciaeingenieria/index",
+    "email": "entrecei@ucp.edu.co;line.becerra@ucp.edu.co",
+    "address": "Av. de las Américas Cra. 21 No. 49-95 Pereira (Risaralda-Colombia)",
+    "phone": "3124000",
+    "issns": [
+      "25394169",
+      "19098367"
+    ],
+    "institutions": [
+      "UNIVERSIDAD CATOLICA DE PEREIRA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 988,
+    "name": "PRODUCCION + LIMPIA",
+    "homepage_url": "http://repository.lasallista.edu.co:8080/ojs/index.php/pl",
+    "email": "jumontoya@lasallistadocentes.edu.co",
+    "address": "Carrera 51 No. 118- Sur- 57, Caldas (Antioquia)",
+    "phone": "(4) 3201999",
+    "issns": [
+      "19090455",
+      "23230703"
+    ],
+    "institutions": [
+      "CORPORACION UNIVERSITARIA LASALLISTA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 1005,
+    "name": "Intropica",
+    "homepage_url": "http://revistas.unimagdalena.edu.co/index.php/intropica",
+    "email": "revistaintropica@unimagdalena.edu.co; revistaintropica@gmail.com",
+    "address": "Carrera 32 No 22 - 08 Magdalena - Colombia",
+    "phone": "4301292",
+    "issns": [
+      "23897864",
+      "1794161X"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DEL MAGDALENA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 1006,
+    "name": "CUADERNOS LATINOAMERICANOS DE ADMINISTRACIÓN",
+    "homepage_url": "http://revistas.unbosque.edu.co/index.php/cuaderlam/index",
+    "email": "cuaderlam@unbosque.edu.co",
+    "address": "CRA. 7B Bis No. 132-11",
+    "phone": "6489000",
+    "issns": [
+      "22486011",
+      "19005016"
+    ],
+    "institutions": [
+      "UNIVERSIDAD EL BOSQUE"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 1008,
+    "name": "Revista Perspectivas",
+    "homepage_url": "https://revistas.ufps.edu.co/index.php/perspectivas/index",
+    "email": "perspectivas@ufps.edu.co",
+    "address": "Avenida Gran Colombia NO. 12E-96 Barrio Colsag",
+    "phone": "5776655",
+    "issns": [
+      "25005197",
+      "24627682",
+      "20275676",
+      "01012908",
+      "25909215"
+    ],
+    "institutions": [
+      "UNIVERSIDAD FRANCISCO DE PAULA SANTANDER"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 1027,
+    "name": "ORNITOLOGÍA COLOMBIANA",
+    "homepage_url": "https://revistas.ornitologiacolombiana.com/index.php/roc/index",
+    "email": "revista@ornitologiacolombiana.com",
+    "address": "Transversal 18 A Bis No. 37-92",
+    "phone": "3152617130",
+    "issns": [
+      "17940915"
+    ],
+    "institutions": [
+      "Asociación Colombiana De Ornitología"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 1031,
+    "name": "REVISTA AMBIENTAL AGUA, AIRE Y SUELO",
+    "homepage_url": "https://www.unipamplona.edu.co",
+    "email": "revistambiental@unipamplona.edu.co",
+    "address": "Km 1 Salida B/ga El buque",
+    "phone": "5685303",
+    "issns": [
+      "19009178"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DE PAMPLONA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 1034,
+    "name": "Finanzas y Política Económica",
+    "homepage_url": "http://editorial.ucatolica.edu.co/ojsucatolica/revistas_ucatolica/index.php/RFYPE/index",
+    "email": "revistafinypolecon@ucatolica.edu.co",
+    "address": "Universidad Católica de Colombia, Facultad de Economía Ciencias Económicas y Administrativas, Carrera 13 N° 47-49 Bogotá, Colombia",
+    "phone": "(57-1) 3277300",
+    "issns": [
+      "20117663",
+      "22486046"
+    ],
+    "institutions": [
+      "UNIVERSIDAD CATOLICA DE COLOMBIA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 1044,
+    "name": "Dictamen Libre",
+    "homepage_url": "https://revistas.unilibre.edu.co/index.php/dictamenlibre/index",
+    "email": "coordinacioneditorial.baq@unilibre.edu.co;liliam.mendozav@unilibre.edu.co",
+    "address": "KRA 46 N° 48 - 170",
+    "phone": "3673800 ext 316",
+    "issns": [
+      "01240099",
+      "26194244"
+    ],
+    "institutions": [
+      "UNIVERSIDAD LIBRE DE COLOMBIA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 1047,
+    "name": "CUADERNOS DE LITERATURA",
+    "homepage_url": "http://revistas.javeriana.edu.co/index.php/cualit",
+    "email": "cuadernos.literatura@javeriana.edu.co; jcedeno@javeriana.edu.co",
+    "address": "Cra 5 No. 39-00 Oficina 304",
+    "phone": "(571) 3208320",
+    "issns": [
+      "23461691",
+      "01228102"
+    ],
+    "institutions": [
+      "PONTIFICIA UNIVERSIDAD JAVERIANA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 1055,
+    "name": "ELEUTHERA",
+    "homepage_url": "http://eleuthera.ucaldas.edu.co/",
+    "email": "eleuthera@ucaldas.edu.co; revistascientificas@ucaldas.edu.co",
+    "address": "Carrera 23 No. 58-65 Universidad de Caldas - Sede Palogrande. Departamento de Desarrollo Humano. Tercera Planta",
+    "phone": "(57) (6)8862720",
+    "issns": [
+      "20114532",
+      "24631469"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DE CALDAS"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 1071,
+    "name": "@limentech",
+    "homepage_url": "https://www.unipamplona.edu.co",
+    "email": "revista.alimentech@unipamplona.edu.co",
+    "address": "Campus Universitario, Pamplona Km. 1 Vía a Bucaramanga, El Buque",
+    "phone": "5685303",
+    "issns": [
+      "16927125"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DE PAMPLONA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 1080,
+    "name": "Historia y Sociedad",
+    "homepage_url": "http://www.revistas.unal.edu.co/index.php/hisysoc/index",
+    "email": "revhisys_med@unal.edu.co",
+    "address": "Carrera 65 No. 59A-110, edificio 46, oficina 108, Centro Editorial, código postal 050034, Medellín, Antioquia, Colombia",
+    "phone": "(57 4) 4309000",
+    "issns": [
+      "01218417",
+      "23574720"
+    ],
+    "institutions": [
+      "UNIVERSIDAD NACIONAL DE COLOMBIA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 1083,
+    "name": "AMAUTA",
+    "homepage_url": "http://investigaciones.uniatlantico.edu.co/revistas/index.php/Amauta/index",
+    "email": "revamauta@gmail.com;cristobalarteta@yahoo.es",
+    "address": "KILOMETRO 7 ANTIGUA VIA PUERTO COLOMBIA",
+    "phone": "3197010",
+    "issns": [
+      "25007769",
+      "17945658"
+    ],
+    "institutions": [
+      "UNIVERSIDAD DEL ATLÁNTICO"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 1088,
+    "name": "Revista Logos Ciencia & Tecnología",
+    "homepage_url": "https://revistalogos.policia.edu.co:8443/index.php/rlct",
+    "email": "dinae.logosct@policia.gov.co;diepo.gudic@policia.gov.co",
+    "address": "Transversal 33 No. 47 A 35 Sur",
+    "phone": "(601) 5159000",
+    "issns": [
+      "2145549X",
+      "24224200"
+    ],
+    "institutions": [
+      "Dirección de Educación Policial - Policía Nacional De Colombia"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 1102,
+    "name": "RATIO JURIS",
+    "homepage_url": "https://publicaciones.unaula.edu.co/index.php/ratiojuris",
+    "email": "editor.ratiojuris@unaula.edu.co; jfvalenciagr@gmail.com",
+    "address": "Carrera 55 No. 49 51",
+    "phone": "5112199",
+    "issns": [
+      "17946638",
+      "26194066"
+    ],
+    "institutions": [
+      "Universidad Autónoma Latinoamericana - Unaula"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 1108,
+    "name": "Revista filosofía UIS",
+    "homepage_url": "http://revistas.uis.edu.co/index.php/revistafilosofiauis",
+    "email": "revistafilosofia@uis.edu.co",
+    "address": "Carrera 27, Calle 9. Universidad Industrial de Santander, Facultad de Ciencias Humanas, Escuela de Filosofía. Bucaramanga, Colombia.",
+    "phone": "6344000",
+    "issns": [
+      "21458529",
+      "16922484"
+    ],
+    "institutions": [
+      "UNIVERSIDAD  INDUSTRIAL DE SANTANDER"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 1114,
+    "name": "Educación y Ciudad",
+    "homepage_url": "https://revistas.idep.edu.co/index.php/educacion-y-ciudad",
+    "email": "educacionyciudad@idep.edu.co",
+    "address": "Edificio Colseguros, Carrera 10 No. 17-72. Piso 16.",
+    "phone": "+57 314 4889973",
+    "issns": [
+      "23576286",
+      "01230425"
+    ],
+    "institutions": [
+      "Instituto para la Investigación Educativa y el Desarrollo Pedagógico"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 1117,
+    "name": "MEDICINA UPB",
+    "homepage_url": "http://revistas.upb.edu.co/index.php/Medicina/index",
+    "email": "joseg.franco@upb.edu.co",
+    "address": "Carrera 78 B número 72 A 109, Escuela de Ciencias de la Salud, Campus de Robledo. Medellín",
+    "phone": "4 - 4488388",
+    "issns": [
+      "23576308",
+      "01204874"
+    ],
+    "institutions": [
+      "UNIVERSIDAD PONTIFICIA BOLIVARIANA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 1120,
+    "name": "Nuevo Foro Penal",
+    "homepage_url": "http://publicaciones.eafit.edu.co/index.php/nuevo-foro-penal",
+    "email": "nfp@eafit.edu.co",
+    "address": "Carrera 49 No. 7 Sur - 50. Av. Las Vegas",
+    "phone": "2619500",
+    "issns": [
+      "01208179",
+      "25394991"
+    ],
+    "institutions": [
+      "UNIVERSIDAD EAFIT"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 1121,
+    "name": "Ingenierías USBMed",
+    "homepage_url": "http://revistas.usb.edu.co/index.php/IngUSBmed",
+    "email": "ingenierias.usbmed@usb.edu.co",
+    "address": "Cr 56C 51-110",
+    "phone": "5145600",
+    "issns": [
+      "20275846"
+    ],
+    "institutions": [
+      "Universidad De San Buenaventura"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 1124,
+    "name": "INGENIERIA SOLIDARIA",
+    "homepage_url": "https://revistas.ucc.edu.co/index.php/in/index",
+    "email": "ingenieriasolidaria@ucc.edu.co",
+    "address": "AVENIDA CARACAS No. 37-15",
+    "phone": "3323265",
+    "issns": [
+      "19003102",
+      "23576014"
+    ],
+    "institutions": [
+      "UNIVERSIDAD COOPERATIVA DE COLOMBIA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 1130,
+    "name": "CUADERNOS DE CONTABILIDAD",
+    "homepage_url": "http://revistas.javeriana.edu.co/index.php/cuacont/index",
+    "email": "cuadernosdeconta@javeriana.edu.co",
+    "address": "Cra.  7 No 40B #36 Ed. Jorge Hoyos Vásquez- Piso 6.",
+    "phone": "(571) 3208320",
+    "issns": [
+      "01231472",
+      "25006045"
+    ],
+    "institutions": [
+      "PONTIFICIA UNIVERSIDAD JAVERIANA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 1146,
+    "name": "REFLEXIÓN POLÍTICA",
+    "homepage_url": "https://revistas.unab.edu.co/index.php/reflexion/index",
+    "email": "reflepol@unab.edu.co",
+    "address": "Avenida 42 N° 48-11 UNAB - Edificio Biblioteca Piso 5° IEP. Bucaramanga-Santander-Colombia",
+    "phone": "(7)6436111",
+    "issns": [
+      "01240781",
+      "25908669"
+    ],
+    "institutions": [
+      "UNIVERSIDAD AUTONOMA DE BUCARAMANGA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 1173,
+    "name": "Investigación & Desarrollo",
+    "homepage_url": "http://rcientificas.uninorte.edu.co/index.php/investigacion/index",
+    "email": "rinvydes@uninorte.edu.co",
+    "address": "Kilómetro 5, Antigua vía Puerto Colombia",
+    "phone": "3509509",
+    "issns": [
+      "20117574"
+    ],
+    "institutions": [
+      "FUNDACIÓN UNIVERSIDAD DEL NORTE"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 1191,
+    "name": "PENSAMIENTO AMERICANO",
+    "homepage_url": "http://publicaciones.americana.edu.co/index.php/pensamientoamericano",
+    "email": "pensamientoamericano@coruniamericana.edu.co; aiglesias@coruniamericana.edu.co",
+    "address": "Carrera 53 No. 64-142",
+    "phone": "57 + 5 + 385102",
+    "issns": [
+      "27451402",
+      "20272448"
+    ],
+    "institutions": [
+      "Corporación Universitaria Americana"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 1256,
+    "name": "Anuario Electrónico de Estudios en Comunicación Social \"Disertaciones\"",
+    "homepage_url": "http://revistas.urosario.edu.co/index.php/disertaciones/index",
+    "email": "disertaciones@urosario.edu.co",
+    "address": "Calle 12C No. 6-25 - Bogotá D.C. Colombia",
+    "phone": null,
+    "issns": [
+      "18569536"
+    ],
+    "institutions": [
+      "COLEGIO MAYOR NUESTRA SEÑORA DEL ROSARIO",
+      "UNIVERSIDAD COMPLUTENSE DE MADRID"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 1301,
+    "name": "REVISTA CRIMINALIDAD",
+    "homepage_url": "https://revistacriminalidad.policia.gov.co:8000/index.php/revcriminalidad/issue/archive",
+    "email": "dijin.rev-crim@policia.gov.co",
+    "address": "Avenida El Dorado No. 75-25, barrio Modelia, Bogotá D.C., Colombia",
+    "phone": "057 1 5159700",
+    "issns": [
+      "22565531",
+      "17943108"
+    ],
+    "institutions": [
+      "Dirección de Educación Policial - Policía Nacional De Colombia"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 1313,
+    "name": "HALLAZGOS",
+    "homepage_url": "http://revistas.usta.edu.co/index.php/hallazgos/index",
+    "email": "revistahallazgos@usantotomas.edu.co",
+    "address": "Calle 52 No.7-11 P.7",
+    "phone": "5878797",
+    "issns": [
+      "2422409X",
+      "17943841"
+    ],
+    "institutions": [
+      "UNIVERSIDAD SANTO TOMAS"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 1324,
+    "name": "REVISTA COLOMBIANA DE REUMATOLOGÍA",
+    "homepage_url": "https://www.elsevier.es/es-revista-revista-colombiana-reumatologia-374",
+    "email": "revistacolombianareumatologia@gmail.com",
+    "address": "Calle 104 No. 14a-51. Oficina 501",
+    "phone": "6350840",
+    "issns": [
+      "01218123",
+      "20279000"
+    ],
+    "institutions": [
+      "Asociación Colombiana de Reumatología"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  },
+  {
+    "id": 158871,
+    "name": "GESTIÓN Y DESARROLLO LIBRE",
+    "homepage_url": "http://www.unilibrecucuta.edu.co/ojs/index.php/gestionyd/index",
+    "email": "revista.gestionydesarrollolibre.cuc@unilibre.edu.co",
+    "address": "Avenida 4ta 12N-81 El Bosque, Cúcuta",
+    "phone": "5829810",
+    "issns": [
+      "25393669"
+    ],
+    "institutions": [
+      "UNIVERSIDAD LIBRE DE COLOMBIA"
+    ],
+    "current_category": "C",
+    "current_year": 2024
+  }
+]

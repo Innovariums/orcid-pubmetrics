@@ -311,6 +311,95 @@ UI y el badge "COMITÉ" en el grafo.
 
 ---
 
+## 8.1 Publindex como índice secundario (22 abril 2026)
+
+**Motivación.** Después de desplegar Fase 2 (Open Editors) se verificó que el
+dataset no cubre el ecosistema colombiano: **0 editores con `ror_country = CO`**
+de 922.097 registros totales. Cualquier revista nacional queda fuera de la
+detección automática de conflictos. Esto se documentó en el informe técnico
+entregado el 2026-04-22 (`Informe-conflictos-editoriales-revistas-nacionales.pdf`).
+
+**Decisión de alcance.** Avanzar por fases, aprobado tras revisión:
+
+- **Fase A (completada 2026-04-22)** — Enriquecer el dataset Publindex con
+  la URL oficial de cada revista vigente, para que el usuario pueda
+  verificar manualmente los casos que la detección automática no cubre.
+- Fase B (pendiente) — Seed curado manual de comités editoriales para
+  revistas A1/A2 prioritarias, con ORCIDs verificados uno a uno.
+- Fase C (condicional) — Evaluar scraper OJS genérico + matcher nombre-a-ORCID
+  sólo si las fases anteriores resultan insuficientes.
+
+### Qué se construyó en la Fase A
+
+**Fuente de datos.** El portal oficial `scienti.minciencias.gov.co/publindex/`
+expone una API pública no documentada que alimenta su SPA Angular:
+
+```
+GET /publindex/api/publico/revistasPublindex/categorias
+GET /publindex/api/publico/revistasPublindex/categorias/{A1|A2|B|C}
+```
+
+Devuelve por cada revista vigente: `txtNombre`, `txtPaginaWeb`, `txtEmail`,
+`txtDireccion`, `txtTelefono`, `issns[]`, `instituciones[]`. Este endpoint es
+la fuente actualizada hasta la clasificación 2024, más fresca que el dataset
+de datos.gov.co (congelado en 2022).
+
+**Pipeline.** `scripts/fetch_publindex.py` consume los 4 endpoints por
+categoría, normaliza URLs (antepone `https://` cuando falta esquema) e ISSNs
+(8 chars sin guión, mayúsculas), y genera dos ficheros en `data/publindex/`:
+
+- `publindex.json` (1.24 MB): histórico 2004-2024 por (issn, año) para el
+  lookup principal del drawer. Incluye 566 filas nuevas para 2024.
+- `publindex_current.json` (136 KB): 287 revistas vigentes con metadata
+  completa (URL, email, dirección, teléfono, instituciones editoras).
+
+**Cobertura real.** 287 revistas vigentes: 7 A1 + 17 A2 + 114 B + 149 C.
+Cobertura de contacto: **287/287 (100%)** con `homepage_url` y `email`.
+Detección de plataforma Open Journal Systems vía patrón `/index.php/{slug}/`
+en la URL: **209/287 (72,8%)**. El resto son portales institucionales custom
+(Uniandes, CUC, Icesi, UdeA) que no siguen el patrón OJS y reciben sólo el
+enlace al sitio oficial sin ruta automática al comité editorial.
+
+**Backend.** `PublindexProvider` extendido para cargar ambos ficheros y
+merge por ISSN normalizado. Nuevos campos en `PublindexRecord`:
+`homepage_url`, `email`, `editorial_team_url` (derivado heurísticamente para
+OJS), `is_ojs`. El endpoint `POST /publindex/lookup` los expone en el
+response.
+
+**Frontend.** `DetailDrawer` (`PublindexBlock`) añade dos botones cuando la
+entry tiene URL:
+
+- **Sitio oficial de la revista ↗** — apunta a `homepage_url`. Presente en
+  las 287 revistas vigentes.
+- **Comité editorial ↗** — apunta a `{base}/index.php/{slug}/about/editorialTeam`.
+  Presente sólo en las 209 detectadas como OJS. Tooltip advierte que la ruta
+  puede no estar disponible en todas las revistas.
+
+El resto de la UI (chip "no indexada", distribución por cuartil, stacked
+bars, PDF, CSV) no cambia. La feature sigue siendo **secundaria**: los
+botones sólo aparecen dentro del `PublindexBlock`, que a su vez sólo se
+renderiza en publicaciones sin cuartil SJR.
+
+### Lo que esta fase NO hace (explícito)
+
+- **No clasifica como "conflicto editorial"** ninguna publicación. El botón
+  "Comité editorial" abre el listado en el sitio de la revista para que el
+  usuario lo revise manualmente.
+- **No añade tipos de chip nuevos**: sigue la decisión del profesor de
+  2026-04-21 de que Publindex es exploración, no reemplazo de JCR/SJR.
+- **No cambia la detección existente** para revistas internacionales: Open
+  Editors sigue siendo la fuente del cruce automático ORCID ↔ comité.
+
+### Siguiente punto de decisión
+
+Fase B requiere una lista priorizada de revistas nacionales (por ejemplo, las
+que concentran los casos de estudio del equipo) para que valga la pena el
+esfuerzo manual. Sin esa lista, la ruta más sensata es dejar Fase A en
+producción y observar qué revistas aparecen con frecuencia en los análisis
+reales.
+
+---
+
 ## 9. Investigación de APIs (abril 2026)
 
 ### 8.1 Hallazgo crítico
@@ -409,7 +498,12 @@ Se compromete además a consultar en paralelo con biblioteca/investigación si l
   `api-orcid-pubmetrics.innovarium.site` (back), TLS vía Traefik +
   Let's Encrypt
 - [x] Data bakeada en la imagen Docker (SJR 2013-2024 + Open Editors
-  Plus 2026) para evitar volume mounts frágiles
+  Plus 2026 + Publindex histórico + vigentes 2024) para evitar volume
+  mounts frágiles
+- [x] **Publindex Fase A** (2026-04-22): enriquecimiento con URL oficial
+  de las 287 revistas vigentes vía API pública del portal MinCiencias;
+  botones "Sitio oficial" y "Comité editorial" en el drawer para las
+  publicaciones sin cuartil SJR. Detalle en §8.1.
 
 **Pendientes:**
 - [ ] Cache persistente de consultas → Postgres (Fase 3)
@@ -419,5 +513,14 @@ Se compromete además a consultar en paralelo con biblioteca/investigación si l
 - [ ] Consulta del profesor a biblioteca sobre JCR institucional
 - [ ] Lista seed de revistas/investigadores sospechosos para validar
   detección editorial con casos conocidos (aporta el profesor)
+- [ ] **Publindex Fase B** (pendiente de lista priorizada): seed curado
+  manual de comités editoriales para revistas A1/A2 nacionales con
+  ORCIDs verificados uno a uno. Requiere input del equipo sobre qué
+  revistas concentran los casos de estudio.
+- [ ] **Publindex Fase C** (condicional): scraper OJS genérico + matcher
+  nombre-a-ORCID — sólo si B resulta insuficiente en la práctica; UI debe
+  separar explícitamente "ORCID publicado" de "ORCID inferido" por el
+  riesgo de falsos positivos (15-25% estimado).
 - [ ] Scraping dirigido de comités editoriales de revistas
-  latinoamericanas que Open Editors no cubre
+  latinoamericanas que Open Editors no cubre (cubierto parcialmente
+  por Publindex Fase B/C)

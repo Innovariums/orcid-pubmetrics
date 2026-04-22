@@ -358,7 +358,10 @@ orcid/
 │               └── pdfReport.tsx
 └── data/
     ├── sjr/                         # 12 CSVs 2013-2024 (commiteados, 132 MB)
-    └── open_editors/                # parquet Open Editors Plus 2026 (57 MB)
+    ├── open_editors/                # parquet Open Editors Plus 2026 (57 MB)
+    └── publindex/                   # histórico + vigentes 2024 (1.4 MB total)
+        ├── publindex.json           # histórico 2004-2024 por (issn, año)
+        └── publindex_current.json   # 287 revistas vigentes con homepage_url, email
 ```
 
 ---
@@ -433,6 +436,41 @@ Cada fase tiene **criterio de aceptación** concreto (lo que el profe puede ver 
   "Cooperación del grupo" y tonaliza autores del grupo
 - [x] CSV + PDF de comparación
 - [x] UI neutra: datos sin juicios, tonos sin alarmas
+
+### Fase 2.5 — Publindex como índice secundario ✅ (2026-04-22)
+
+Contexto y decisión detallados en `project.md §8.1`. Resumen del plan ejecutado:
+
+**Opción A — Enriquecer dataset con URL oficial de cada revista vigente:**
+
+- [x] Verificar API pública del portal Publindex (endpoints no documentados
+  que alimentan la SPA Angular): `GET /api/publico/revistasPublindex/categorias`
+  y `/categorias/{A1|A2|B|C}`
+- [x] `scripts/fetch_publindex.py` consume los 4 endpoints por categoría,
+  normaliza URLs e ISSNs, genera `data/publindex/publindex.json` (histórico
+  2004-2024) y `publindex_current.json` (287 revistas vigentes con metadata)
+- [x] Cobertura: 287/287 revistas con `homepage_url` y `email` (100%); 209/287
+  detectadas como OJS por patrón `/index.php/{slug}/` (72,8%)
+- [x] `PublindexProvider` extendido: carga ambos ficheros, merge por ISSN
+  normalizado, nuevos campos `homepage_url`, `email`, `editorial_team_url`
+  (derivado heurísticamente para OJS), `is_ojs`
+- [x] `POST /publindex/lookup` expone los nuevos campos
+- [x] `DetailDrawer` / `PublindexBlock`: botones "Sitio oficial de la revista"
+  y "Comité editorial" (cuando es OJS) dentro del bloque Publindex existente
+- [x] Tooltip explícito en el botón "Comité editorial" advirtiendo que la
+  ruta estándar OJS puede no estar disponible en todas las revistas
+
+**Lo que esta fase NO hace (explícito):**
+
+- No clasifica como "conflicto editorial" ninguna publicación
+- No añade tipos de chip nuevos en la tabla (decisión del 2026-04-21)
+- No toca la detección existente vía Open Editors para revistas internacionales
+
+**Pendiente de decisión para avanzar a Fase 2.6 (opcional):**
+
+- [ ] Seed curado manual de comités editoriales para revistas A1/A2 más
+  relevantes (criterio: frecuencia de aparición en casos de estudio
+  concretos). Requiere lista priorizada desde el equipo antes de iniciar.
 
 ### Fase 3 — Escalamiento y despliegue (parcial)
 

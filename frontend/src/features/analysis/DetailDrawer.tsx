@@ -491,6 +491,42 @@ function PublindexBlock({
         </span>
       </div>
       {bodyNode}
+      {entry && (entry.homepage_url || entry.editorial_team_url) && (
+        <div
+          style={{
+            marginTop: 10,
+            paddingTop: 8,
+            borderTop: "1px solid var(--ink-100)",
+            display: "flex",
+            flexWrap: "wrap",
+            gap: 6,
+          }}
+        >
+          {entry.homepage_url && (
+            <a
+              href={entry.homepage_url}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="op-btn op-btn--ghost op-btn--sm"
+              style={{ fontSize: 11.5, padding: "4px 10px" }}
+            >
+              Sitio oficial de la revista ↗
+            </a>
+          )}
+          {entry.editorial_team_url && (
+            <a
+              href={entry.editorial_team_url}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="op-btn op-btn--ghost op-btn--sm"
+              style={{ fontSize: 11.5, padding: "4px 10px" }}
+              title="Ruta estándar de Open Journal Systems — puede no estar disponible en todas las revistas"
+            >
+              Comité editorial ↗
+            </a>
+          )}
+        </div>
+      )}
     </div>
   );
 }

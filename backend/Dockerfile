@@ -1,4 +1,4 @@
-# rev: 2026-04-21T19:10 — add publindex dataset + env var
+# rev: 2026-04-22T10:30 — publindex fase A: URL oficial + vigentes 2024
 FROM python:3.12-slim
 
 ENV PYTHONUNBUFFERED=1 \

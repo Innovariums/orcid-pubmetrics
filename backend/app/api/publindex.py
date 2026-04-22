@@ -22,6 +22,10 @@ class PublindexEntry(BaseModel):
     latest_year: int
     latest_category: str
     history: list[PublindexYearItem]
+    homepage_url: str | None = None
+    email: str | None = None
+    editorial_team_url: str | None = None
+    is_ojs: bool = False
 
 
 class PublindexLookupRequest(BaseModel):
@@ -52,5 +56,9 @@ def lookup(
             history=[
                 PublindexYearItem(year=h.year, category=h.category) for h in rec.history
             ],
+            homepage_url=rec.homepage_url,
+            email=rec.email,
+            editorial_team_url=rec.editorial_team_url,
+            is_ojs=rec.is_ojs,
         )
     return PublindexLookupResponse(entries=entries)
