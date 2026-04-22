@@ -56,18 +56,34 @@ def _fetch_json(path: str) -> Any:
 def _normalize_url(raw: str | None) -> str | None:
     """Normaliza URLs que el portal devuelve sin esquema (www.revista.edu.co).
 
-    Se asume https:// por defecto — las revistas académicas colombianas en
-    2024 ya están todas sobre TLS. Si la URL no empieza con http, se
-    antepone https://.
+    Algunos registros del portal Publindex traen múltiples URLs separadas
+    por `;` o `,` (típicamente el sitio OJS + una réplica en SciELO). Se
+    prefiere la primera que contenga `/index.php/` (OJS, con comité
+    editorial auto-derivable). Si ninguna la tiene, se queda con la
+    primera bien formada. HTTPS por defecto si no se declara esquema.
     """
     if not raw:
         return None
     cleaned = raw.strip()
     if not cleaned:
         return None
-    if cleaned.startswith(("http://", "https://")):
-        return cleaned
-    return "https://" + cleaned
+
+    candidates: list[str] = []
+    for part in cleaned.replace(",", ";").split(";"):
+        p = part.strip()
+        if p:
+            candidates.append(p)
+    if not candidates:
+        return None
+
+    def _with_scheme(u: str) -> str:
+        return u if u.startswith(("http://", "https://")) else "https://" + u
+
+    # Preferir URLs con /index.php/ (OJS) — permiten derivar comité editorial
+    for c in candidates:
+        if "/index.php/" in c:
+            return _with_scheme(c)
+    return _with_scheme(candidates[0])
 
 
 def _normalize_issn(raw: str | None) -> str | None:

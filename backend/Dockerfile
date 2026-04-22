@@ -1,4 +1,4 @@
-# rev: 2026-04-22T10:30 — publindex fase A: URL oficial + vigentes 2024
+# rev: 2026-04-22T11:10 — fix URLs multivalor en publindex_current
 FROM python:3.12-slim
 
 ENV PYTHONUNBUFFERED=1 \

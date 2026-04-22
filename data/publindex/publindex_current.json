@@ -728,7 +728,7 @@
   {
     "id": 82,
     "name": "CUADERNOS DE ECONOMÍA",
-    "homepage_url": "http://www.revistas.unal.edu.co/index.php/ceconomia;http://fce.unal.edu.co/cuadernos",
+    "homepage_url": "http://www.revistas.unal.edu.co/index.php/ceconomia",
     "email": "revcuaeco_bog@unal.edu.co",
     "address": "Carrera 30 No.45 -03, Ciudad Universitaria, Facultad de Ciencias Económicas Ed. 310, Primer piso, Centro Editorial",
     "phone": "3165000",
@@ -1960,7 +1960,7 @@
   {
     "id": 861,
     "name": "Revista Facultad de Ingeniería",
-    "homepage_url": "http://www.uptc.edu.co/enlaces/rfingenieria;https://revistas.uptc.edu.co/index.php/ingenieria",
+    "homepage_url": "https://revistas.uptc.edu.co/index.php/ingenieria",
     "email": "revista.ingenieria@uptc.edu.co",
     "address": "Avenida Central del Norte 39-115",
     "phone": "7405626",
@@ -2027,7 +2027,7 @@
   {
     "id": 927,
     "name": "Revista Colombiana de Ciencias Hortícolas",
-    "homepage_url": "http://www.soccolhort.com/revista/html/home.html;https://revistas.uptc.edu.co/index.php/ciencias_horticolas/index",
+    "homepage_url": "https://revistas.uptc.edu.co/index.php/ciencias_horticolas/index",
     "email": "rcch@uptc.edu.co",
     "address": "Avenida carrera 30 No. 45-03 edificio 500 oficina 327",
     "phone": "3165000",
@@ -2811,7 +2811,7 @@
   {
     "id": 221,
     "name": "Revista de la Facultad de Medicina",
-    "homepage_url": "http://www.revistas.unal.edu.co/index.php/revfacmed;http://www.scielo.org.co/scielo.php?script=sci_serial&pid=0120 0011&lng=es&nrm=iso",
+    "homepage_url": "http://www.revistas.unal.edu.co/index.php/revfacmed",
     "email": "revista_fmbog@unal.edu.co",
     "address": "Av Cra. 30 No. 45-03. Revista de la Facultad de Medicina oficina 225.",
     "phone": "3165145",
@@ -4140,7 +4140,7 @@
   {
     "id": 828,
     "name": "SIGNOS - Investigación en sistemas de gestión",
-    "homepage_url": "https://revistas.usantotomas.edu.co/index.php/signos;https://revistas.usantotomas.edu.co/index.php/signos/issue/archive",
+    "homepage_url": "https://revistas.usantotomas.edu.co/index.php/signos",
     "email": "guillermo.pena@usantotomas.edu.co",
     "address": "Carrera 9 No 51 - 11",
     "phone": "315 50 18",
